@@ -1,0 +1,40 @@
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\obj\Release\ResolveAssemblyReference.cache
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\obj\Release\Monad_Hosting.Properties.Resources.resources
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\obj\Release\ScriptedTurtle.csproj.GenerateResource.Cache
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\obj\Release\Monad Hosting.exe
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Monad Hosting.exe
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Monad Hosting.pdb
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\IronPython.dll
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\IronPython.Modules.dll
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Microsoft.Scripting.Core.dll
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Microsoft.Scripting.dll
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Microsoft.Scripting.ExtensionAttribute.dll
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\obj\Release\Monad Hosting.pdb
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\obj\Release\Monad_Hosting.TheTurtle.resources
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Examples\Circle.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Examples\Spiral.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Examples\Flower.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Examples\Fern.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Examples\GraphProcesses.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Examples\IntersectingCircles.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\bin\Release\Examples\Tree.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\Examples\Circle.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\Examples\Fern.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\Examples\GraphProcesses.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\Examples\IntersectingCircles.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\Examples\Spiral.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\Examples\Flower.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\Examples\Tree.txt
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\ScriptedTurtle.exe
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\ScriptedTurtle.pdb
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\IronPython.dll
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\IronPython.Modules.dll
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\Microsoft.Scripting.Core.dll
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\Microsoft.Scripting.dll
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\bin\Release\Microsoft.Scripting.ExtensionAttribute.dll
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\obj\Release\ResolveAssemblyReference.cache
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\obj\Release\ScriptedTurtle.TheTurtle.resources
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\obj\Release\ScriptedTurtle.Properties.Resources.resources
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\obj\Release\ScriptedTurtle.csproj.GenerateResource.Cache
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\obj\Release\ScriptedTurtle.exe
+C:\compile\repository\SDE Talks\ScriptedTurtle\ScriptedTurtle\obj\Release\ScriptedTurtle.pdb

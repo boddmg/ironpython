@@ -1,0 +1,37 @@
+﻿########################################################
+##
+## Graph the working set of processes in the system.
+## Yes. I am ashamed.
+##
+########################################################
+
+from System.Diagnostics import Process
+turtle.Reset()
+
+def bar(value, max, screenHeight):
+   if value < 5000000:
+      return
+      
+   turtle.Forward((float(value) / max) * screenHeight)
+   turtle.Right(90)
+   turtle.Forward(20)
+   turtle.Right(90)
+   turtle.Forward((float(value) / max) * screenHeight)
+   turtle.Left(90)
+   turtle.Forward(10)
+   turtle.Left(90)
+
+
+turtle.PenUp()
+turtle.Backward(200)
+turtle.Left(90)
+turtle.Forward(500)
+turtle.Right(90)
+turtle.PenDown()
+
+## Get max workingSet
+maxWorkingSet = max(process.WorkingSet for process in Process.GetProcesses())
+
+## Graph them
+for process in Process.GetProcesses():
+   bar(process.WorkingSet, maxWorkingSet, 400)

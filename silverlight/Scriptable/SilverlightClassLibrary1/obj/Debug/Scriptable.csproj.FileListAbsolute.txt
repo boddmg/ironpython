@@ -1,0 +1,5 @@
+E:\SilverlightProjects\Scriptable\SilverlightClassLibrary1\SilverlightClassLibrary1\obj\Debug\ResolveAssemblyReference.cache
+E:\SilverlightProjects\Scriptable\SilverlightClassLibrary1\SilverlightClassLibrary1\ClientBin\Scriptable.dll
+E:\SilverlightProjects\Scriptable\SilverlightClassLibrary1\SilverlightClassLibrary1\ClientBin\Scriptable.pdb
+E:\SilverlightProjects\Scriptable\SilverlightClassLibrary1\SilverlightClassLibrary1\obj\Debug\Scriptable.dll
+E:\SilverlightProjects\Scriptable\SilverlightClassLibrary1\SilverlightClassLibrary1\obj\Debug\Scriptable.pdb

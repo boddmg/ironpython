@@ -1,0 +1,182 @@
+################################################################################
+##
+## Draw a circle.
+##
+################################################################################
+
+turtle.Reset()
+for i in range(360+1):
+   turtle.Forward(1)
+   turtle.Right(1)
+
+
+
+################################################################################
+##
+## Draw a spiral.
+##
+################################################################################
+
+turtle.Reset()
+
+def spiral(size):
+   if size > 30:
+       return 
+
+   turtle.Forward(size)
+   turtle.Right(15)
+
+   spiral(size * 1.02)
+
+spiral(5)
+
+
+################################################################################
+##
+## Draw something that looks a little like a flower.
+##
+################################################################################
+
+turtle.Reset()
+
+def flower(thickness):
+   sides = 12
+   length = 36
+
+   for petal in range(thickness+1):
+      for counter in range(1, sides+1):
+         turtle.Forward(length)
+         turtle.Right(360.0/sides)
+      turtle.Right((360.0/thickness))
+
+flower(20)
+
+
+########################################################
+##
+## Draw a set of intersecting circles.
+##
+########################################################
+
+turtle.Reset()
+
+for i in range(1, 120+1):
+   for i in range(1, 180+1):
+      turtle.Forward(12)
+      turtle.Right(2)
+
+   turtle.Right(3)
+
+
+
+########################################################
+##
+## Draw a tree.
+##
+########################################################
+
+from System import Random
+random = Random()
+
+turtle.Reset()
+turtle.PenUp()
+turtle.Backward(150)
+turtle.PenDown()
+
+def tree(size):
+  if size< 5: 
+    return 
+
+  turtle.Forward(size)
+
+  turtle.Left(30)
+  tree(size * (random.NextDouble() * 0.8 + 0.2))
+
+  turtle.Right(60)
+  tree(size * (random.NextDouble() * 0.8 + 0.2))
+
+  turtle.Left(30)
+  turtle.Backward(size)
+
+tree(100)
+
+
+########################################################
+##
+## Draw a fern.
+##
+########################################################
+
+turtle.Reset()
+
+def fern(size):
+   if size < 5: 
+       return 
+   
+   turtle.Forward(size / 20.0)
+   turtle.Left(80)
+   fern (size * 0.3)
+   
+   turtle.Right(82)
+   turtle.Forward(size / 20.0)
+
+   turtle.Right(80)
+   fern (size * 0.3)
+
+   turtle.Left(78)
+   fern (size * 0.9)
+
+   turtle.Left(2)
+   turtle.Backward(size / 20.0)
+   
+   turtle.Left(2)
+   turtle.Backward(size / 20.0)
+
+turtle.PenUp()
+turtle.Left(90)
+turtle.Forward(50)
+turtle.Left(90)
+turtle.Forward(180)
+turtle.Right(180)
+turtle.PenDown()
+
+fern(440)
+
+
+########################################################
+##
+## Graph the working set of processes in the system.
+## Yes. I am ashamed.
+##
+########################################################
+
+from System.Diagnostics import Process
+turtle.Reset()
+
+def bar(value, max, screenHeight):
+   if value < 5000000:
+      return
+      
+   turtle.Forward((float(value) / max) * screenHeight)
+   turtle.Right(90)
+   turtle.Forward(20)
+   turtle.Right(90)
+   turtle.Forward((float(value) / max) * screenHeight)
+   turtle.Left(90)
+   turtle.Forward(10)
+   turtle.Left(90)
+
+
+turtle.PenUp()
+turtle.Backward(200)
+turtle.Left(90)
+turtle.Forward(500)
+turtle.Right(90)
+turtle.PenDown()
+
+## Get max workingSet
+maxWorkingSet = max(process.WorkingSet for process in Process.GetProcesses())
+
+## Graph them
+for process in Process.GetProcesses():
+   bar(process.WorkingSet, maxWorkingSet, 400)

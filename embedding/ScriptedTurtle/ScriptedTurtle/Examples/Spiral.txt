@@ -1,0 +1,18 @@
+﻿########################################################
+##
+## Draw a spiral.
+##
+########################################################
+
+turtle.Reset()
+
+def spiral(size):
+   if size > 30:
+       return 
+
+   turtle.Forward(size)
+   turtle.Right(15)
+
+   spiral(size * 1.02)
+
+spiral(5)

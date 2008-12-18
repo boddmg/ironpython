@@ -1,0 +1,30 @@
+﻿########################################################
+##
+## Draw a tree.
+##
+########################################################
+
+from System import Random
+random = Random()
+
+turtle.Reset()
+turtle.PenUp()
+turtle.Backward(150)
+turtle.PenDown()
+
+def tree(size):
+  if size< 5: 
+    return 
+
+  turtle.Forward(size)
+
+  turtle.Left(30)
+  tree(size * (random.NextDouble() * 0.8 + 0.2))
+
+  turtle.Right(60)
+  tree(size * (random.NextDouble() * 0.8 + 0.2))
+
+  turtle.Left(30)
+  turtle.Backward(size)
+
+tree(100)

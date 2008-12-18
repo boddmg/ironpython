@@ -1,0 +1,40 @@
+﻿########################################################
+##
+## Draw a fern.
+##
+########################################################
+
+turtle.Reset()
+
+def fern(size):
+   if size < 5: 
+       return 
+   
+   turtle.Forward(size / 20.0)
+   turtle.Left(80)
+   fern (size * 0.3)
+   
+   turtle.Right(82)
+   turtle.Forward(size / 20.0)
+
+   turtle.Right(80)
+   fern (size * 0.3)
+
+   turtle.Left(78)
+   fern (size * 0.9)
+
+   turtle.Left(2)
+   turtle.Backward(size / 20.0)
+   
+   turtle.Left(2)
+   turtle.Backward(size / 20.0)
+
+turtle.PenUp()
+turtle.Left(90)
+turtle.Forward(50)
+turtle.Left(90)
+turtle.Forward(180)
+turtle.Right(180)
+turtle.PenDown()
+
+fern(440)

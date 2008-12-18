@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <title>Mini Web IDE for IronPython and Silverlight 2: 0.6.0</title>
+    <script language="javascript" type="text/javascript" src="edit_area/edit_area_full.js"></script>
+    <style type="text/css">
+        body {font-family: Verdana, arial;margin: 15px;}
+	</style>
+
+    <!-- Basic stylesheet for application -->
+    <link type="text/css" rel="stylesheet" href="assets/stylesheets/screen.css" />
+    <!-- Formatting for Dynamic Language error window -->
+    <link type="text/css" rel="stylesheet" href="assets/stylesheets/error.css" />
+    <!-- Defines "onSilverlightError" function for Silverlight plugin -->
+    <script type="text/javascript" src="assets/javascripts/error.js"></script>
+  </head>
+  <body>
+    <h1>Mini Web IDE for IronPython and Silverlight 2: 0.6.0</h1>
+    <p><a href="http://www.voidspace.org.uk/ironpython/silverlight/index.shtml">IronPython and Silverlight Articles and Demos</a></p>
+
+    <script type="text/javascript">
+        editAreaLoader.init({
+        	id : "code"	,	        // textarea id
+        	syntax: "python",		// syntax to be uses for highgliting
+        	start_highlight: true,	// to display with highlight mode on start-up
+        	allow_resize: 'no',
+        	replace_tab_by_spaces: '4',
+        	change_callback: 'recalculate'
+        });
+        trigger = { loaded: false }
+        function recalculate() {
+            if (!trigger.loaded) {
+                return;
+            }
+            control = document.getElementById('SilverlightPlugin');
+            python = editAreaLoader.getValue('code');
+            control.Content.codeChange.method(python);
+        }
+
+        function load(){
+            if (!trigger.loaded) {
+                return;
+            }
+            control = document.getElementById('SilverlightPlugin');
+            python = control.Content.load.method();
+            if (python != '') {
+                 editAreaLoader.setValue('code', python);
+           }
+        }
+
+        function reloadExamples(){
+            if (!trigger.loaded) {
+                return;
+            }
+            control = document.getElementById('SilverlightPlugin');
+            control.Content.refresh.method()
+        }
+
+        function writesomestuff (value) {
+		  element = document.getElementById('debugging');
+		  element.value = element.value + value
+
+        }
+    </script>
+
+
+    <div id="user_interface" style="width: 100%;">
+        <div id="codebox" style="float: left;">
+            <h2>Python Code</h2>
+            <p>
+                <input type="button" onClick="recalculate();" value="Execute" /> &nbsp;
+                <input type="button" onClick="load();" value="Load" />
+            </p>
+            <p><textarea id="code" rows="25" cols="60" wrap="off"></textarea></p>
+
+            <div style="border: 1px dashed black;padding: 5px;">
+                <div id="experimental"><p>Scratchpad element with the id 'experimental'.</p></div>
+                <p><input name="input_field" id="input_field" value="Example" />&nbsp;<input type="button" value="OK" id="OkButton" name="OkButton" /></p>
+            </div>
+        </div>
+
+        <div id="container" style="float: right;">
+          <h2>Silverlight Canvas</h2>
+
+          <div id="example" style="visibility: hidden;"></div>
+
+		  <div id='errorLocation' style="font-size: small;color: Gray;"></div>
+
+		  <div id="SilverlightPluginHost" width="450" height="540">
+                <script type="text/javascript">
+                  function setCode(s, e) {
+                      editAreaLoader.setValue('code', e.code);
+                  }
+
+                  function onload() {
+                      element = document.getElementById('debugging');
+                      element.value = element.value + 'Silverlight Loaded\r\n';
+                      trigger.loaded = true;
+
+                      control = document.getElementById('SilverlightPlugin');
+                      control.Content.setCode.Event = setCode;
+                  }
+                </script>
+                
+                <object id="SilverlightPlugin" data="data:application/x-silverlight," type="application/x-silverlight-2" width="450" height="540">
+                  <param name="source" value="app.xap"/>
+                  <param name="onerror" value="onSilverlightError" />
+                  <param name="onload" value="onload" />
+                  <param name="background" value="#00000000" />
+                  <param name="initParams" value="reportErrors=errorLocation" />
+                  <param name="windowless" value="true" />
+
+                  <a href="http://go.microsoft.com/fwlink/?LinkID=124807" style="text-decoration: none;">
+                    <img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style: none"/>
+                  </a>
+                </object>
+                <iframe style='visibility:hidden;height:0;width:0;border:0px'></iframe>
+		  </div>
+
+            <p><input type="button" value="Examples" name="refresh" onclick="reloadExamples()" /></p>
+
+        </div>
+    </div>
+
+
+    <div style="margin:10px;float: left;">
+        <h2>Debugging Output</h2>
+        <p><textarea id="debugging" rows="15" cols="88" readonly="readonly"></textarea></p>
+        <p>A project for experimenting with IronPython and Silverlight</p>
+        <ul>
+            <li>&copy; Created by <a href="http://www.voidspace.org.uk/python/weblog/index.shtml">Michael Foord</a> 2007-8</li>
+            <li>Requires Silverlight 2</li>
+            <li><a href="http://www.voidspace.org.uk/ironpython/silverlight/index.shtml">Web IDE Home Page (and download)</a></li>
+            <li>Uses the <a href="http://www.cdolivet.net/index.php?page=editArea">EditArea</a> Syntax Highlighting Javascript Code Editor</li>
+        </ul>
+    </div>
+
+  </body>
+</html>

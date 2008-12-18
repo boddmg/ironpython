@@ -1,0 +1,12 @@
+E:\Projects\Evaluator\Evaluator\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\Evaluator\Evaluator\obj\Debug\Evaluator.csproj.GenerateResource.Cache
+E:\Projects\Evaluator\Evaluator\bin\Debug\Evaluator.exe
+E:\Projects\Evaluator\Evaluator\bin\Debug\Evaluator.pdb
+E:\Projects\Evaluator\Evaluator\bin\Debug\IronPython.dll
+E:\Projects\Evaluator\Evaluator\bin\Debug\IronPython.Modules.dll
+E:\Projects\Evaluator\Evaluator\bin\Debug\Microsoft.Scripting.dll
+E:\Projects\Evaluator\Evaluator\obj\Debug\Evaluator.exe
+E:\Projects\Evaluator\Evaluator\obj\Debug\Evaluator.pdb
+E:\Projects\Evaluator\Evaluator\obj\Debug\Evaluator.IronPythonEvaluator.resources
+E:\repository\Presentation\Evaluator\Evaluator\obj\Debug\Evaluator.exe
+E:\repository\Presentation\Evaluator\Evaluator\obj\Debug\Evaluator.pdb

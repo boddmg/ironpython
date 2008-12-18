@@ -1,0 +1,11 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" RuntimeVersion="2.0.31005.00" EntryPointAssembly="Microsoft.Scripting.Silverlight" EntryPointType="Microsoft.Scripting.Silverlight.DynamicApplication">
+  <Deployment.Parts>
+    <!-- Add additional assemblies here -->
+    <AssemblyPart Source="/deploy/Microsoft.Scripting.ExtensionAttribute.dll" />
+    <AssemblyPart Source="/deploy/Microsoft.Scripting.Silverlight.dll" />
+    <AssemblyPart Source="/deploy/Microsoft.Scripting.Core.dll" />
+    <AssemblyPart Source="/deploy/Microsoft.Scripting.dll" />
+    <AssemblyPart Source="/deploy/IronPython.dll" />
+    <AssemblyPart Source="/deploy/IronPython.Modules.dll" />
+  </Deployment.Parts>
+</Deployment>

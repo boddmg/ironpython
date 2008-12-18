@@ -1,0 +1,22 @@
+E:\Projects\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.Calculator.resources
+E:\Projects\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.csproj.GenerateResource.Cache
+E:\Projects\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\EmbeddedCalculator.exe
+E:\Projects\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\EmbeddedCalculator.pdb
+E:\Projects\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\IronPython.dll
+E:\Projects\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\IronPython.Modules.dll
+E:\Projects\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\Microsoft.Scripting.dll
+E:\Projects\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.exe
+E:\Projects\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.pdb
+E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.exe
+E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.pdb
+E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.Calculator.resources
+E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.csproj.GenerateResource.Cache
+E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\bin\Debug\EmbeddedCalculator.exe
+E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\bin\Debug\EmbeddedCalculator.pdb
+E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\bin\Debug\IronPython.dll
+E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\bin\Debug\IronPython.Modules.dll
+E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\bin\Debug\Microsoft.Scripting.dll
+E:\repository\Presentation\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.exe
+E:\repository\Presentation\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.pdb

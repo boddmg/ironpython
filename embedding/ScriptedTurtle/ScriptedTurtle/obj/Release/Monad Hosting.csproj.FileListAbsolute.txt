@@ -1,0 +1,23 @@
+C:\DevDemo\monad_hosting_2\Monad Hosting\bin\Release\Monad Hosting.exe
+C:\DevDemo\monad_hosting_2\Monad Hosting\bin\Release\Monad Hosting.pdb
+C:\DevDemo\monad_hosting_2\Monad Hosting\obj\Release\ResolveAssemblyReference.cache
+C:\DevDemo\monad_hosting_2\Monad Hosting\obj\Release\Monad_Hosting.MonadHost.resources
+C:\DevDemo\monad_hosting_2\Monad Hosting\obj\Release\Monad_Hosting.Properties.Resources.resources
+C:\DevDemo\monad_hosting_2\Monad Hosting\obj\Release\Monad Hosting.csproj.GenerateResource.Cache
+C:\DevDemo\monad_hosting_2\Monad Hosting\obj\Release\Monad Hosting.exe
+C:\DevDemo\monad_hosting_2\Monad Hosting\obj\Release\Monad Hosting.pdb
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\obj\Release\Monad Hosting.exe
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\obj\Release\Monad Hosting.pdb
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\bin\Release\Monad Hosting.exe
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\bin\Release\Monad Hosting.pdb
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\bin\Release\IronPython.dll
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\bin\Release\IronPython.Modules.dll
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\bin\Release\Microsoft.Scripting.Core.dll
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\bin\Release\Microsoft.Scripting.dll
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\bin\Release\Microsoft.Scripting.ExtensionAttribute.dll
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\obj\Release\ResolveAssemblyReference.cache
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\obj\Release\Monad_Hosting.MonadHost.resources
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\obj\Release\Monad_Hosting.Properties.Resources.resources
+E:\monad_hosting_2\monad_hosting_2\Monad Hosting\obj\Release\Monad Hosting.csproj.GenerateResource.Cache
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\obj\Release\Monad Hosting.exe
+C:\compile\repository\SDE Talks\ScriptedTurtle\Monad Hosting\obj\Release\Monad Hosting.pdb
