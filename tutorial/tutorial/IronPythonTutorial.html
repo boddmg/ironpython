@@ -1,0 +1,1521 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<meta name="version" content="S5 1.1" />
+<title>Developing with IronPython</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 5196 2007-06-03 20:25:28Z wiemann $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<link rel="stylesheet" href="ui/default/slides.css"
+      type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css"
+      type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css"
+      type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css"
+      type="text/css" media="projection" id="operaFix" />
+
+<style type="text/css">
+#currentSlide {display: none;}
+</style>
+</head>
+<body>
+<div class="layout">
+<div id="controls"></div>
+<div id="currentSlide"></div>
+<div id="header">
+
+</div>
+<div id="footer">
+<h1>Developing with IronPython</h1>
+
+</div>
+</div>
+<div class="presentation">
+<div class="slide" id="slide0">
+<h1 class="title">Developing with IronPython</h1>
+
+<!-- Definitions of interpreted text roles (classes) for S5/HTML data. -->
+<!-- This data file has been placed in the public domain. -->
+<!-- Colours
+======= -->
+<!-- Text Sizes
+========== -->
+<!-- Display in Slides (Presentation Mode) Only
+========================================== -->
+<!-- Display in Outline Mode Only
+============================ -->
+<!-- Display in Print Only
+===================== -->
+<!-- Display in Handout Mode Only
+============================ -->
+<!-- Incremental Display
+=================== -->
+<div class="contents handout topic" id="id1">
+<p class="topic-title first">Developing with IronPython</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction-to-ironpython" id="id2">Introduction to IronPython</a></li>
+<li><a class="reference internal" href="#the-net-framework" id="id3">The .NET Framework</a></li>
+<li><a class="reference internal" href="#advantages-of-ironpython" id="id4">Advantages of IronPython</a></li>
+<li><a class="reference internal" href="#disadvantages-of-ironpython" id="id5">Disadvantages of IronPython</a></li>
+<li><a class="reference internal" href="#connecting-python-to-net" id="id6">Connecting Python to .NET</a></li>
+<li><a class="reference internal" href="#importing-net-classes" id="id7">Importing .NET Classes</a></li>
+<li><a class="reference internal" href="#python-and-net-types-1" id="id8">Python and .NET Types (1)</a></li>
+<li><a class="reference internal" href="#python-and-net-types-2" id="id9">Python and .NET Types (2)</a></li>
+<li><a class="reference internal" href="#subclassing-net-types" id="id10">Subclassing .NET Types</a></li>
+<li><a class="reference internal" href="#overloading" id="id11">Overloading</a></li>
+<li><a class="reference internal" href="#arrays-and-generics" id="id12">Arrays and Generics</a></li>
+<li><a class="reference internal" href="#making-guis" id="id13">Making GUIs</a></li>
+<li><a class="reference internal" href="#user-interaction" id="id14">User Interaction</a></li>
+<li><a class="reference internal" href="#introducing-twatter" id="id15">Introducing Twatter</a></li>
+<li><a class="reference internal" href="#creating-a-form" id="id16">Creating a Form</a></li>
+<li><a class="reference internal" href="#creating-a-form-example" id="id17">Creating a Form: Example</a></li>
+<li><a class="reference internal" href="#laying-out-the-form-1" id="id18">Laying Out the Form (1)</a></li>
+<li><a class="reference internal" href="#laying-out-the-form-2" id="id19">Laying Out the Form (2)</a></li>
+<li><a class="reference internal" href="#positioning-example" id="id20">Positioning Example</a></li>
+<li><a class="reference internal" href="#practical-adding-a-button" id="id21">Practical: Adding a Button</a></li>
+<li><a class="reference internal" href="#anchoring-and-docking" id="id22">Anchoring and Docking</a></li>
+<li><a class="reference internal" href="#docking" id="id23">Docking</a></li>
+<li><a class="reference internal" href="#anchoring" id="id24">Anchoring</a></li>
+<li><a class="reference internal" href="#practical-anchoring" id="id25">Practical: Anchoring</a></li>
+<li><a class="reference internal" href="#dropdown-menus" id="id26">Dropdown Menus</a></li>
+<li><a class="reference internal" href="#practical-add-menu-items" id="id27">Practical: Add Menu Items</a></li>
+<li><a class="reference internal" href="#practical-event-handlers" id="id28">Practical: Event Handlers</a></li>
+<li><a class="reference internal" href="#background-twitter-api" id="id29">Background: Twitter API</a></li>
+<li><a class="reference internal" href="#net-streams" id="id30">.NET Streams</a></li>
+<li><a class="reference internal" href="#making-web-requests" id="id31">Making Web Requests</a></li>
+<li><a class="reference internal" href="#practical-adding-update-support" id="id32">Practical: Adding Update Support</a></li>
+<li><a class="reference internal" href="#xml-parsing" id="id33">XML Parsing</a></li>
+<li><a class="reference internal" href="#xml-parsing-example" id="id34">XML Parsing: Example</a></li>
+<li><a class="reference internal" href="#cleaner-xml-handling" id="id35">Cleaner XML Handling</a></li>
+<li><a class="reference internal" href="#twitter-statuses" id="id36">Twitter Statuses</a></li>
+<li><a class="reference internal" href="#parsing-twitter-statuses" id="id37">Parsing Twitter Statuses</a></li>
+<li><a class="reference internal" href="#parsed-statuses" id="id38">Parsed Statuses</a></li>
+<li><a class="reference internal" href="#databases-ado-net" id="id39">Databases: ADO.NET</a></li>
+<li><a class="reference internal" href="#dataset-layer" id="id40">DataSet Layer</a></li>
+<li><a class="reference internal" href="#data-provider-layer" id="id41">Data Provider Layer</a></li>
+<li><a class="reference internal" href="#getting-connected" id="id42">Getting Connected</a></li>
+<li><a class="reference internal" href="#issuing-commands" id="id43">Issuing Commands</a></li>
+<li><a class="reference internal" href="#avoid-sql-injection" id="id44">Avoid SQL Injection!</a></li>
+<li><a class="reference internal" href="#reading-results" id="id45">Reading Results</a></li>
+<li><a class="reference internal" href="#ironpython-and-threads" id="id46">IronPython and Threads</a></li>
+<li><a class="reference internal" href="#basic-principles" id="id47">Basic Principles</a></li>
+<li><a class="reference internal" href="#thread-class-threadstart-delegate" id="id48">Thread Class &amp; ThreadStart Delegate</a></li>
+<li><a class="reference internal" href="#aborting-threads" id="id49">Aborting Threads</a></li>
+<li><a class="reference internal" href="#cleaning-up-in-a-finally-block" id="id50">Cleaning up in a Finally Block</a></li>
+<li><a class="reference internal" href="#windows-forms-and-threads" id="id51">Windows Forms and Threads</a></li>
+<li><a class="reference internal" href="#the-calltarget0-delegate" id="id52">The CallTarget0 Delegate</a></li>
+<li><a class="reference internal" href="#invoking-onto-the-control-thread" id="id53">Invoking onto the Control Thread</a></li>
+</ul>
+</div>
+<img align="right" alt="IronPython in Action" class="image align-right" src="images/ironpythoninaction.jpg" style="width: 325px; height: 415px;" />
+<ul class="simple">
+<li><a class="reference external" href="http://www.ironpythoninaction.com/">www.ironpythoninaction.com</a></li>
+<li><a class="reference external" href="http://www.resolversystems.com">Resolver Systems</a></li>
+<li><a class="reference external" href="http://www.freshfoo.com">freshfoo.com</a></li>
+</ul>
+<p class="handout">This tutorial is taken by:</p>
+<ul class="handout simple">
+<li><a class="reference external" href="http://www.voidspace.org.uk/python/weblog/index.shtml">Michael Foord</a></li>
+<li>Christian Muirhead</li>
+<li><a class="reference external" href="http://www.freshfoo.com">Menno Smits</a></li>
+</ul>
+<p class="handout">All three of us work for Resolver Systems in London, creating a spreadsheet development environment with IronPython. There are currently around 50 000 lines of IronPython code in Resolver One, plus around 130 000 lines in the test framework.</p>
+<p class="handout">Christian and Michael are also the authors of <em>IronPython in Action</em>, the first (English) book on IronPython - published by Manning Publications. It is now complete and should be available mid-Novemeber.</p>
+<p class="handout">It covers topics like:</p>
+<ul class="handout simple">
+<li>Windows Forms and Windows Presentation Foundation</li>
+<li>Databases, web services and XML</li>
+<li>Silverlight</li>
+<li>Extending and embedding IronPython with C# and VB.NET</li>
+<li>Metaprogramming, testing and design patterns</li>
+<li>System administration (shell-scripting, WMI and Powershell with IronPython)</li>
+<li>ASP.NET</li>
+</ul>
+
+</div>
+<div class="slide" id="introduction-to-ironpython">
+<h1>Introduction to IronPython</h1>
+<ul class="simple">
+<li>IronPython is a Python <em>compiler</em></li>
+<li>Runs on .NET and Mono</li>
+<li>Originally created by Jim Hugunin</li>
+<li>Now being developed by a Microsoft team</li>
+<li>Stable version 1.1.2 (Python 2.4)</li>
+<li>Version 2, still in beta and built on the Dynamic Language Runtime (Python 2.5)</li>
+<li>Version 2 runs on Silverlight</li>
+</ul>
+<p class="handout">IronPython was originally created as an experiment to demonstrate how bad the .NET framework was for dynamic languages.</p>
+<p class="handout">His early version ran the Pystone benchmark about 1.7 times faster than CPython, so it became a serious project. Eventually he was hired by Microsoft to work on the CLR (Common Language Runtime) and they took on IronPython - releasing it with an OSI approved open source license.</p>
+<p class="handout">After completing IronPython 1 they abstracted out the dynamic type system and dynamic language hosting environment to create the Dynamic Language Runtime. As well as making it easier to implement dynamic languages for .NET, the DLR allows dynamic languages to interoperate through a shared type system. IronPython 2 (still in beta) is built on the DLR. Other (Microsoft) DLR languages include IronRuby (still in alpha) and Managed JScript (an ECMA 3 compliant implementation of Javascript for Silverlight).</p>
+<p class="handout">Visual Basic .NET version ten will be 'partially dynamic' through the DLR - which will become part of the Common Language Runtime. C# 4 will also include mechanisms for easier interaction with 'dynamic objects' (possible now through the IronPython hosting API - but a bit clumsy).</p>
+<p class="handout">IronPython is a Python compiler - it compiles Python to in-memory assemblies in IL (Intermediate Language), the .NET bytecode (which can be compiled to native code by the JIT). It is very well integrated with the .NET framework. Strings in Python are .NET string objects, <em>and</em> they have the Python methods that you would expect. The same is true for the other types.</p>
+<p class="handout">We can also take .NET assemblies and import classes / objects from them, and use them with <em>no</em> wrapping needed.</p>
+</div>
+<div class="slide" id="the-net-framework">
+<h1>The .NET Framework</h1>
+<ul>
+<li><p class="first">Microsoft's 'grand' programming framework for Windows</p>
+</li>
+<li><dl class="first docutils">
+<dt>Powerful application runtime</dt>
+<dd><ul class="first last simple">
+<li>JIT compiler</li>
+<li>Automatic garbage collection</li>
+<li><strong>Huge</strong> libraries (ASP.NET, winforms, WPF, ADO, WCF...)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Cross-platform with Mono</p>
+</li>
+<li><p class="first">'Standard' programming language is C# ('Java done right')</p>
+</li>
+</ul>
+</div>
+<div class="slide" id="advantages-of-ironpython">
+<h1>Advantages of IronPython</h1>
+<ul class="simple">
+<li>Access to .NET libraries</li>
+<li>Easy to extend with C#</li>
+<li>Political reasons!</li>
+<li>Silverlight!!</li>
+<li>Binary distributions or apps with multiple 'Python engines'</li>
+<li>A better threading model than CPython (no GIL)</li>
+<li>Sandbox code with AppDomains</li>
+</ul>
+<p class="handout">IronPython has several advantages over CPython for the Python programmer.</p>
+<p class="handout">These include:</p>
+<ul class="handout simple">
+<li>Interoperation with existing .NET components including the huge .NET libraries - in particular the WIndows Forms and WPF user interface libraries</li>
+<li>Extending IronPython with C# (for performance reasons) is dramatically easier than extending CPython with C (IronPython can use .NET class libraries natively)</li>
+<li>IronPython (based on .NET) may be an easier sell politically (in a corporate IT environment) than CPython</li>
+<li>Script the browser with Silverlight</li>
+<li>Create binary distributions of applications, or applications with multiple Python engines (difficult with CPython)</li>
+<li>Applications can execute code inside AppDomains with restricted privileges (again - hard in CPython)</li>
+<li>.NET has a better threading model than CPython (no Global Interpreter Lock and the ability to abort threads) - so you can create threaded applications that use multiple CPU cores</li>
+</ul>
+</div>
+<div class="slide" id="disadvantages-of-ironpython">
+<h1>Disadvantages of IronPython</h1>
+<ul class="simple">
+<li>No Python stack frames &amp; other incompatibilities</li>
+<li>All strings are Unicode in IronPython</li>
+<li>No C extensions  - Ironclad for the future though</li>
+<li>Performance profile is very different</li>
+<li>Dependency on .NET or Mono</li>
+</ul>
+<p class="handout">There is a cost to using IronPython of course.</p>
+<p class="handout">A substantial part of the Python standard library (or existing Python code) <em>does</em> work. However, the performance profile for IronPython is very different to CPython (function calls and arithmetic are massively faster - using the builtin types is slower). This means that code optimised <em>for CPython</em> will typically run slower on IronPython.</p>
+<p class="handout">IronPython is not <em>fully</em> compatible with CPython though - it doesn't use Python stack frames for example. Code that depends on CPython 'implementation details' are unlikely to work.</p>
+<p class="handout">Another potential source of incompatibility (although it seems to be less of a problem in practice) is that all strings are Unicode in IronPython (like Python 3). This actually makes working with strings much more pleasant!</p>
+<p class="handout">The single biggest incompatibility problem is that Python C extensions don't work. Several of these (particularly the builtin modules) have been re-implemented by the IronPython team in C#. For others, the community has provided compatibility wrappers around an equivalent .NET library. You can find several of these in <a class="reference external" href="http://fepy.sourceforge.net">FePy: the IronPython Community Edition</a> (maintained by Seo Sanghyeon).</p>
+<p class="handout">For the rest, one possibility is <a class="reference external" href="http://code.google.com/p/ironclad/">Ironclad</a>. This is an open source project by Resolver Systems, and is basically a re-implementation of the Python C API in C#. It allows C extensions to be imported and used seamlessly from IronPython (our goal is to allow Numpy to be used from inside Resolver One). It already works for small extensions (like bz2) - and in the latest release you could import numpy and create and use integer arrays! There is still a lot to be done though.</p>
+</div>
+<div class="slide" id="connecting-python-to-net">
+<h1>Connecting Python to .NET</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>Two <em>orthogonal</em> ways of organising classes in .NET</dt>
+<dd><ul class="first last simple">
+<li>Namespaces</li>
+<li>Assemblies</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Use clr.AddReference to make classes in an assembly available for import</p>
+</li>
+</ul>
+<pre class="literal-block">
+import clr # built-in to IronPython
+clr.AddReference('System.Data')
+</pre>
+</div>
+<div class="slide" id="importing-net-classes">
+<h1>Importing .NET Classes</h1>
+<ul class="simple">
+<li>Classes in the assembly are now available for import from their namespace</li>
+</ul>
+<pre class="literal-block">
+from System.Data.Common import DbConnection
+</pre>
+<ul class="simple">
+<li>Assemblies are found by searching sys.path (as well as other locations)</li>
+</ul>
+<p class="handout">Namespaces behave similarly to packages and modules (although they're
+read-only).  Assemblies don't really have any Python analogue, except maybe
+the kind of sys.path manipulations big projects might do to ensure modules
+are available for importing.</p>
+<p class="handout">The an assembly's name doesn't have to be a prefix of all of the
+namespaces whose classes it contains, but in general that's how
+things are organised - it's easier to manage.</p>
+<p class="handout">Two assemblies can have classes in the same namespace. Say assembly A1
+contains Example.Classes namespace containing the class Fish, and A2
+contains Example.Classes with Dog. You could add references to A1 and A2
+and then do: from Example.Classes import Dog, Fish</p>
+</div>
+<div class="slide" id="python-and-net-types-1">
+<h1>Python and .NET Types (1)</h1>
+<ul class="simple">
+<li>IronPython built-in types are the equivalent .NET types</li>
+</ul>
+<pre class="literal-block">
+&gt;&gt;&gt; import System
+&gt;&gt;&gt; int is System.Int32
+True
+&gt;&gt;&gt; str is System.String
+True
+</pre>
+<ul class="simple">
+<li>Cleverness about what methods are visible: str.upper() vs String.ToUpper()</li>
+<li>None gets treated as null</li>
+</ul>
+<p class="handout">The standard Python methods on builtins are always available, but
+the .NET ones don't show up unless the clr module has been
+imported.</p>
+<p class="handout">Having the standard Python types actually be the .NET types means
+that the interface with normal C# code can be very natural.</p>
+</div>
+<div class="slide" id="python-and-net-types-2">
+<h1>Python and .NET Types (2)</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>Built-in containers are custom types which implement standard .NET interfaces</dt>
+<dd><ul class="first last simple">
+<li>list -&gt; IList</li>
+<li>dict -&gt; IDictionary</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>.NET types you might see in the wild:</dt>
+<dd><ul class="first last simple">
+<li>Enumerations: nicer constants/flags for APIs</li>
+<li>Structs: like classes, but value types</li>
+<li>Delegates: statically typed function pointers</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="handout">Often APIs you're using in the framework expect enumerables, ILists
+or dictionaries, so you can pass them straight in from IronPython
+code without needing to do any translation.</p>
+<p class="handout">Delegates are heavily used in the framework for callbacks, especially
+for event handlers in the GUI toolkit. In a lot of cases,
+IronPython can detect what delegate type is expected in a
+particular place and automaticaly wrap function references, as long
+as the number of arguments is right.</p>
+</div>
+<div class="slide" id="subclassing-net-types">
+<h1>Subclassing .NET Types</h1>
+<ul>
+<li><p class="first">IronPython classes can inherit from .NET classes</p>
+</li>
+<li><dl class="first docutils">
+<dt>Override methods on base class</dt>
+<dd><ul class="first last simple">
+<li>Should be signature compatible with the overridden method</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Doesn't create new .NET classes for each Python class</dt>
+<dd><ul class="first last simple">
+<li>One shared between all subclasses of each .NET base class</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>.NET code can call into Python code</dt>
+<dd><ul class="first last simple">
+<li>But only from .NET base class references</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="slide" id="overloading">
+<h1>Overloading</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>.NET classes can have <em>overloaded</em> methods</dt>
+<dd><ul class="first last simple">
+<li>Distinguished by types of arguments</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<pre class="literal-block">
+ExampleClass.Add(Int32, Int32)
+ExampleClass.Add(String, String)
+</pre>
+<ul class="simple">
+<li>Often IP can determine correct method from types of arguments</li>
+<li>Occasionally needs help</li>
+</ul>
+<pre class="literal-block">
+ec.Add.Overloads[int, int]('hello', None)
+</pre>
+</div>
+<div class="slide" id="arrays-and-generics">
+<h1>Arrays and Generics</h1>
+<ul class="simple">
+<li>Uses similar syntax for creating Arrays</li>
+</ul>
+<pre class="literal-block">
+from System import Array
+a = Array[float]([1.2, 2.2, 4])
+</pre>
+<ul class="simple">
+<li>And for instantiating generics</li>
+</ul>
+<pre class="literal-block">
+from System.Collections.Generics import SortedDictionary
+d = SortedDictionary[str, list]()
+</pre>
+<p class="handout">The Python containers are generally more useful/flexible than
+arrays and a lot of generic classes, but sometimes they're
+necessary for talking to an API. The .NET generic collections can
+also be useful if you want to use a container with different
+performance tradeoffs than the Python ones.</p>
+<p class="handout">One thing to note is that arrays and generics can only tell the
+difference between classes that are distinct at the .NET level. If
+you have two different subclasses of object, and an array that you
+only intended to contain one type, the instances of the other type
+can still be stored in it, because as far as the CLR is concerned
+they are of the same type.</p>
+<pre class="handout literal-block">
+class Custom1(object):
+    pass
+
+class Custom2(object):
+    pass
+
+c = Custom1()
+
+a = Array[Custom1]([c])
+
+a[0] = Custom2()  # this will work
+</pre>
+</div>
+<div class="slide" id="making-guis">
+<h1>Making GUIs</h1>
+<ul class="simple">
+<li>The GUI framework lives in System.Windows.Forms/Controls</li>
+<li>That's the assembly and the namespace</li>
+<li>Hello world:</li>
+</ul>
+<pre class="literal-block">
+clr.AddReference('System.Windows.Forms')
+from System.Windows.Forms import Application, Label, Form
+form = Form()
+label = Label(Parent=form, Text='Hello world!')
+Application.Run(form)
+</pre>
+<p class="handout">.NET UI components come from System.Windows.Forms (in .NET 3.0 and up
+they were moved to System.Windows.Controls).</p>
+<p class="handout">The constructor for the Label actually takes no parameters; the
+keyword arguments are IronPython syntactic sugar to make
+constructing GUIs a little more convenient. It's equivalent to:</p>
+<pre class="handout literal-block">
+label = Label()
+label.Parent = form
+label.Text = 'Hello world!'
+</pre>
+</div>
+<div class="slide" id="user-interaction">
+<h1>User Interaction</h1>
+<ul class="simple">
+<li>Add controls with event handlers to forms</li>
+</ul>
+<pre class="literal-block">
+button = Button(Parent=form, Text='hey')
+def onClick(sender, args):
+    print 'quit it'
+button.Click += onClick
+Application.Run(form)
+</pre>
+<ul class="simple">
+<li>onClick function is automatically wrapped in EventHandler delegate</li>
+<li>More on this later...</li>
+</ul>
+</div>
+<div class="slide" id="introducing-twatter">
+<h1>Introducing Twatter</h1>
+<ul class="simple">
+<li>Yet Another Twitter Client</li>
+<li>Very simple</li>
+<li>Missing some bits which we're going to implement now</li>
+<li>Let's see what it looks like...</li>
+</ul>
+<p class="handout">Twatter is a simple application, written in IronPython, that talks to the
+Twitter service (<a class="reference external" href="http://twitter.com/">http://twitter.com/</a>). Twitter offers excellent web APIs
+that allow you to see what your friends are up to, as well as update your
+own status. Twatter takes advantage of these APIs to retrieve &quot;tweets&quot;
+and submit new tweets. Tweets are cached to a database to keep a long
+history and avoid having to bother the Twitter service so much.</p>
+</div>
+<div class="slide" id="creating-a-form">
+<h1>Creating a Form</h1>
+<ul>
+<li><p class="first">Create a subclass of Form</p>
+</li>
+<li><dl class="first docutils">
+<dt>in __init__():</dt>
+<dd><ul class="first last simple">
+<li>call the superclass!</li>
+<li>Create control instances</li>
+<li>Add controls and lay them out</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Controls added using self.Controls.Add()</p>
+</li>
+</ul>
+<p class="handout">To create a form in .NET you'll need to create a subclass of the .NET Form
+class. In the constructor you can set up properties of the form and create
+control instances (eg. TextBox, Button, Panel) which should appear on the
+form. It's useful to keep references to the important controls as instance
+variables for later use.</p>
+<p class="handout">Controls which hold other controls are known as container controls.
+Contain controls include Form and Panel. By combining such controls you
+can construct complex layouts. More on this later.</p>
+<p class="handout">Useful links:</p>
+<ul class="handout simple">
+<li>System.Windows.Forms (v2.0): <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.form(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.form(VS.80).aspx</a></li>
+<li>System.Windows.Forms (v3.5): <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.aspx</a></li>
+</ul>
+</div>
+<div class="slide" id="creating-a-form-example">
+<h1>Creating a Form: Example</h1>
+<pre class="literal-block">
+class MainForm(Form):
+
+    INITIAL_WIDTH = 600
+    INITIAL_HEIGHT = 600
+
+    def __init__(self):
+        Form.__init__(self)
+        self.Text = 'twatter'
+        self.Height = self.INITIAL_HEIGHT
+        self.Width = self.INITIAL_WIDTH
+
+        self.postTextBox = TextBox()
+        self.postTextBox.Multiline = True
+
+        self.friendsListBox = ListBox()
+        ...
+</pre>
+<p class="handout">This is a sample from our Twatter application (MainForm.py). We create a
+subclass of Form called MainForm. In the constructor, the Form constructor
+is called (rather important) and then we set the title (&quot;Text&quot;), Height
+and Width of the form. Then it's just a matter of creating a few controls
+and configuring them.</p>
+</div>
+<div class="slide" id="laying-out-the-form-1">
+<h1>Laying Out the Form (1)</h1>
+<ul class="simple">
+<li>On Windows you can use Visual Studio.</li>
+<li>but... programmatic layout works everywhere</li>
+<li>Programmatic layout is required for highly dynamic interfaces</li>
+<li>Parameterising layout</li>
+</ul>
+<p class="handout">On Windows, most people use Visual Studio to do layout. This works ok but
+isn't an option for Unix or Mac users.</p>
+<p class="handout">Programmatic layout works on all platforms but can be tedious. It is
+necessary when dynamic interfaces need to built at runtime. One advantage
+of programmatic layouts is that they can be quick to change if
+parameterised correctly.  Such changes can often be time-consuming if using
+a visual design tool.</p>
+</div>
+<div class="slide" id="laying-out-the-form-2">
+<h1>Laying Out the Form (2)</h1>
+<ul>
+<li><p class="first">Panel, GroupBox and others</p>
+</li>
+<li><dl class="first docutils">
+<dt>Simple positioning done using attributes:</dt>
+<dd><ul class="first last simple">
+<li>Top, Left, Width, Height</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">In pixels, relative to parent container</p>
+</li>
+<li><p class="first">Use ClientSize to determine the area inside a Control</p>
+</li>
+</ul>
+<p class="handout">To arrange controls, container controls such as Panel or GroupBox are
+used. Container controls can usually hold other container controls. By
+using a mix of controls the required layout can be acheived.</p>
+<p class="handout">Most .NET controls have 4 attributes which can be used to do simple
+positioning and sizing: Top, Left, Width, Height. These values are in
+pixels and are normally applied relative to the parent container.</p>
+<p class="handout">The ClientSize attribute of a control indicates the space inside a
+control. This attribute is a Size object; it itself has Height and
+Width attributes.</p>
+</div>
+<div class="slide" id="positioning-example">
+<h1>Positioning Example</h1>
+<ul>
+<li><p class="first">Look inside MainForm.py: _layout() method</p>
+</li>
+<li><p class="first">Observe how the parts of the form are put together using Controls.Add</p>
+</li>
+<li><p class="first">Main parts: upperPanel, lowerPanel</p>
+</li>
+<li><dl class="first docutils">
+<dt>Style notes:</dt>
+<dd><ul class="first last simple">
+<li>hard-coded numbers are avoided</li>
+<li>positions and sizes of controls are relative to other controls</li>
+<li>easy to maintain</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="handout">The main layout groups on MainForm are 2 Panel instances. All other
+controls are contained within these 2 controls.</p>
+</div>
+<div class="slide" id="practical-adding-a-button">
+<h1>Practical: Adding a Button</h1>
+<ul>
+<li><p class="first">Create a Button instance and give it some text</p>
+</li>
+<li><p class="first">Keep a reference to it on the form</p>
+</li>
+<li><p class="first">Add() it to the form's Controls</p>
+</li>
+<li><dl class="first docutils">
+<dt>Adjust the layout</dt>
+<dd><ul class="first last simple">
+<li>rough is ok, we can fix it later</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="handout">Useful links:</p>
+<ul class="handout simple">
+<li>Button class: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.button(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.button(VS.80).aspx</a></li>
+<li>Form.Controls property: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.control.controls(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.control.controls(VS.80).aspx</a></li>
+</ul>
+</div>
+<div class="slide" id="anchoring-and-docking">
+<h1>Anchoring and Docking</h1>
+<ul>
+<li><p class="first">What about when the window is resized?</p>
+</li>
+<li><p class="first">Ideally, controls should resize with the form</p>
+</li>
+<li><dl class="first docutils">
+<dt>Two solutions:</dt>
+<dd><ul class="first last simple">
+<li>Docking</li>
+<li>Anchoring</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">You should choose one mechanism: they don't work well together</p>
+</li>
+</ul>
+</div>
+<div class="slide" id="docking">
+<h1>Docking</h1>
+<ul>
+<li><p class="first">Keeps a control stuck to a particular side of it's parent</p>
+</li>
+<li><p class="first">Can stick a control to one side of it's parent, or all sides (Fill).</p>
+</li>
+<li><dl class="first docutils">
+<dt>Set via Dock property using the DockStyle enumeration:</dt>
+<dd><ul class="first last simple">
+<li>Left, Right, Top, Bottom, Fill</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Docked controls resize to always be completely attached to the given side of the parent</p>
+</li>
+</ul>
+</div>
+<div class="slide" id="anchoring">
+<h1>Anchoring</h1>
+<ul>
+<li><p class="first">Keeps a control's edge(s) a fixed distance from the parent</p>
+</li>
+<li><dl class="first docutils">
+<dt>Set via the Anchor property using the AnchorStyles enumeration</dt>
+<dd><ul class="first last simple">
+<li>Top, Left, Right, Bottom</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Unlike Dock these can be combined to anchor to more than one edge</p>
+</li>
+<li><p class="first">An Anchored control will keep a constant distance to the parent edge(s)</p>
+</li>
+<li><p class="first">Controls will resize as required to meet the contraints</p>
+</li>
+</ul>
+</div>
+<div class="slide" id="practical-anchoring">
+<h1>Practical: Anchoring</h1>
+<ul class="simple">
+<li>Run twatter and resize the window, controls don't move!</li>
+<li>Try out different Dock options</li>
+<li>Try out Anchor options</li>
+<li>Then, try to make the form resize nicely</li>
+<li>Hint: the Panels &amp; Button we added are good places to start</li>
+</ul>
+<p class="handout">Useful links:</p>
+<ul class="handout simple">
+<li>Anchor property: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.control.anchor.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.control.anchor.aspx</a></li>
+<li>AnchorStyles: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.anchorstyles.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.anchorstyles.aspx</a></li>
+<li>Dock property: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.control.dock.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.control.dock.aspx</a></li>
+<li>DockStyle: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.dockstyle.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.dockstyle.aspx</a></li>
+</ul>
+</div>
+<div class="slide" id="dropdown-menus">
+<h1>Dropdown Menus</h1>
+<ul class="simple">
+<li>Dropdown menu bar is handled by the MenuStrip control</li>
+<li>Each menu is ToolStripMenuItem Add()'ed to MenuStrip.Controls</li>
+<li>Each menu item is a ToolStripMenuItem Add()'ed to the parent's DropDownItems</li>
+<li>MenuStrip instance is then added to Form.Controls</li>
+<li>Also need to set MainMenuStrip on Form</li>
+</ul>
+<p class="handout">Menu bars are a common feature of most applications. They are easily
+implemented using .NET.</p>
+<p class="handout">The top-level object representing the menu bar is MenuStrip.</p>
+<p class="handout">MenuStrip are loaded with ToolStripMenuItem objects (via Controls.Add).
+These represent each menu (&quot;File&quot;, &quot;Edit&quot; etc).</p>
+<p class="handout">These ToolStripMenuItem objects are passed further ToolStripMenuItem
+objects for each menu item (eg. &quot;New&quot;, &quot;Open&quot;, &quot;Quit&quot;) via
+DropDownItems.Add().</p>
+<p class="handout">The Form is given the menu bar by adding the MenuStrip instance to
+Controls and setting the MainMenuStrip attribute.</p>
+</div>
+<div class="slide" id="practical-add-menu-items">
+<h1>Practical: Add Menu Items</h1>
+<ul>
+<li><p class="first">The Twatter application currently has a dropdown menu but no menu items</p>
+</li>
+<li><dl class="first docutils">
+<dt>Add 2 items:</dt>
+<dd><ul class="first last simple">
+<li>Refresh</li>
+<li>Quit</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Remember to keep references to menu items created. We'll need them later.</p>
+</li>
+</ul>
+<p class="handout">Useful links:</p>
+<ul class="handout simple">
+<li>ToolStripMenuItem class: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.toolstripmenuitem.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.toolstripmenuitem.aspx</a></li>
+</ul>
+</div>
+<div class="slide" id="practical-event-handlers">
+<h1>Practical: Event Handlers</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>Add events handlers for:</dt>
+<dd><ul class="first last simple">
+<li>the Post button</li>
+<li>the Quit menu item</li>
+<li>the Refresh menu item</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Make Quit work (look at docs for Application)</p>
+</li>
+<li><p class="first">Stub is ok for Post and Quit</p>
+</li>
+</ul>
+<p class="handout">Reminder of how event handlers are set ... for a Button:</p>
+<pre class="handout literal-block">
+Button.Click += myHandler
+</pre>
+</div>
+<div class="slide" id="background-twitter-api">
+<h1>Background: Twitter API</h1>
+<ul>
+<li><p class="first">RESTful web API</p>
+</li>
+<li><p class="first">Allows querying of users &amp; tweets in a variety of ways &amp; updates</p>
+</li>
+<li><p class="first">Authentication is done using HTTP Basic Auth (401)</p>
+</li>
+<li><dl class="first docutils">
+<dt>Variety of return types indicated by extension:</dt>
+<dd><ul class="first last simple">
+<li>JSON, RSS, Atom, XML (which we'll use)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Twatter only needs a small subset of the API:</dt>
+<dd><ul class="first last simple">
+<li>GET: statuses/friends_timeline.xml</li>
+<li>POST: statuses/update.xml</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="handout">Twitter offers a well designed web API that applications can use to
+retrieve and create status updates and private messages. Twitter can
+report information in a variety of formats, selected by the extension of
+requested resource.</p>
+<p class="handout">Twitter's API has been designed using the REST (Representational State
+Transfer) style. Among other things, this means it's easy to write
+clients that use the API using just basic web requests.</p>
+<p class="handout">Useful links:</p>
+<ul class="handout simple">
+<li>Twitter API: <a class="reference external" href="http://apiwiki.twitter.com/REST+API+Documentation">http://apiwiki.twitter.com/REST+API+Documentation</a></li>
+<li>REST: <a class="reference external" href="http://en.wikipedia.org/wiki/Representational_State_Transfer">http://en.wikipedia.org/wiki/Representational_State_Transfer</a></li>
+</ul>
+</div>
+<div class="slide" id="net-streams">
+<h1>.NET Streams</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>.NET streams represent are sequential bytes:</dt>
+<dd><ul class="first last simple">
+<li>files</li>
+<li>network connections</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Used by the .NET API where I/O is done</p>
+</li>
+<li><p class="first">A little over-engineered, but ok</p>
+</li>
+<li><dl class="first docutils">
+<dt>You get a friendlier API by wrapping a Stream</dt>
+<dd><ul class="first last simple">
+<li>StreamReader</li>
+<li>StreamWriter</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Need Streams to use the .NET web APIs</p>
+</li>
+</ul>
+<p class="handout">Streams appear throughout the .NET API where sequences of bytes need to
+represented (typically when doing file or network I/O). The Stream base
+class is generic. There are various subclasses of Stream for different uses
+(eg. FileStream, MemoryStream, BufferedStream).</p>
+<p class="handout">Various .NET methods will return Stream instances which your code can use or
+pass to other APIs. The Stream interface itself isn't easy to use. A
+friendlier way of dealing with Streams is wrap them with a StreamReader or
+StreamWriter. These provide convenient methods for manipulating stream data.</p>
+</div>
+<div class="slide" id="making-web-requests">
+<h1>Making Web Requests</h1>
+<ul>
+<li><p class="first">Using .NET, web requests are made using the System.Net.WebRequest</p>
+</li>
+<li><dl class="first docutils">
+<dt>To use:</dt>
+<dd><ul class="first last simple">
+<li>Create a WebRequest</li>
+<li>Set the Method attribute ('GET' or 'POST')</li>
+<li>Set Credentials attribute if authenentication is required</li>
+<li>If POST use the request's stream to add POST data (GetRequestStream())</li>
+<li>Call GetResponse() on the request to get the response object</li>
+<li>Call GetResponseStream() on the response to get out response text</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="handout">Useful links:</p>
+<ul class="handout simple">
+<li>WebRequest: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.net.webrequest.aspx">http://msdn.microsoft.com/en-us/library/system.net.webrequest.aspx</a></li>
+<li>StreamReader: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.io.streamreader(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.io.streamreader(VS.80).aspx</a></li>
+<li>StreamWriter: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.io.streamwriter(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.io.streamwriter(VS.80).aspx</a></li>
+</ul>
+</div>
+<div class="slide" id="practical-adding-update-support">
+<h1>Practical: Adding Update Support</h1>
+<ul class="simple">
+<li>Add an update() method to twitter.Client.Client</li>
+<li>Make a POST to <a class="reference external" href="http://twitter.com/statuses/update.xml">http://twitter.com/statuses/update.xml</a></li>
+<li>One POST argument (status) is required which gives the tweet text</li>
+<li>Don't forget authentication!</li>
+<li>Call update from the button handler we created earlier</li>
+</ul>
+<p class="handout">Useful links:</p>
+<ul class="handout simple">
+<li>Twitter update API: <a class="reference external" href="http://apiwiki.twitter.com/REST+API+Documentation#update">http://apiwiki.twitter.com/REST+API+Documentation#update</a></li>
+</ul>
+</div>
+<div class="slide" id="xml-parsing">
+<h1>XML Parsing</h1>
+<ul>
+<li><p class="first">The Twitter API can return tweet timelines as XML</p>
+</li>
+<li><p class="first">Twatter uses the .NET API from System.Xml</p>
+</li>
+<li><p class="first">.NET's main parser API is at System.Xml.XmlReader</p>
+</li>
+<li><dl class="first docutils">
+<dt>XmlReader.Create() takes TextReader</dt>
+<dd><ul class="first last simple">
+<li>the StreamReader we used previously is a TextReader</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Call Read() method to move to next node</p>
+</li>
+</ul>
+<p class="handout">Useful links:</p>
+<ul class="handout simple">
+<li>XmlReader: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.xml.xmlreader(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.xml.xmlreader(VS.80).aspx</a></li>
+</ul>
+</div>
+<div class="slide" id="xml-parsing-example">
+<h1>XML Parsing: Example</h1>
+<pre class="literal-block">
+reader = XmlReader(someTextReader)
+while reader.Read():
+    if reader.NodeType == XmlNodeType.Element:
+        goHandleThisElement(reader)
+    elif reader.NodeType == XmlNodeType.Text:
+        goHandleThisText(reader)
+    ...
+</pre>
+<p class="handout">This is a simplified example. We'll look at some real XML handling soon.</p>
+</div>
+<div class="slide" id="cleaner-xml-handling">
+<h1>Cleaner XML Handling</h1>
+<ul>
+<li><p class="first">XML API is functional but not elegant (it's for C# programmers)</p>
+</li>
+<li><p class="first">With a dynamic language like IronPython we can do better</p>
+</li>
+<li><p class="first">Subclass XmlDocumentReader (xmlreader.py)</p>
+</li>
+<li><dl class="first docutils">
+<dt>Add methods to handle nodes you care about</dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">onStart_...</span></tt> for start tags</li>
+<li><tt class="docutils literal"><span class="pre">onEnd_...</span></tt> for end tags</li>
+<li><tt class="docutils literal"><span class="pre">onText_...</span></tt> for text between tags</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="handout">It is common to wrap the very general .NET XML parsing APIs with a
+intermediate layer to make them more convenient to use. With a dynamic
+language like IronPython we can create an API that is elegant, requiring
+minimal programming effort to use.</p>
+<p class="handout">For Twatter we've to chosen wrap XmlReader to create a SAX/event-driven
+style parser. This is implemented in xmlreader.py as the XmlDocumentReader
+class. To use, subclass XmlDocumentReader and then add methods to handle
+XML nodes as they are encountered in the stream. The method names should
+include the event type (eg. onStart...) and the element name. For example
+to handle the start of the status tag you would just add a method called
+onStart_status. The rest is handled by XmlDocumentReader. Nodes that don't
+have a corresponding handler method are ignored.</p>
+<p class="handout">We'll look at how to use this class to parse Twitter statuses soon.</p>
+</div>
+<div class="slide" id="twitter-statuses">
+<h1>Twitter Statuses</h1>
+<pre class="literal-block">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;statuses type=&quot;array&quot;&gt;
+  &lt;status&gt;
+    &lt;created_at&gt;Thu Aug 14 12:00:49 +0000 2008&lt;/created_at&gt;
+    &lt;id&gt;887300130&lt;/id&gt;
+    &lt;text&gt;How long do Britons talk, text, surf and watch?&lt;/text&gt;
+    ...
+    &lt;user&gt;
+      &lt;id&gt;621583&lt;/id&gt;
+      &lt;name&gt;BBC Technology&lt;/name&gt;
+      &lt;screen_name&gt;bbctech&lt;/screen_name&gt;
+      &lt;location&gt;London, UK&lt;/location&gt;
+      ...
+    &lt;/user&gt;
+  &lt;/status&gt;
+...
+&lt;/statuses&gt;
+</pre>
+<p class="handout">This is an example of what a Twitter status timeline looks like in XML
+format. I've added whitespace to make it more readable. In practice, all
+unnecessary whitespace is stripped to reduce network overhead.</p>
+<p class="handout">See also: <a class="reference external" href="http://apiwiki.twitter.com/REST+API+Documentation#friendstimeline">http://apiwiki.twitter.com/REST+API+Documentation#friendstimeline</a></p>
+</div>
+<div class="slide" id="parsing-twitter-statuses">
+<h1>Parsing Twitter Statuses</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>Subclass that handles Twitter statuses:</dt>
+<dd><ul class="first last simple">
+<li>twitter.StatusReader.StatusReader</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>To use:</dt>
+<dd><ul class="first last simple">
+<li>Create an instance</li>
+<li>call read() with a StreamReader</li>
+<li>get back a list of dicts with another dict for the user</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="slide" id="parsed-statuses">
+<h1>Parsed Statuses</h1>
+<pre class="literal-block">
+[ {
+  'id': '71283719'
+  'text': 'Feeding the cat',
+  ...
+  'user': {
+     'id': '132801',
+     'location', 'Nether Wallop, UK',
+     ...
+   }
+}, ... ]
+</pre>
+<p class="handout">Sample of the return value of StatusReader.read()</p>
+</div>
+<div class="slide" id="databases-ado-net">
+<h1>Databases: ADO.NET</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>Connect to lots of different DBMSs</dt>
+<dd><ul class="first last simple">
+<li>SQL Server</li>
+<li>Oracle</li>
+<li>SQLite</li>
+<li>PostgreSQL</li>
+<li>...</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Two parts</dt>
+<dd><ul class="first last simple">
+<li>Database-specific Data Providers</li>
+<li>Generic DataSets</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="slide" id="dataset-layer">
+<h1>DataSet Layer</h1>
+<ul class="simple">
+<li>Disconnected in-memory data storage and manipulation</li>
+<li>Huge!</li>
+<li>Lots of facilities for slicing and dicing data</li>
+<li>... which aren't really needed in Python</li>
+</ul>
+</div>
+<div class="slide" id="data-provider-layer">
+<h1>Data Provider Layer</h1>
+<ul>
+<li><dl class="first docutils">
+<dt>Database specific</dt>
+<dd><ul class="first last simple">
+<li>Some come with framework</li>
+<li>Others provided by DBMS groups</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Classes for getting at data</dt>
+<dd><ul class="first last simple">
+<li>Connection</li>
+<li>Command (+ Parameter)</li>
+<li>Reader</li>
+<li>Transaction</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="handout">More information about ADO.NET: <a class="reference external" href="http://msdn.microsoft.com/en-us/data/aa937722.aspx">http://msdn.microsoft.com/en-us/data/aa937722.aspx</a></p>
+</div>
+<div class="slide" id="getting-connected">
+<h1>Getting Connected</h1>
+<ul class="simple">
+<li>Make sure your data provider is on sys.path</li>
+</ul>
+<pre class="literal-block">
+clr.AddReference('System.Data.SQLite')
+from System.Data.SQLite import SQLiteConnection
+connection = SQLiteConnection(
+    'data source=d:\play\tutorial\db.sql3')
+connection.Open()
+</pre>
+<ul class="simple">
+<li>Connection class name and connection string parameters depend on provider</li>
+</ul>
+</div>
+<div class="slide" id="issuing-commands">
+<h1>Issuing Commands</h1>
+<ul class="simple">
+<li>With the Command class!</li>
+</ul>
+<pre class="literal-block">
+command = connection.CreateCommand()
+command.CommandText = 'select count(*) from tweets'
+command.ExecuteScalar()
+</pre>
+<ul class="simple">
+<li>ExecuteScalar returns first value from first row of results</li>
+<li>ExecuteNonQuery for INSERT, UPDATE and DELETE</li>
+<li>ExecuteReader for reading results</li>
+</ul>
+</div>
+<div class="slide" id="avoid-sql-injection">
+<h1>Avoid SQL Injection!</h1>
+<ul class="simple">
+<li>Use parameters!</li>
+<li>Faster queries</li>
+<li>No annoying quoting of strings or date values</li>
+</ul>
+<pre class="literal-block">
+command.CommandText = '''
+       select * from tweets
+       where friend_id = :id'''
+command.Parameters.Add(SQLiteParameter('id', 23))
+</pre>
+<ul class="simple">
+<li>Name of Parameter class also depends on provider</li>
+</ul>
+</div>
+<div class="slide" id="reading-results">
+<h1>Reading Results</h1>
+<ul class="simple">
+<li>Command.ExecuteReader returns a DataReader</li>
+<li>Forward-only access to result set</li>
+<li>Includes meta-data about column names and types</li>
+</ul>
+<pre class="literal-block">
+reader = command.ExecuteReader()
+while reader.Read():
+    tweetCreatedAt = reader['created']
+    &lt; do something with tweet &gt;
+reader.Close()
+</pre>
+<ul class="simple">
+<li>Close frees the result set</li>
+</ul>
+</div>
+<div class="slide" id="ironpython-and-threads">
+<h1>IronPython and Threads</h1>
+<div align="center" class="align-center"><img alt="The good sides of threads..." class="image align-center" src="images/threads.jpg" style="width: 400px; height: 300px;" /></div>
+</div>
+<div class="slide" id="basic-principles">
+<h1>Basic Principles</h1>
+<ul class="simple">
+<li>Basic support is the <tt class="docutils literal"><span class="pre">Thread</span></tt> class from <tt class="docutils literal"><span class="pre">System.Threading</span></tt></li>
+<li>You can also use the Python threading API</li>
+<li>An unhandled exception in a .NET thread is fatal - not in a Python thread</li>
+<li>You can abort .NET threads</li>
+<li>No Global Interpreter Lock - scale across multiple cores</li>
+</ul>
+</div>
+<div class="slide" id="thread-class-threadstart-delegate">
+<h1>Thread Class &amp; ThreadStart Delegate</h1>
+<pre class="literal-block">
+&gt;&gt;&gt; from System.Threading import Thread, ThreadStart
+&gt;&gt;&gt; def f():
+...    Thread.Sleep(5000)
+...    print 'Finished'
+...
+&gt;&gt;&gt; t = Thread(ThreadStart(f))
+&gt;&gt;&gt; t.Start()
+&gt;&gt;&gt; Finished
+</pre>
+<p class="handout">If you are using IronPython 2 you will see a warning if you use <tt class="docutils literal"><span class="pre">thread.Sleep</span></tt>. You can use <tt class="docutils literal"><span class="pre">Thread.CurrentThread.Join</span></tt> to achieve the same effect.</p>
+</div>
+<div class="slide" id="aborting-threads">
+<h1>Aborting Threads</h1>
+<pre class="literal-block">
+&gt;&gt;&gt; from System.Threading import Thread, ThreadStart
+&gt;&gt;&gt; def f():
+...    Thread.Sleep(5000)
+...    print 'Finished'
+...
+&gt;&gt;&gt; t = Thread(ThreadStart(f))
+&gt;&gt;&gt; t.Start()
+&gt;&gt;&gt; t.Abort()
+</pre>
+<p class="handout">Calling <tt class="docutils literal"><span class="pre">Thread.Abort</span></tt> raises a <tt class="docutils literal"><span class="pre">ThreadAbortException</span></tt> inside the thread.</p>
+</div>
+<div class="slide" id="cleaning-up-in-a-finally-block">
+<h1>Cleaning up in a Finally Block</h1>
+<pre class="literal-block">
+&gt;&gt;&gt; from System.Threading import Thread, ThreadStart
+&gt;&gt;&gt; def f():
+...     try:
+...         print 'Started'
+...     finally:
+...         Thread.Sleep(5000)
+...         print 'Finished'
+...
+&gt;&gt;&gt; t = Thread(ThreadStart(f))
+&gt;&gt;&gt; t.Start()
+Started
+&gt;&gt;&gt; t.Abort()
+Finished
+</pre>
+<p class="handout">The <tt class="docutils literal"><span class="pre">ThreadAbortException</span></tt> won't be raised whilst we are inside a <tt class="docutils literal"><span class="pre">finally</span></tt> block. Calling <tt class="docutils literal"><span class="pre">Thread.Abort</span></tt> doesn't kill the thread until the finally block has completed.  <tt class="docutils literal"><span class="pre">Thread.CurrentThread.ResetAbort</span></tt> can be used to cancel the thread abort.</p>
+</div>
+<div class="slide" id="windows-forms-and-threads">
+<h1>Windows Forms and Threads</h1>
+<ul class="simple">
+<li>Windows Forms (and WPF) must be used inside a Single Threaded Apartment (STA thread)</li>
+<li>Interacting with controls must be done from that thread</li>
+<li>We can communicate from another thread by invoking onto the message loop</li>
+<li>Every control has an <tt class="docutils literal"><span class="pre">Invoke</span></tt> method that takes a delegate</li>
+</ul>
+</div>
+<div class="slide" id="the-calltarget0-delegate">
+<h1>The CallTarget0 Delegate</h1>
+<pre class="literal-block">
+import clr
+try:
+    # IronPython 1.x
+    from IronPython.Runtime.Calls import CallTarget0
+except ImportError:
+    # IronPython 2.x
+    clr.AddReference('IronPython')
+    from IronPython.Compiler import CallTarget0
+</pre>
+<p class="handout"><tt class="docutils literal"><span class="pre">CallTarget0</span></tt> (and <tt class="docutils literal"><span class="pre">CallTarget1</span></tt> etc) changed location in between IronPython 1 and 2 (in fact it changed twice in IronPython 2 - the one shown here is its final resting place.)</p>
+</div>
+<div class="slide" id="invoking-onto-the-control-thread">
+<h1>Invoking onto the Control Thread</h1>
+<pre class="literal-block">
+def SetText():
+    textbox.Text = 'Something'
+
+delegate = CallTarget0(SetText)
+form.Invoke(SetText)
+
+text = form.Invoke(CallTarget0(lambda: textbox.Text))
+</pre>
+<p class="handout">For callables that take arguments you can use <tt class="docutils literal"><span class="pre">CallTarget1</span></tt> and friends. I prefer to wrap the call with a lambda and use <tt class="docutils literal"><span class="pre">CallTarget0</span></tt>.</p>
+<p class="handout">In IronPython 2 <tt class="docutils literal"><span class="pre">CallTarget0</span></tt> doesn't work with .NET methods that have a void return signature. To invoke a call to something like <tt class="docutils literal"><span class="pre">form.Close</span></tt>  you will also need to wrap the call in a lambda.</p>
+<p class="handout">We can use this to make the database / network calls for Twatter happen on a background thread.</p>
+</div>
+</div>
+</body>
+</html>
