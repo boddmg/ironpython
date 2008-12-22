@@ -9,6 +9,7 @@ namespace Evaluator
     {
         static void Main(string[] args)
         {
+            Application.EnableVisualStyles();
             IronPythonEvaluator evaluator = new IronPythonEvaluator();
             Application.Run(evaluator);
         }

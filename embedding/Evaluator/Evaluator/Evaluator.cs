@@ -17,7 +17,7 @@ namespace Evaluator
 
         public Engine()
         {
-            engine = ScriptRuntime.Create().GetEngine("py");
+            engine = Python.CreateEngine();
             scope = engine.CreateScope();
         }
 
@@ -41,7 +41,7 @@ namespace Evaluator
                 return "Error executing code: " + ex.ToString();
             }
 
-            if (!scope.VariableExists("x"))
+            if (!scope.ContainsVariable("x"))
             {
                 return "x was deleted";
             }

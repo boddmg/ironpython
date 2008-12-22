@@ -10,3 +10,15 @@ E:\Projects\Evaluator\Evaluator\obj\Debug\Evaluator.pdb
 E:\Projects\Evaluator\Evaluator\obj\Debug\Evaluator.IronPythonEvaluator.resources
 E:\repository\Presentation\Evaluator\Evaluator\obj\Debug\Evaluator.exe
 E:\repository\Presentation\Evaluator\Evaluator\obj\Debug\Evaluator.pdb
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\obj\Debug\Evaluator.exe
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\obj\Debug\Evaluator.pdb
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Debug\Evaluator.exe
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Debug\Evaluator.pdb
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Debug\IronPython.dll
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Debug\IronPython.Modules.dll
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Debug\Microsoft.Scripting.Core.dll
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Debug\Microsoft.Scripting.dll
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Debug\Microsoft.Scripting.ExtensionAttribute.dll
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\obj\Debug\ResolveAssemblyReference.cache
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\obj\Debug\Evaluator.IronPythonEvaluator.resources
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\obj\Debug\Evaluator.csproj.GenerateResource.Cache

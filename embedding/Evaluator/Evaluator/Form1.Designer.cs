@@ -51,6 +51,7 @@
             // 
             // value_of_x
             // 
+            this.value_of_x.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.value_of_x.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.value_of_x.Location = new System.Drawing.Point(124, 9);
             this.value_of_x.Name = "value_of_x";
@@ -60,6 +61,7 @@
             // 
             // code
             // 
+            this.code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.code.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.code.Location = new System.Drawing.Point(17, 74);
             this.code.Multiline = true;
@@ -82,6 +84,7 @@
             // 
             // result
             // 
+            this.result.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.result.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.result.Location = new System.Drawing.Point(17, 350);
             this.result.Name = "result";
@@ -133,7 +136,7 @@
             this.Controls.Add(this.code);
             this.Controls.Add(this.value_of_x);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "IronPythonEvaluator";
             this.Text = "IronPython Evaluator";
             this.ResumeLayout(false);

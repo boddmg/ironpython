@@ -1,0 +1,12 @@
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Release\Evaluator.exe
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Release\Evaluator.pdb
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Release\IronPython.dll
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Release\IronPython.Modules.dll
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Release\Microsoft.Scripting.Core.dll
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Release\Microsoft.Scripting.dll
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\bin\Release\Microsoft.Scripting.ExtensionAttribute.dll
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\obj\Release\ResolveAssemblyReference.cache
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\obj\Release\Evaluator.IronPythonEvaluator.resources
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\obj\Release\Evaluator.csproj.GenerateResource.Cache
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\obj\Release\Evaluator.exe
+C:\compile\ironpy-examples\embedding\Evaluator\Evaluator\obj\Release\Evaluator.pdb
