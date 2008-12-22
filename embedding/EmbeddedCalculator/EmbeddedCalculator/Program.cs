@@ -9,6 +9,7 @@ namespace EmbeddedCalculator
     {
         static void Main(string[] args)
         {
+            Application.EnableVisualStyles();
             Calculator calc = new Calculator();
             Application.Run(calc);
         }

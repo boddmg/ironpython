@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+
+using IronPython;
 using IronPython.Hosting;
-using IronPython.Runtime;
 using Microsoft.Scripting;
 using Microsoft.Scripting.Hosting;
+
 
 namespace EmbeddedCalculator
 {
@@ -15,12 +17,10 @@ namespace EmbeddedCalculator
 
         public Engine()
         {
-            engine = ScriptRuntime.Create().GetEngine("py");
-            // An alternative would be engine = PythonEngine.CurrentEngine
-
+            Dictionary<String,Object> options = new Dictionary<string,object>();
+            options["DivisionOptions"] = PythonDivisionOptions.New;
+            engine = Python.CreateEngine(options);
             scope = engine.CreateScope();
-
-            ((IronPython.PythonEngineOptions)engine.Options).DivisionOptions = IronPython.PythonDivisionOptions.New;
 
         }
 
@@ -29,9 +29,10 @@ namespace EmbeddedCalculator
             try
             {
                 ScriptSource source = engine.CreateScriptSourceFromString(input, SourceCodeKind.Expression);
-                return source.Execute(scope).ToString();
+                object result = source.Execute(scope);
+                return result.ToString();
             }
-            catch (Exception ex)
+            catch
             {
                 return "Error";
             }

@@ -20,3 +20,15 @@ E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\bin\Debug\IronPython.Mo
 E:\Projects\EmbeddedCalculator - Copy\EmbeddedCalculator\bin\Debug\Microsoft.Scripting.dll
 E:\repository\Presentation\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.exe
 E:\repository\Presentation\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.pdb
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.exe
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.pdb
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\ResolveAssemblyReference.cache
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.Calculator.resources
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\obj\Debug\EmbeddedCalculator.csproj.GenerateResource.Cache
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\EmbeddedCalculator.exe
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\EmbeddedCalculator.pdb
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\IronPython.dll
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\IronPython.Modules.dll
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\Microsoft.Scripting.Core.dll
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\Microsoft.Scripting.dll
+C:\compile\ironpy-examples\embedding\EmbeddedCalculator\EmbeddedCalculator\bin\Debug\Microsoft.Scripting.ExtensionAttribute.dll

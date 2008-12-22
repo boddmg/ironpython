@@ -62,6 +62,7 @@
             // display
             // 
             this.display.BackColor = System.Drawing.Color.White;
+            this.display.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.display.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.display.Location = new System.Drawing.Point(13, 13);
             this.display.Name = "display";
