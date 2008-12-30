@@ -1,0 +1,9 @@
+C:\compile\DefaultArgumentsVB\DefaultArgumentsVB\bin\Release\DefaultArguments.dll
+C:\compile\DefaultArgumentsVB\DefaultArgumentsVB\bin\Release\DefaultArguments.pdb
+C:\compile\DefaultArgumentsVB\DefaultArgumentsVB\bin\Release\DefaultArguments.xml
+C:\compile\DefaultArgumentsVB\DefaultArgumentsVB\obj\Release\ResolveAssemblyReference.cache
+C:\compile\DefaultArgumentsVB\DefaultArgumentsVB\obj\Release\DefaultArguments.Resources.resources
+C:\compile\DefaultArgumentsVB\DefaultArgumentsVB\obj\Release\DefaultArgumentsVB.vbproj.GenerateResource.Cache
+C:\compile\DefaultArgumentsVB\DefaultArgumentsVB\obj\Release\DefaultArguments.dll
+C:\compile\DefaultArgumentsVB\DefaultArgumentsVB\obj\Release\DefaultArguments.xml
+C:\compile\DefaultArgumentsVB\DefaultArgumentsVB\obj\Release\DefaultArguments.pdb

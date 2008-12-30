@@ -1,0 +1,5 @@
+C:\compile\DynamicObject\DynamicObject\bin\Release\DynamicObject.dll
+C:\compile\DynamicObject\DynamicObject\bin\Release\DynamicObject.pdb
+C:\compile\DynamicObject\DynamicObject\obj\Release\ResolveAssemblyReference.cache
+C:\compile\DynamicObject\DynamicObject\obj\Release\DynamicObject.dll
+C:\compile\DynamicObject\DynamicObject\obj\Release\DynamicObject.pdb

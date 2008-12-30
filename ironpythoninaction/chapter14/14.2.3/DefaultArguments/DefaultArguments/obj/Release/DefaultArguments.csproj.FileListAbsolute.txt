@@ -1,0 +1,15 @@
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\DefaultArguments\bin\Release\DefaultArguments.dll
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\DefaultArguments\bin\Release\DefaultArguments.pdb
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\DefaultArguments\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\DefaultArguments\obj\Release\DefaultArguments.dll
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\DefaultArguments\obj\Release\DefaultArguments.pdb
+C:\compile\DefaultArguments\DefaultArguments\bin\Release\DefaultArguments.dll
+C:\compile\DefaultArguments\DefaultArguments\bin\Release\DefaultArguments.pdb
+C:\compile\DefaultArguments\DefaultArguments\obj\Release\ResolveAssemblyReference.cache
+C:\compile\DefaultArguments\DefaultArguments\obj\Release\DefaultArguments.dll
+C:\compile\DefaultArguments\DefaultArguments\obj\Release\DefaultArguments.pdb
+C:\IronPythonBook\sourcecode\chapter14\14.2.2\DefaultArguments\DefaultArguments\bin\Release\DefaultArguments.dll
+C:\IronPythonBook\sourcecode\chapter14\14.2.2\DefaultArguments\DefaultArguments\bin\Release\DefaultArguments.pdb
+C:\IronPythonBook\sourcecode\chapter14\14.2.2\DefaultArguments\DefaultArguments\obj\Release\ResolveAssemblyReference.cache
+C:\IronPythonBook\sourcecode\chapter14\14.2.2\DefaultArguments\DefaultArguments\obj\Release\DefaultArguments.dll
+C:\IronPythonBook\sourcecode\chapter14\14.2.2\DefaultArguments\DefaultArguments\obj\Release\DefaultArguments.pdb

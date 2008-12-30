@@ -1,0 +1,184 @@
+<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+    <Paragraph>
+        This is a FlowDocument example.  The text contained here is a <Hyperlink NavigateUri="http://msdn2.microsoft.com/en-us/library/ms748388.aspx">FlowDocument</Hyperlink>.
+	The document is reflowed as the page size or view mode changes.
+        Documents are created with a subset of XAML markup. 
+        <LineBreak />
+	Did you notice the funky hyperlink?
+    </Paragraph>
+    <Paragraph>	
+	We can programatically trigger an action when it is
+        clicked (like the example from the previous section), and we can even embed whole user
+	interfaces into flow documents.
+    </Paragraph>
+    <Paragraph>
+        The markup enables me to make some things
+        <Bold>Bold</Bold>, and other things
+        <Italic>Italic</Italic>. Although it is another
+        markup to learn, it is much easier to construct documents like this
+        than to do it from code.
+    </Paragraph>
+
+    <Paragraph FontSize="24">
+        <Figure HorizontalAnchor="ContentLeft" VerticalAnchor="ContentTop" Width="300">
+            <BlockUIContainer Padding="0">
+                <Image Height="212" Width="287" Source="<% document_location %>image2.jpg" />
+            </BlockUIContainer>
+            <Paragraph Foreground="Blue" FontFamily="Consolas">
+                Fred &quot;The Radical&quot;</Paragraph>
+        </Figure>
+    </Paragraph>
+    
+   <Section Background="LightBlue">
+   
+      <Paragraph>This is a list: (in a LightBlue section)</Paragraph>
+      <List>
+	 <ListItem>
+	   <Paragraph><Bold>Item Number 1 - Bold</Bold></Paragraph>
+	 </ListItem>
+	 <ListItem>
+	   <Paragraph><Italic>Item Number 2 - Italic</Italic></Paragraph>
+	 </ListItem>
+	 <ListItem>
+	   <Paragraph><Underline>Item Number 3 - Underline</Underline></Paragraph>
+	 </ListItem>   
+      </List>
+      
+      <Paragraph>Next are several user interface elements:</Paragraph>
+      <BlockUIContainer>
+	 <Button Width="80">A Button!</Button>
+      </BlockUIContainer>
+
+      <BlockUIContainer>
+	<StackPanel>
+	  <Label Foreground="Blue">Choose a value:</Label>
+	  <ComboBox Width="50">
+	    <ComboBoxItem IsSelected="True">a</ComboBoxItem>
+	    <ComboBoxItem>b</ComboBoxItem>
+	    <ComboBoxItem>c</ComboBoxItem>
+	  </ComboBox>
+	  <Label Foreground="Red">Choose a value:</Label>
+	  <StackPanel>
+	    <RadioButton>1</RadioButton>
+	    <RadioButton>2</RadioButton>
+	    <RadioButton>3</RadioButton>
+	  </StackPanel>
+	  <Label>Enter a value:</Label>
+	  <TextBox Margin="10">
+	    A text editor embedded in flow content.
+	  </TextBox>
+	</StackPanel>
+      </BlockUIContainer>
+      
+
+      <Paragraph>
+	UI Elements can also be placed inline: like this <Button>Button</Button>.
+      </Paragraph>
+   </Section>
+   
+   <Table CellSpacing="5">
+	   <Table.Columns>
+	   <TableColumn />
+	   <TableColumn />
+	   <TableColumn />
+	   <TableColumn />
+     </Table.Columns>
+       <TableRowGroup>
+	 <TableRow>
+	    <TableCell ColumnSpan="4"><Paragraph FontSize="24pt" FontWeight="Bold">Planetary Information</Paragraph></TableCell>
+	 </TableRow>
+	 <TableRow>
+	    <TableCell><Paragraph>Planet</Paragraph></TableCell>
+	    <TableCell><Paragraph>Distance from Sun</Paragraph></TableCell>
+	    <TableCell><Paragraph>Diameter</Paragraph></TableCell>
+	    <TableCell><Paragraph>Mass</Paragraph></TableCell>
+	 </TableRow>
+   
+   
+	 <TableRow>
+	    <TableCell ColumnSpan="4"><Paragraph FontSize="14pt" FontWeight="Bold">The Inner Planets</Paragraph></TableCell>
+	 </TableRow>
+	 <TableRow>
+	    <TableCell><Paragraph>Mercury</Paragraph></TableCell>
+	    <TableCell><Paragraph>57,910,000 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>4,880 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>3.30e23 kg</Paragraph></TableCell>
+	 </TableRow>
+	 <TableRow Background="lightgray">
+	    <TableCell><Paragraph>Venus</Paragraph></TableCell>
+	    <TableCell><Paragraph>108,200,000 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>12,103.6 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>4.869e24 kg</Paragraph></TableCell>
+	 </TableRow>
+	 <TableRow>
+	    <TableCell><Paragraph>Earth</Paragraph></TableCell>
+	    <TableCell><Paragraph>149,600,000 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>12,756.3 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>5.972e24 kg</Paragraph></TableCell>
+	 </TableRow>
+	 <TableRow Background="lightgray">
+	    <TableCell><Paragraph>Mars</Paragraph></TableCell>
+	    <TableCell><Paragraph>227,940,000 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>6,794 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>6.4219e23 kg</Paragraph></TableCell>
+	 </TableRow>
+	 <TableRow>
+	    <TableCell ColumnSpan="4"><Paragraph FontSize="14pt" FontWeight="Bold">The Outer Planets</Paragraph></TableCell>
+	 </TableRow>
+	 <TableRow>
+	    <TableCell><Paragraph>Jupiter</Paragraph></TableCell>
+	    <TableCell><Paragraph>778,330,000 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>142,984 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>1.900e27 kg</Paragraph></TableCell>
+	 </TableRow>
+	 <TableRow Background="lightgray">
+	    <TableCell><Paragraph>Saturn</Paragraph></TableCell>
+	    <TableCell><Paragraph>1,429,400,000 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>120,536 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>5.68e26 kg</Paragraph></TableCell>
+	 </TableRow>
+	 <TableRow>
+	    <TableCell><Paragraph>Uranus</Paragraph></TableCell>
+	    <TableCell><Paragraph>2,870,990,000 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>51,118 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>8.683e25 kg</Paragraph></TableCell>
+	 </TableRow>
+	 <TableRow Background="lightgray">
+	    <TableCell><Paragraph>Neptune</Paragraph></TableCell>
+	    <TableCell><Paragraph>4,504,000,000 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>49,532 km</Paragraph></TableCell>
+	    <TableCell><Paragraph>1.0247e26 kg</Paragraph></TableCell>
+	 </TableRow>
+   
+   
+	 <TableRow>
+	    <TableCell ColumnSpan="4"><Paragraph FontSize="10pt" FontStyle="Italic">Information from the <Hyperlink 
+   NavigateUri="http://encarta.msn.com/encnet/refpages/artcenter.aspx">Encarta</Hyperlink> web site.</Paragraph></TableCell>
+	 </TableRow>
+       </TableRowGroup>
+   </Table>
+   
+   <Paragraph
+     TextAlignment="Left"
+     FontSize="18" 
+     FontFamily="Palatino Linotype"
+     Typography.NumeralStyle="OldStyle"
+     Typography.Fraction="Stacked"
+     Typography.Variants="Inferior"
+   >
+     <Run>
+       This text has some altered typography characteristics.  Note
+       that use of an open type font is necessary for most typographic
+       properties to be effective.
+     </Run>
+     <LineBreak/><LineBreak/>
+     <Run>
+       0123456789 10 11 12 13
+     </Run>
+     <LineBreak/><LineBreak/>
+     <Run>
+       1/2 2/3 3/4
+     </Run>
+   </Paragraph>
+
+</FlowDocument>

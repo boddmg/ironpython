@@ -1,0 +1,10 @@
+C:\compile\User32\User32\bin\Release\WindowUtils.dll
+C:\compile\User32\User32\bin\Release\WindowUtils.pdb
+C:\compile\User32\User32\obj\Release\ResolveAssemblyReference.cache
+C:\compile\User32\User32\obj\Release\WindowUtils.dll
+C:\compile\User32\User32\obj\Release\WindowUtils.pdb
+C:\compile\WindowUtils\WindowUtils\bin\Release\WindowUtils.dll
+C:\compile\WindowUtils\WindowUtils\bin\Release\WindowUtils.pdb
+C:\compile\WindowUtils\WindowUtils\obj\Release\ResolveAssemblyReference.cache
+C:\compile\WindowUtils\WindowUtils\obj\Release\WindowUtils.dll
+C:\compile\WindowUtils\WindowUtils\obj\Release\WindowUtils.pdb

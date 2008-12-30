@@ -1,0 +1,7 @@
+C:\IronPythonBook\sourcecode\chapter6\6.3\RenameTabDialogProject\RenameTabDialog\bin\Release\RenameTabDialog.dll
+C:\IronPythonBook\sourcecode\chapter6\6.3\RenameTabDialogProject\RenameTabDialog\bin\Release\RenameTabDialog.pdb
+C:\IronPythonBook\sourcecode\chapter6\6.3\RenameTabDialogProject\RenameTabDialog\obj\Release\ResolveAssemblyReference.cache
+C:\IronPythonBook\sourcecode\chapter6\6.3\RenameTabDialogProject\RenameTabDialog\obj\Release\RenameTabDialog.RenameTabDialogBase.resources
+C:\IronPythonBook\sourcecode\chapter6\6.3\RenameTabDialogProject\RenameTabDialog\obj\Release\RenameTabDialog.csproj.GenerateResource.Cache
+C:\IronPythonBook\sourcecode\chapter6\6.3\RenameTabDialogProject\RenameTabDialog\obj\Release\RenameTabDialog.dll
+C:\IronPythonBook\sourcecode\chapter6\6.3\RenameTabDialogProject\RenameTabDialog\obj\Release\RenameTabDialog.pdb

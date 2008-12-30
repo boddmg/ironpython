@@ -1,0 +1,10 @@
+C:\compile\BasicEmbedding\ClassLibrary\obj\Release\ResolveAssemblyReference.cache
+C:\compile\BasicEmbedding\ClassLibrary\bin\Release\ClassLibrary.dll
+C:\compile\BasicEmbedding\ClassLibrary\bin\Release\ClassLibrary.pdb
+C:\compile\BasicEmbedding\ClassLibrary\obj\Release\ClassLibrary.dll
+C:\compile\BasicEmbedding\ClassLibrary\obj\Release\ClassLibrary.pdb
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbedding\ClassLibrary\bin\Release\ClassLibrary.dll
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbedding\ClassLibrary\bin\Release\ClassLibrary.pdb
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbedding\ClassLibrary\obj\Release\ResolveAssemblyReference.cache
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbedding\ClassLibrary\obj\Release\ClassLibrary.dll
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbedding\ClassLibrary\obj\Release\ClassLibrary.pdb

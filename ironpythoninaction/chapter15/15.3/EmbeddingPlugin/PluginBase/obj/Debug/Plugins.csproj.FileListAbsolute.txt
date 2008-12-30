@@ -1,0 +1,10 @@
+C:\compile\EmbeddingPlugin\PluginBase\bin\Debug\Plugins.dll
+C:\compile\EmbeddingPlugin\PluginBase\bin\Debug\Plugins.pdb
+C:\compile\EmbeddingPlugin\PluginBase\obj\Debug\ResolveAssemblyReference.cache
+C:\compile\EmbeddingPlugin\PluginBase\obj\Debug\Plugins.dll
+C:\compile\EmbeddingPlugin\PluginBase\obj\Debug\Plugins.pdb
+C:\IronPythonBook\sourcecode\chapter15\15.3\EmbeddingPlugin\PluginBase\bin\Debug\Plugins.dll
+C:\IronPythonBook\sourcecode\chapter15\15.3\EmbeddingPlugin\PluginBase\bin\Debug\Plugins.pdb
+C:\IronPythonBook\sourcecode\chapter15\15.3\EmbeddingPlugin\PluginBase\obj\Debug\ResolveAssemblyReference.cache
+C:\IronPythonBook\sourcecode\chapter15\15.3\EmbeddingPlugin\PluginBase\obj\Debug\Plugins.dll
+C:\IronPythonBook\sourcecode\chapter15\15.3\EmbeddingPlugin\PluginBase\obj\Debug\Plugins.pdb

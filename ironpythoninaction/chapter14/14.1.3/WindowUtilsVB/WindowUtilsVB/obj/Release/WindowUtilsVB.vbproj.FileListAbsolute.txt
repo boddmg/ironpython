@@ -1,0 +1,9 @@
+C:\compile\WindowUtilsVB\WindowUtilsVB\bin\Release\WindowUtils.dll
+C:\compile\WindowUtilsVB\WindowUtilsVB\bin\Release\WindowUtils.pdb
+C:\compile\WindowUtilsVB\WindowUtilsVB\bin\Release\WindowUtils.xml
+C:\compile\WindowUtilsVB\WindowUtilsVB\obj\Release\ResolveAssemblyReference.cache
+C:\compile\WindowUtilsVB\WindowUtilsVB\obj\Release\WindowUtils.Resources.resources
+C:\compile\WindowUtilsVB\WindowUtilsVB\obj\Release\WindowUtilsVB.vbproj.GenerateResource.Cache
+C:\compile\WindowUtilsVB\WindowUtilsVB\obj\Release\WindowUtils.dll
+C:\compile\WindowUtilsVB\WindowUtilsVB\obj\Release\WindowUtils.xml
+C:\compile\WindowUtilsVB\WindowUtilsVB\obj\Release\WindowUtils.pdb

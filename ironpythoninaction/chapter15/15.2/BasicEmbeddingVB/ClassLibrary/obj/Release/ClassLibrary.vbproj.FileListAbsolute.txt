@@ -1,0 +1,9 @@
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbeddingVB\ClassLibrary\bin\Release\ClassLibrary.dll
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbeddingVB\ClassLibrary\bin\Release\ClassLibrary.pdb
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbeddingVB\ClassLibrary\bin\Release\ClassLibrary.xml
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbeddingVB\ClassLibrary\obj\Release\ResolveAssemblyReference.cache
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbeddingVB\ClassLibrary\obj\Release\ClassLibrary.Resources.resources
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbeddingVB\ClassLibrary\obj\Release\ClassLibrary.vbproj.GenerateResource.Cache
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbeddingVB\ClassLibrary\obj\Release\ClassLibrary.dll
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbeddingVB\ClassLibrary\obj\Release\ClassLibrary.xml
+C:\IronPythonBook\sourcecode\chapter15\15.2\BasicEmbeddingVB\ClassLibrary\obj\Release\ClassLibrary.pdb

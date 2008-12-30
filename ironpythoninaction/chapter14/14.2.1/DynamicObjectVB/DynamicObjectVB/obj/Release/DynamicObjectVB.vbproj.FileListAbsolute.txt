@@ -1,0 +1,9 @@
+C:\compile\DynamicObjectVB\DynamicObjectVB\obj\Release\ResolveAssemblyReference.cache
+C:\compile\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObject.Resources.resources
+C:\compile\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObjectVB.vbproj.GenerateResource.Cache
+C:\compile\DynamicObjectVB\DynamicObjectVB\bin\Release\DynamicObject.dll
+C:\compile\DynamicObjectVB\DynamicObjectVB\bin\Release\DynamicObject.pdb
+C:\compile\DynamicObjectVB\DynamicObjectVB\bin\Release\DynamicObject.xml
+C:\compile\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObject.dll
+C:\compile\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObject.xml
+C:\compile\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObject.pdb

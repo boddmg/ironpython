@@ -1,0 +1,10 @@
+C:\compile\PythonExtension\PythonExtension\obj\Release\ResolveAssemblyReference.cache
+C:\compile\PythonExtension\PythonExtension\bin\Release\PythonExtension.dll
+C:\compile\PythonExtension\PythonExtension\bin\Release\PythonExtension.pdb
+C:\compile\PythonExtension\PythonExtension\obj\Release\PythonExtension.dll
+C:\compile\PythonExtension\PythonExtension\obj\Release\PythonExtension.pdb
+C:\IronPythonBook\sourcecode\chapter14\14.1.2\PythonExtension\PythonExtension\obj\Release\ResolveAssemblyReference.cache
+C:\IronPythonBook\sourcecode\chapter14\14.1.2\PythonExtension\PythonExtension\obj\Release\PythonExtension.dll
+C:\IronPythonBook\sourcecode\chapter14\14.1.2\PythonExtension\PythonExtension\obj\Release\PythonExtension.pdb
+C:\IronPythonBook\sourcecode\chapter14\14.1.2\PythonExtension\PythonExtension\bin\Release\PythonExtension.dll
+C:\IronPythonBook\sourcecode\chapter14\14.1.2\PythonExtension\PythonExtension\bin\Release\PythonExtension.pdb

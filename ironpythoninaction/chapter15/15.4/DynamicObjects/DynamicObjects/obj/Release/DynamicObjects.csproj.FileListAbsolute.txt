@@ -1,0 +1,10 @@
+C:\IronPythonBook\sourcecode\chapter15\15.4\DynamicObjects\DynamicObjects\obj\Release\ResolveAssemblyReference.cache
+C:\IronPythonBook\sourcecode\chapter15\15.4\DynamicObjects\DynamicObjects\bin\Release\DynamicObjects.exe
+C:\IronPythonBook\sourcecode\chapter15\15.4\DynamicObjects\DynamicObjects\bin\Release\DynamicObjects.pdb
+C:\IronPythonBook\sourcecode\chapter15\15.4\DynamicObjects\DynamicObjects\bin\Release\IronPython.dll
+C:\IronPythonBook\sourcecode\chapter15\15.4\DynamicObjects\DynamicObjects\bin\Release\IronPython.Modules.dll
+C:\IronPythonBook\sourcecode\chapter15\15.4\DynamicObjects\DynamicObjects\bin\Release\Microsoft.Scripting.Core.dll
+C:\IronPythonBook\sourcecode\chapter15\15.4\DynamicObjects\DynamicObjects\bin\Release\Microsoft.Scripting.dll
+C:\IronPythonBook\sourcecode\chapter15\15.4\DynamicObjects\DynamicObjects\obj\Release\DynamicObjects.exe
+C:\IronPythonBook\sourcecode\chapter15\15.4\DynamicObjects\DynamicObjects\obj\Release\DynamicObjects.pdb
+C:\IronPythonBook\sourcecode\chapter15\15.4\DynamicObjects\DynamicObjects\bin\Release\Microsoft.Scripting.ExtensionAttribute.dll

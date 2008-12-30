@@ -1,0 +1,5 @@
+C:\compile\EmbeddingPlugin\PluginBase\obj\Release\ResolveAssemblyReference.cache
+C:\compile\EmbeddingPlugin\PluginBase\bin\Release\PluginBase.dll
+C:\compile\EmbeddingPlugin\PluginBase\bin\Release\PluginBase.pdb
+C:\compile\EmbeddingPlugin\PluginBase\obj\Release\PluginBase.dll
+C:\compile\EmbeddingPlugin\PluginBase\obj\Release\PluginBase.pdb

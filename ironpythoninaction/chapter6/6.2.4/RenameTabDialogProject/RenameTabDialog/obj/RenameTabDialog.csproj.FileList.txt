@@ -1,0 +1,7 @@
+bin\Release\RenameTabDialog.dll
+bin\Release\RenameTabDialog.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\RenameTabDialog.csproj.GenerateResource.Cache
+obj\Release\RenameTabDialog.dll
+obj\Release\RenameTabDialog.pdb
+obj\Release\RenameTabDialog.RenameTabDialogBase.resources

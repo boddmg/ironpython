@@ -1,0 +1,15 @@
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\bin\Debug\program.py
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\bin\Debug\EmbeddedExecutableVB.exe
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\bin\Debug\EmbeddedExecutableVB.pdb
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\bin\Debug\EmbeddedExecutableVB.xml
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\bin\Debug\IronPython.dll
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\bin\Debug\IronPython.Modules.dll
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\bin\Debug\Microsoft.Scripting.Core.dll
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\bin\Debug\Microsoft.Scripting.dll
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\bin\Debug\Microsoft.Scripting.ExtensionAttribute.dll
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\obj\Debug\ResolveAssemblyReference.cache
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\obj\Debug\EmbeddedExecutable.Resources.resources
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\obj\Debug\EmbeddedExecutableVB.vbproj.GenerateResource.Cache
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\obj\Debug\EmbeddedExecutableVB.exe
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\obj\Debug\EmbeddedExecutableVB.xml
+C:\IronPythonBook\sourcecode\chapter15\15.1\EmbeddedExecutableVB\EmbeddedExecutableVB\obj\Debug\EmbeddedExecutableVB.pdb

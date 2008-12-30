@@ -1,0 +1,9 @@
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\ConsoleApplication1\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Release\IronPython.dll
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Release\IronPython.Modules.dll
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Release\Microsoft.Scripting.Core.dll
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\ConsoleApplication1\bin\Release\Microsoft.Scripting.dll
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\ConsoleApplication1\obj\Release\ConsoleApplication1.exe
+C:\Users\Michael Foord\AppData\Local\Temporary Projects\ConsoleApplication1\obj\Release\ConsoleApplication1.pdb

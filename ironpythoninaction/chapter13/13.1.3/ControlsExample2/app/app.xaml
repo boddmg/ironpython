@@ -1,0 +1,49 @@
+<UserControl 
+	x:Class="System.Windows.Controls.UserControl"
+    xmlns="http://schemas.microsoft.com/client/2007"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls">
+
+   <Grid>
+       <Grid.RowDefinitions>
+           <RowDefinition />
+       </Grid.RowDefinitions>
+       <Grid.ColumnDefinitions>
+           <ColumnDefinition />
+           <ColumnDefinition />
+       </Grid.ColumnDefinitions>
+
+       <StackPanel Grid.Row="0" Grid.Column="0" 
+        Margin="20,20,10,20">        
+           <TextBox Margin="5" Text="TextBox..." />
+           <HyperlinkButton Content="HyperlinkButton" 
+            NavigateUri="http://www.manning.com/foord" />
+           <RadioButton Content="RadioButton 1" IsChecked="True" Margin="5"/>
+           <RadioButton Content="RadioButton 2" Margin="5"/>
+           <CheckBox Content="CheckBox" 
+            IsThreeState="True" Margin="5" />           
+           <ListBox Margin="5" Height="150">
+              <ListBoxItem Content="One" />
+              <ListBoxItem Content="Two" /> 
+              <ListBoxItem Content="Three" />
+              <ListBoxItem Content="Four" />
+              <ListBoxItem Content="Five" />
+              <ListBoxItem Content="Six" />         
+           </ListBox>  
+       </StackPanel>
+
+       <StackPanel Grid.Row="0" Grid.Column="1" 
+        Margin="20,20,10,20">
+            <ContentControl Content="ContentControl" Margin="5"/>
+            <Button Content="ToolTipped Button" Margin="5" ToolTipService.ToolTip="Some ToolTip"/>
+            <ToggleButton Content="ToggleButton" Margin="5"/>
+            <c:DatePicker Margin="5"/>
+            <c:Calendar Margin="5"/>
+       </StackPanel> 
+         
+       <c:GridSplitter Grid.Column="1"
+        Width="5" HorizontalAlignment="Left" VerticalAlignment="Stretch" 
+        ShowsPreview="True" />
+
+   </Grid>
+</UserControl> 

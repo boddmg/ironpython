@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Basic Express 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BasicEmbeddingVB", "BasicEmbeddingVB\BasicEmbeddingVB.vbproj", "{6023ACC6-D724-47D6-BD39-17FD3B0026C1}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ClassLibrary", "ClassLibrary\ClassLibrary.vbproj", "{51DF99C5-639C-4B36-B41E-B4A641615E9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6023ACC6-D724-47D6-BD39-17FD3B0026C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6023ACC6-D724-47D6-BD39-17FD3B0026C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6023ACC6-D724-47D6-BD39-17FD3B0026C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6023ACC6-D724-47D6-BD39-17FD3B0026C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51DF99C5-639C-4B36-B41E-B4A641615E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51DF99C5-639C-4B36-B41E-B4A641615E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51DF99C5-639C-4B36-B41E-B4A641615E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51DF99C5-639C-4B36-B41E-B4A641615E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

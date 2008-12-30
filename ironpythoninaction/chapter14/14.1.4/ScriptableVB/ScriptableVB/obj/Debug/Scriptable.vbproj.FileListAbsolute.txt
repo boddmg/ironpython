@@ -1,0 +1,7 @@
+E:\Projects\ScriptableVB\ScriptableVB\ClientBin\Scriptable.dll
+E:\Projects\ScriptableVB\ScriptableVB\ClientBin\Scriptable.pdb
+E:\Projects\ScriptableVB\ScriptableVB\ClientBin\Scriptable.xml
+E:\Projects\ScriptableVB\ScriptableVB\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\ScriptableVB\ScriptableVB\obj\Debug\Scriptable.dll
+E:\Projects\ScriptableVB\ScriptableVB\obj\Debug\Scriptable.xml
+E:\Projects\ScriptableVB\ScriptableVB\obj\Debug\Scriptable.pdb

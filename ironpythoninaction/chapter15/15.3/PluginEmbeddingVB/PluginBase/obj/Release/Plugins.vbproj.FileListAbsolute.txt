@@ -1,0 +1,9 @@
+C:\IronPythonBook\sourcecode\chapter15\15.3\PluginEmbeddingVB\PluginBase\bin\Release\Plugins.dll
+C:\IronPythonBook\sourcecode\chapter15\15.3\PluginEmbeddingVB\PluginBase\bin\Release\Plugins.pdb
+C:\IronPythonBook\sourcecode\chapter15\15.3\PluginEmbeddingVB\PluginBase\bin\Release\Plugins.xml
+C:\IronPythonBook\sourcecode\chapter15\15.3\PluginEmbeddingVB\PluginBase\obj\Release\ResolveAssemblyReference.cache
+C:\IronPythonBook\sourcecode\chapter15\15.3\PluginEmbeddingVB\PluginBase\obj\Release\Plugins.Resources.resources
+C:\IronPythonBook\sourcecode\chapter15\15.3\PluginEmbeddingVB\PluginBase\obj\Release\Plugins.vbproj.GenerateResource.Cache
+C:\IronPythonBook\sourcecode\chapter15\15.3\PluginEmbeddingVB\PluginBase\obj\Release\Plugins.dll
+C:\IronPythonBook\sourcecode\chapter15\15.3\PluginEmbeddingVB\PluginBase\obj\Release\Plugins.xml
+C:\IronPythonBook\sourcecode\chapter15\15.3\PluginEmbeddingVB\PluginBase\obj\Release\Plugins.pdb
