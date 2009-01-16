@@ -1,0 +1,11 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="EmbeddingIronPythonSilverlight" EntryPointType="EmbeddingIronPythonSilverlight.App" RuntimeVersion="2.0.31005.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="EmbeddingIronPythonSilverlight" Source="EmbeddingIronPythonSilverlight.dll" />
+    <AssemblyPart x:Name="IronPython" Source="IronPython.dll" />
+    <AssemblyPart x:Name="IronPython.Modules" Source="IronPython.Modules.dll" />
+    <AssemblyPart x:Name="Microsoft.Scripting.Core" Source="Microsoft.Scripting.Core.dll" />
+    <AssemblyPart x:Name="Microsoft.Scripting" Source="Microsoft.Scripting.dll" />
+    <AssemblyPart x:Name="Microsoft.Scripting.Silverlight" Source="Microsoft.Scripting.Silverlight.dll" />
+    <AssemblyPart x:Name="Microsoft.Scripting.ExtensionAttribute" Source="Microsoft.Scripting.ExtensionAttribute.dll" />
+  </Deployment.Parts>
+</Deployment>
