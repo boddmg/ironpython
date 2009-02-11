@@ -15,8 +15,8 @@ Developing with IronPython
     :class: image
 
 * `www.ironpythoninaction.com <http://www.ironpythoninaction.com/>`_
+* `tartley.com <http://www.tartley.com>`_
 * `Resolver Systems <http://www.resolversystems.com>`_
-* `freshfoo.com <http://www.freshfoo.com>`_
 
 
 .. class:: handout
@@ -24,8 +24,7 @@ Developing with IronPython
     This tutorial is taken by:
     
     * `Michael Foord <http://www.voidspace.org.uk/python/weblog/index.shtml>`_
-    * Christian Muirhead
-    * `Menno Smits <http://www.freshfoo.com>`_
+    * `Jonathan Hartley <http://www.tartley.com>`_
     
     All three of us work for Resolver Systems in London, creating a spreadsheet development environment with IronPython. There are currently around 50 000 lines of IronPython code in Resolver One, plus around 130 000 lines in the test framework.
     
@@ -50,7 +49,7 @@ Introduction to IronPython
 * Originally created by Jim Hugunin
 * Now being developed by a Microsoft team
 * Stable version 1.1.2 (Python 2.4)
-* Version 2, still in beta and built on the Dynamic Language Runtime (Python 2.5)
+* Version 2, built on the Dynamic Language Runtime (Python 2.5)
 * Version 2 runs on Silverlight
 
 .. class:: handout
@@ -61,7 +60,7 @@ Introduction to IronPython
     
     After completing IronPython 1 they abstracted out the dynamic type system and dynamic language hosting environment to create the Dynamic Language Runtime. As well as making it easier to implement dynamic languages for .NET, the DLR allows dynamic languages to interoperate through a shared type system. IronPython 2 (still in beta) is built on the DLR. Other (Microsoft) DLR languages include IronRuby (still in alpha) and Managed JScript (an ECMA 3 compliant implementation of Javascript for Silverlight).
     
-    Visual Basic .NET version ten will be 'partially dynamic' through the DLR - which will become part of the Common Language Runtime. C# 4 will also include mechanisms for easier interaction with 'dynamic objects' (possible now through the IronPython hosting API - but a bit clumsy).
+    Visual Basic .NET version ten and C# 4.0 will be 'partially dynamic' through the DLR - which will become part of the Common Language Runtime. C# 4 will also include mechanisms for easier interaction with 'dynamic objects' (possible now through the IronPython hosting API - but a bit clumsy).
     
     IronPython is a Python compiler - it compiles Python to in-memory assemblies in IL (Intermediate Language), the .NET bytecode (which can be compiled to native code by the JIT). It is very well integrated with the .NET framework. Strings in Python are .NET string objects, *and* they have the Python methods that you would expect. The same is true for the other types.
 
@@ -131,9 +130,11 @@ Disadvantages of IronPython
     
 Connecting Python to .NET
 =========================
+
 * Two *orthogonal* ways of organising classes in .NET
     - Namespaces
     - Assemblies
+    
 * Use clr.AddReference to make classes in an assembly available for import
 
 :: 
@@ -336,7 +337,7 @@ User Interaction
 * More on this later...
 
 
-Introducing Twatter
+Introducing Stutter
 ===================
 * Yet Another Twitter Client
 * Very simple
@@ -346,10 +347,10 @@ Introducing Twatter
 
 .. class:: handout
 
-    Twatter is a simple application, written in IronPython, that talks to the
+    Stutter is a simple application, written in IronPython, that talks to the
     Twitter service (http://twitter.com/). Twitter offers excellent web APIs
     that allow you to see what your friends are up to, as well as update your
-    own status. Twatter takes advantage of these APIs to retrieve "tweets"
+    own status. Stutter takes advantage of these APIs to retrieve "tweets"
     and submit new tweets. Tweets are cached to a database to keep a long
     history and avoid having to bother the Twitter service so much.
 
@@ -393,7 +394,7 @@ Creating a Form: Example
 
         def __init__(self):
             Form.__init__(self)
-            self.Text = 'twatter'
+            self.Text = 'stutter'
             self.Height = self.INITIAL_HEIGHT
             self.Width = self.INITIAL_WIDTH
 
@@ -406,7 +407,7 @@ Creating a Form: Example
 
 .. class:: handout
 
-    This is a sample from our Twatter application (MainForm.py). We create a
+    This is a sample from our Stutter application (MainForm.py). We create a
     subclass of Form called MainForm. In the constructor, the Form constructor
     is called (rather important) and then we set the title ("Text"), Height
     and Width of the form. Then it's just a matter of creating a few controls
@@ -517,7 +518,7 @@ Anchoring
 
 Practical: Anchoring
 ====================
-* Run twatter and resize the window, controls don't move!
+* Run stutter and resize the window, controls don't move!
 * Try out different Dock options
 * Try out Anchor options
 * Then, try to make the form resize nicely
@@ -561,7 +562,7 @@ Dropdown Menus
 
 Practical: Add Menu Items
 =========================
-* The Twatter application currently has a dropdown menu but no menu items
+* The Stutter application currently has a dropdown menu but no menu items
 * Add 2 items:
     - Refresh
     - Quit
@@ -597,7 +598,7 @@ Background: Twitter API
 * Authentication is done using HTTP Basic Auth (401)
 * Variety of return types indicated by extension:
     - JSON, RSS, Atom, XML (which we'll use)
-* Twatter only needs a small subset of the API:
+* Stutter only needs a small subset of the API:
     - GET: statuses/friends_timeline.xml
     - POST: statuses/update.xml
     
@@ -684,7 +685,7 @@ Practical: Adding Update Support
 XML Parsing
 ===========
 * The Twitter API can return tweet timelines as XML
-* Twatter uses the .NET API from System.Xml
+* Stutter uses the .NET API from System.Xml
 * .NET's main parser API is at System.Xml.XmlReader
 * XmlReader.Create() takes TextReader 
     - the StreamReader we used previously is a TextReader
@@ -731,7 +732,7 @@ Cleaner XML Handling
     language like IronPython we can create an API that is elegant, requiring
     minimal programming effort to use.
 
-    For Twatter we've to chosen wrap XmlReader to create a SAX/event-driven
+    For Stutter we've to chosen wrap XmlReader to create a SAX/event-driven
     style parser. This is implemented in xmlreader.py as the XmlDocumentReader
     class. To use, subclass XmlDocumentReader and then add methods to handle
     XML nodes as they are encountered in the stream. The method names should
@@ -1031,5 +1032,5 @@ Invoking onto the Control Thread
     
     In IronPython 2 ``CallTarget0`` doesn't work with .NET methods that have a void return signature. To invoke a call to something like ``form.Close``  you will also need to wrap the call in a lambda.
     
-    We can use this to make the database / network calls for Twatter happen on a background thread.
+    We can use this to make the database / network calls for Stutter happen on a background thread.
     
