@@ -5,12 +5,12 @@ from MainForm import MainForm
 from twitter.Client import Client
 from config import config
 
-import twatterdb
+import stutterdb
 
 from threadhelper import DoBackgroundWithInvoke
 
         
-class Twatter(object):
+class Stutter(object):
 
     def __init__(self):
         self.client = Client(config.username, 
@@ -27,7 +27,7 @@ class Twatter(object):
 
     def refreshFriends(self):
         prevSelection = self.form.friendsListBox.SelectedItem
-        self.form.showFriends(['All'] + twatterdb.getFriends())
+        self.form.showFriends(['All'] + stutterdb.getFriends())
         # fires the onSelectFriend event handler that displays tweets
         self.form.friendsListBox.SelectedItem = prevSelection
 
@@ -36,7 +36,7 @@ class Twatter(object):
         selectedFriend = None
         if self.form.friendsListBox.SelectedIndex != 0:
             selectedFriend = self.form.friendsListBox.SelectedItem
-        self.form.showTweets(twatterdb.getTweets(selectedFriend))
+        self.form.showTweets(stutterdb.getTweets(selectedFriend))
 
             
     def run(self):
@@ -46,7 +46,7 @@ class Twatter(object):
 
     def onPost(self, source, args):
         tweet = self.client.update(self.form.postTextBox.Text)
-        twatterdb.saveTweet(tweet)
+        stutterdb.saveTweet(tweet)
         self.form.postTextBox.Text = ''
         self.displayTweets()
 
@@ -54,7 +54,7 @@ class Twatter(object):
     def onRefresh(self, source, args):
         def refresh():
             for tweet in self.client.getFriendsTimeline():
-                twatterdb.saveTweet(tweet)
+                stutterdb.saveTweet(tweet)
         DoBackgroundWithInvoke(refresh, self.refreshFriends, self.form)
 
 
@@ -67,7 +67,7 @@ class Twatter(object):
 
 
 def main():
-    app = Twatter()
+    app = Stutter()
     app.run()
 
 if __name__ == '__main__':

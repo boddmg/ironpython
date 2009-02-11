@@ -1,7 +1,7 @@
 from ConfigParser import RawConfigParser
 
 parser = RawConfigParser()
-f = file('twatter.ini', 'rt')
+f = file('stutter.ini', 'rt')
 parser.readfp(f)
 f.close()
 

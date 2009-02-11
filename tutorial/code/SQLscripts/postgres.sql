@@ -1,9 +1,9 @@
 -- run with:
 -- psql -f postgres.sql -U postgres postgres
 
-create database twatter_db;
+create database stutter_db;
 
-\connect twatter_db
+\connect stutter_db
 
 create table friends (
   id integer primary key,

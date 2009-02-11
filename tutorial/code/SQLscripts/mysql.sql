@@ -1,9 +1,9 @@
 -- run with mysql -p < mysql.sql
 use mysql;
 
-create database twatter_db;
+create database stutter_db;
 
-use twatter_db;
+use stutter_db;
 
 create table friends (
   id bigint primary key,
@@ -22,5 +22,5 @@ create table tweets (
   friend_id bigint references friends (id)
 );
 
-grant all on twatter_db.* to 'twatter_user'@'%' identified by 'twatter_pass';
+grant all on stutter_db.* to 'stutter_user'@'%' identified by 'stutter_pass';
 

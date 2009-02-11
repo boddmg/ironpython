@@ -9,7 +9,7 @@ For the ultimate guide to developing with IronPython check out "IronPython in Ac
 
     http://www.ironpythoninaction.com/
     
-The example code here is a very simple desktop Twitter client called "Twatter". It uses 
+The example code here is a very simple desktop Twitter client called "Stutter". It uses 
 Windows Forms for the user interface and will work on Windows, Linux or Apple Mac OS X.
 
 For Windows you need .NET 2.0 Service Pack 1 and either IronPython 1 or 2.
@@ -25,7 +25,7 @@ library.
 You will also need a database; any of sqlite 3, MySQL, PostgreSQL or SQL Server.
 
 
-The 'complete' folder contains the code for the full version of Twatter. In this
+The 'complete' folder contains the code for the full version of Stutter. In this
 folder is a sqlite database and the sqlite binary plus data connector assembly for
 Windows. DONT LOOK AT THIS UNTIL AFTER THE TUTORIAL!
 
@@ -34,9 +34,9 @@ comes with support for sqlite. You can safely delete 'sqlite3.exe' and
 'System.Data.SQLite.DLL'.
 
 To use an alternative database you will need to set it up - sql scripts to do this are
-in the 'db' folder. You will also need to modify 'twatter.ini' appropriately.
+in the 'db' folder. You will also need to modify 'stutter.ini' appropriately.
 
-You will also need to put your Twitter username and password into 'twatter.ini'.
+You will also need to put your Twitter username and password into 'stutter.ini'.
 
 
 If you are attending the tutorial (or following it from the notes), then a 

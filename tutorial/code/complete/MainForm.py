@@ -14,7 +14,7 @@ class MainForm(Form):
 
     def __init__(self):
         Form.__init__(self)
-        self.Text = 'twatter'
+        self.Text = 'stutter'
         self.Height = self.INITIAL_HEIGHT
         self.Width = self.INITIAL_WIDTH
 
@@ -33,17 +33,17 @@ class MainForm(Form):
     def _addMenu(self):
         self.menuStrip = MenuStrip()
 
-        twatterMenu = ToolStripMenuItem("Twatter")
-        twatterMenu.DropDown.ShowImageMargin = False
-        twatterMenu.DropDown.ShowCheckMargin = False
+        stutterMenu = ToolStripMenuItem("Stutter")
+        stutterMenu.DropDown.ShowImageMargin = False
+        stutterMenu.DropDown.ShowCheckMargin = False
 
         self.refreshMenuItem = ToolStripMenuItem("Refresh")
-        twatterMenu.DropDownItems.Add(self.refreshMenuItem)
+        stutterMenu.DropDownItems.Add(self.refreshMenuItem)
 
         self.quitMenuItem = ToolStripMenuItem("Quit")
-        twatterMenu.DropDownItems.Add(self.quitMenuItem)
+        stutterMenu.DropDownItems.Add(self.quitMenuItem)
 
-        self.menuStrip.Items.Add(twatterMenu)
+        self.menuStrip.Items.Add(stutterMenu)
         self.menuStrip.Dock = DockStyle.Top
         self.MainMenuStrip = self.menuStrip
         self.Controls.Add(self.menuStrip)

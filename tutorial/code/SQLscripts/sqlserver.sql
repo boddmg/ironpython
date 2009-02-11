@@ -1,10 +1,10 @@
 -- run with SQL Server Management Studio
 use master;
 
-create database twatter_db;
+create database stutter_db;
 go
 
-use twatter_db;
+use stutter_db;
 
 create table friends (
   id integer primary key,
