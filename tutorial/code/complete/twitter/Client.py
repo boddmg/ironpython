@@ -1,7 +1,9 @@
 import clr
 clr.AddReference('System')
 from System.IO import StreamReader, StreamWriter
-from System.Net import NetworkCredential, WebRequest
+from System.Net import NetworkCredential, WebRequest, ServicePointManager
+
+ServicePointManager.Expect100Continue = False
 
 import urllib
 
