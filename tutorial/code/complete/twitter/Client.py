@@ -3,11 +3,13 @@ clr.AddReference('System')
 from System.IO import StreamReader, StreamWriter
 from System.Net import NetworkCredential, WebRequest, ServicePointManager
 
-ServicePointManager.Expect100Continue = False
-
 import urllib
 
 from StatusReader import StatusReader
+
+# See: http://groups.google.com/group/twitter-development-talk/browse_thread/thread/7c67ff1a2407dee7
+# This setting needed for working with the Twitter API and .NET
+ServicePointManager.Expect100Continue = False
 
 
 class Client(object):
