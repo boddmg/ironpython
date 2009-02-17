@@ -7,3 +7,12 @@ C:\compile\DynamicObjectVB\DynamicObjectVB\bin\Release\DynamicObject.xml
 C:\compile\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObject.dll
 C:\compile\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObject.xml
 C:\compile\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObject.pdb
+C:\compile\ironpython\ironpythoninaction\chapter14\14.2.1\DynamicObjectVB\DynamicObjectVB\bin\Release\DynamicObject.dll
+C:\compile\ironpython\ironpythoninaction\chapter14\14.2.1\DynamicObjectVB\DynamicObjectVB\bin\Release\DynamicObject.pdb
+C:\compile\ironpython\ironpythoninaction\chapter14\14.2.1\DynamicObjectVB\DynamicObjectVB\bin\Release\DynamicObject.xml
+C:\compile\ironpython\ironpythoninaction\chapter14\14.2.1\DynamicObjectVB\DynamicObjectVB\obj\Release\ResolveAssemblyReference.cache
+C:\compile\ironpython\ironpythoninaction\chapter14\14.2.1\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObject.Resources.resources
+C:\compile\ironpython\ironpythoninaction\chapter14\14.2.1\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObjectVB.vbproj.GenerateResource.Cache
+C:\compile\ironpython\ironpythoninaction\chapter14\14.2.1\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObject.dll
+C:\compile\ironpython\ironpythoninaction\chapter14\14.2.1\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObject.xml
+C:\compile\ironpython\ironpythoninaction\chapter14\14.2.1\DynamicObjectVB\DynamicObjectVB\obj\Release\DynamicObject.pdb

@@ -5,6 +5,7 @@ Imports System.Runtime.CompilerServices
 
 Public Class DynamicObject
 
+    Private _error As String = "'DynamicObject' has no attribute '{0}'"
     Private _instance_dict As New Dictionary(Of String, Object)
     Public ReadOnly Property container() As Dictionary(Of String, Object)
         Get
@@ -14,7 +15,7 @@ Public Class DynamicObject
 
     <SpecialName()> Public Function GetBoundMember(ByVal name As String) As Object
         If Not _instance_dict.ContainsKey(name) Then
-            Dim msg As String = String.Format("'DynamicObject' has no attribute '{0}'", name)
+            Dim msg As String = String.Format(_error, name)
             Throw New System.MissingMemberException(msg)
         End If
         Return _instance_dict.Item(name)
@@ -26,7 +27,7 @@ Public Class DynamicObject
 
     <SpecialName()> Public Sub DeleteMember(ByVal name As String)
         If Not _instance_dict.ContainsKey(name) Then
-            Dim msg As String = String.Format("'DynamicObject' has no attribute '{0}'", name)
+            Dim msg As String = String.Format(_error, name)
             Throw New System.MissingMemberException(msg)
         End If
         _instance_dict.Remove(name)
