@@ -399,6 +399,7 @@ Creating a Form
 
 Creating a Form: Example
 ========================
+
 ::
 
     class MainForm(Form):
@@ -431,6 +432,7 @@ Creating a Form: Example
 
 Laying Out the Form (1)
 =======================
+
 * On Windows you can use Visual Studio. 
 * but... programmatic layout works everywhere
 * Programmatic layout is required for highly dynamic interfaces
@@ -439,7 +441,8 @@ Laying Out the Form (1)
 .. class:: handout
 
     On Windows, most people use Visual Studio to do layout. This works ok but
-    isn't an option for Unix or Mac users. 
+    isn't an option for Unix or Mac users. (Mono Develop has a GTK# designer
+    and a Windows Forms designer is in the works.)
     
     Programmatic layout works on all platforms but can be tedious. It is
     necessary when dynamic interfaces need to built at runtime. One advantage
@@ -447,8 +450,10 @@ Laying Out the Form (1)
     parameterised correctly.  Such changes can often be time-consuming if using
     a visual design tool.
 
+
 Laying Out the Form (2)
 =======================
+
 * Panel, GroupBox and others
 * Simple positioning done using attributes:
     - Top, Left, Width, Height
@@ -469,9 +474,50 @@ Laying Out the Form (2)
     control. This attribute is a Size object; it itself has Height and
     Width attributes.
 
+Anchoring and Docking
+=====================
 
-Positioning Example
-===================
+* What about when the window is resized?
+* Ideally, controls should resize with the form
+* Two solutions:
+    - Docking
+    - Anchoring
+* You should choose one mechanism: they don't work well together
+
+
+Docking
+=======
+
+* Keeps a control stuck to a particular side of it's parent
+* Can stick a control to one side of it's parent, or all sides (Fill).
+* Set via Dock property using the DockStyle enumeration:
+    - Left, Right, Top, Bottom, Fill
+* Docked controls resize to always be completely attached to the given side of the parent
+
+
+Anchoring
+=========
+
+* Keeps a control's edge(s) a fixed distance from the parent
+* Set via the Anchor property using the AnchorStyles enumeration
+    - Top, Left, Right, Bottom
+* Unlike Dock these can be combined to anchor to more than one edge
+* An Anchored control will keep a constant distance to the parent edge(s)
+* Controls will resize as required to meet the contraints
+
+.. class:: handout
+
+    Useful links:
+
+    * Anchor property: http://msdn.microsoft.com/en-us/library/system.windows.forms.control.anchor.aspx
+    * AnchorStyles: http://msdn.microsoft.com/en-us/library/system.windows.forms.anchorstyles.aspx
+    * Dock property: http://msdn.microsoft.com/en-us/library/system.windows.forms.control.dock.aspx
+    * DockStyle: http://msdn.microsoft.com/en-us/library/system.windows.forms.dockstyle.aspx
+
+
+Layout in Stutter
+=================
+
 * Look inside MainForm.py: _layout() method
 * Observe how the parts of the form are put together using Controls.Add
 * Main parts: upperPanel, lowerPanel
@@ -484,68 +530,6 @@ Positioning Example
 
     The main layout groups on MainForm are 2 Panel instances. All other
     controls are contained within these 2 controls. 
-
-Practical: Adding a Button
-==========================
-* Create a Button instance and give it some text
-* Keep a reference to it on the form
-* Add() it to the form's Controls
-* Adjust the layout 
-    - rough is ok, we can fix it later
-
-
-.. class:: handout
-
-    Useful links:
-
-    * Button class: http://msdn.microsoft.com/en-us/library/system.windows.forms.button(VS.80).aspx
-    * Form.Controls property: http://msdn.microsoft.com/en-us/library/system.windows.forms.control.controls(VS.80).aspx
-
-
-Anchoring and Docking
-=====================
-* What about when the window is resized?
-* Ideally, controls should resize with the form
-* Two solutions:
-    - Docking
-    - Anchoring
-* You should choose one mechanism: they don't work well together
-
-
-Docking
-=======
-* Keeps a control stuck to a particular side of it's parent
-* Can stick a control to one side of it's parent, or all sides (Fill).
-* Set via Dock property using the DockStyle enumeration:
-    - Left, Right, Top, Bottom, Fill
-* Docked controls resize to always be completely attached to the given side of the parent
-
-Anchoring
-=========
-* Keeps a control's edge(s) a fixed distance from the parent
-* Set via the Anchor property using the AnchorStyles enumeration
-    - Top, Left, Right, Bottom
-* Unlike Dock these can be combined to anchor to more than one edge
-* An Anchored control will keep a constant distance to the parent edge(s)
-* Controls will resize as required to meet the contraints
-
-
-Practical: Anchoring
-====================
-* Run stutter and resize the window, controls don't move!
-* Try out different Dock options
-* Try out Anchor options
-* Then, try to make the form resize nicely
-* Hint: the Panels & Button we added are good places to start
-
-.. class:: handout
-
-    Useful links:
-
-    * Anchor property: http://msdn.microsoft.com/en-us/library/system.windows.forms.control.anchor.aspx
-    * AnchorStyles: http://msdn.microsoft.com/en-us/library/system.windows.forms.anchorstyles.aspx
-    * Dock property: http://msdn.microsoft.com/en-us/library/system.windows.forms.control.dock.aspx
-    * DockStyle: http://msdn.microsoft.com/en-us/library/system.windows.forms.dockstyle.aspx
 
 
 Dropdown Menus
@@ -576,6 +560,7 @@ Dropdown Menus
 
 Practical: Add Menu Items
 =========================
+
 * The Stutter application currently has a dropdown menu but no menu items
 * Add 2 items:
     - Refresh
@@ -591,6 +576,7 @@ Practical: Add Menu Items
 
 Practical: Event Handlers
 =========================
+
 * Add events handlers for:
     - the Post button 
     - the Quit menu item
@@ -604,6 +590,7 @@ Practical: Event Handlers
     ::
 
         Button.Click += myHandler
+
 
 Background: Twitter API
 =======================
