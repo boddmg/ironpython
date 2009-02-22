@@ -534,6 +534,7 @@ Layout in Stutter
 
 Dropdown Menus
 ==============
+
 * Dropdown menu bar is handled by the MenuStrip control
 * Each menu is ToolStripMenuItem Add()'ed to MenuStrip.Controls
 * Each menu item is a ToolStripMenuItem Add()'ed to the parent's DropDownItems
@@ -561,7 +562,8 @@ Dropdown Menus
 Practical: Add Menu Items
 =========================
 
-* The Stutter application currently has a dropdown menu but no menu items
+* The UI of Stutter is created in MainForm.py
+* MainForm currently has a dropdown menu but no menu items
 * Add 2 items:
     - Refresh
     - Quit
@@ -578,23 +580,21 @@ Practical: Add Menu Items
 Practical: Event Handlers
 =========================
 
-* Add events handlers for:
-    - the Post button 
+* Event handlers are hooked up in Stutter.py
+* In the constructor we need to add handlers for:
     - the Quit menu item
     - the Refresh menu item
-* Make Quit work (look at docs for Application)
-* Stub is ok for Post and Quit
 
 .. class:: handout
 
-    Reminder of how event handlers are set ... for a Button:
-    ::
+    Reminder of how event handlers are set ...::
 
-        Button.Click += myHandler
+        ToolStripMenuItem.Click += myHandler
 
 
 Background: Twitter API
 =======================
+
 * RESTful web API
 * Allows querying of users & tweets in a variety of ways & updates
 * Authentication is done using HTTP Basic Auth (401)
