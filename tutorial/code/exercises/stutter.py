@@ -9,19 +9,22 @@ import stutterdb
 
 from threadhelper import DoBackgroundWithInvoke
 
-        
+
 class Stutter(object):
 
     def __init__(self):
-        self.client = Client(config.username, 
+        self.client = Client(config.username,
                              config.password,
                              config.url_base)
 
         self.form = MainForm()
         self.form.postButton.Click += self.onPost
-        self.form.refreshMenuItem.Click += self.onRefresh
         self.form.friendsListBox.SelectedIndexChanged += self.onSelectFriend
-        self.form.quitMenuItem.Click += self.onQuit
+
+        # TODO: Attach functions as event handlers for the two menu items
+        # 'Refresh' and 'Quit' (an onQuit function is already written,
+        # below)
+
         self.refreshFriends()
 
 
@@ -38,7 +41,7 @@ class Stutter(object):
             selectedFriend = self.form.friendsListBox.SelectedItem
         self.form.showTweets(stutterdb.getTweets(selectedFriend))
 
-            
+
     def run(self):
         self.form.Show()
         Application.Run(self.form)
