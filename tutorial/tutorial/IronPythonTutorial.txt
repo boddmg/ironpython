@@ -589,6 +589,11 @@ Practical: Event Handlers
 
         ToolStripMenuItem.Click += myHandler
 
+        def myHandler(self, source, args):
+            pass
+
+    The 'myHandler' function will be called when the event is fired.
+
 
 Background: Twitter API
 =======================

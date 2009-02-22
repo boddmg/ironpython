@@ -22,7 +22,7 @@ class Stutter(object):
         self.form.friendsListBox.SelectedIndexChanged += self.onSelectFriend
 
         # TODO: Attach functions as event handlers for the two menu items
-        # 'Refresh' and 'Quit' (an onQuit function is already written,
+        # 'Refresh' and 'Quit' (an onRefresh function is already written,
         # below)
 
         self.refreshFriends()
@@ -63,10 +63,6 @@ class Stutter(object):
 
     def onSelectFriend(self, source, args):
         self.displayTweets()
-
-
-    def onQuit(self, source, args):
-        Application.Exit()
 
 
 def main():
