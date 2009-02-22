@@ -566,6 +566,7 @@ Practical: Add Menu Items
     - Refresh
     - Quit
 * Remember to keep references to menu items created. We'll need them later.
+* The main menu strip also needs to be added to its parent and docked at the top.
 
 .. class:: handout
 

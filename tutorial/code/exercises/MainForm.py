@@ -37,16 +37,17 @@ class MainForm(Form):
         stutterMenu.DropDown.ShowImageMargin = False
         stutterMenu.DropDown.ShowCheckMargin = False
 
-        self.refreshMenuItem = ToolStripMenuItem("Refresh")
-        stutterMenu.DropDownItems.Add(self.refreshMenuItem)
+        # TODO: Add menu items for 'Refresh' and 'Quit'
+        # These need to be added to the menu 
+        # 'stutterMenu' created above.
 
-        self.quitMenuItem = ToolStripMenuItem("Quit")
-        stutterMenu.DropDownItems.Add(self.quitMenuItem)
 
         self.menuStrip.Items.Add(stutterMenu)
-        self.menuStrip.Dock = DockStyle.Top
         self.MainMenuStrip = self.menuStrip
-        self.Controls.Add(self.menuStrip)
+        
+        # TODO: The main menu (the MenuStrip) needs to
+        #  be docked to the top of its parent
+        # It doesn't have a parent yet
 
 
     def _layout(self):
