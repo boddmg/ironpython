@@ -26,9 +26,9 @@ Developing with IronPython
     * `Michael Foord <http://www.voidspace.org.uk/python/weblog/index.shtml>`_
     * `Jonathan Hartley <http://www.tartley.com>`_
     
-    All three of us work for Resolver Systems in London, creating a spreadsheet development environment with IronPython. There are currently around 50 000 lines of IronPython code in Resolver One, plus around 130 000 lines in the test framework.
+    Both of us work for Resolver Systems in London, creating a spreadsheet development environment with IronPython. There are currently around 40 000 lines of IronPython code in Resolver One, plus around 130 000 lines in the test framework.
     
-    Christian and Michael are also the authors of *IronPython in Action*, the first (English) book on IronPython - published by Manning Publications. It is now complete and should be available mid-Novemeber.
+    Michael is also the author of *IronPython in Action*, the first (English) book on IronPython - published by Manning Publications.
     
     It covers topics like:
     
@@ -48,7 +48,6 @@ Introduction to IronPython
 * Runs on .NET and Mono
 * Originally created by Jim Hugunin
 * Now being developed by a Microsoft team
-* Stable version 1.1.2 (Python 2.4)
 * Version 2, built on the Dynamic Language Runtime (Python 2.5)
 * Version 2 runs on Silverlight (and Moonlight 2 on Linux)
 
