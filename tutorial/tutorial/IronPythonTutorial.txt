@@ -57,11 +57,11 @@ Introduction to IronPython
     
     His early version ran the Pystone benchmark about 1.7 times faster than CPython, so it became a serious project. Eventually he was hired by Microsoft to work on the CLR (Common Language Runtime) and they took on IronPython - releasing it with an OSI approved open source license.
     
-    After completing IronPython 1 they abstracted out the dynamic type system and dynamic language hosting environment to create the Dynamic Language Runtime. As well as making it easier to implement dynamic languages for .NET, the DLR allows dynamic languages to interoperate through a shared type system. IronPython 2 (still in beta) is built on the DLR. Other (Microsoft) DLR languages include IronRuby (still in alpha) and Managed JScript (an ECMA 3 compliant implementation of Javascript for Silverlight).
+    After completing IronPython 1 they abstracted out the dynamic type system and dynamic language hosting environment to create the Dynamic Language Runtime. As well as making it easier to implement dynamic languages for .NET, the DLR allows dynamic languages to interoperate through a shared type system. IronPython 2 is built on the DLR. Other (Microsoft) DLR languages include IronRuby (still in alpha) and Managed JScript (an ECMA 3 compliant implementation of Javascript for Silverlight).
     
-    Visual Basic .NET version ten and C# 4.0 will be 'partially dynamic' through the DLR - which will become part of the Common Language Runtime. C# 4 will also include mechanisms for easier interaction with 'dynamic objects' (possible now through the IronPython hosting API - but a bit clumsy).
+    Visual Basic .NET 10 and C# 4.0 (.NET 4.0) will be 'partially dynamic' through the DLR - which will become part of the Common Language Runtime. It will include mechanisms for easier interaction with 'dynamic objects' (possible now through the IronPython hosting API - but a bit clumsy).
     
-    IronPython is a Python compiler - it compiles Python to in-memory assemblies in IL (Intermediate Language), the .NET bytecode (which can be compiled to native code by the JIT). It is very well integrated with the .NET framework. Strings in Python are .NET string objects, *and* they have the Python methods that you would expect. The same is true for the other types.
+    IronPython is a Python compiler - it compiles Python in-memory to IL (Intermediate Language), the .NET bytecode (which can be compiled to native code by the JIT). It is very well integrated with the .NET framework. Strings in Python are .NET string objects, *and* they have the Python methods that you would expect. The same is true for the other types.
 
     We can also take .NET assemblies and import classes / objects from them, and use them with *no* wrapping needed.
     
@@ -125,7 +125,8 @@ Disadvantages of IronPython
     
     The single biggest incompatibility problem is that Python C extensions don't work. Several of these (particularly the builtin modules) have been re-implemented by the IronPython team in C#. For others, the community has provided compatibility wrappers around an equivalent .NET library. You can find several of these in `FePy: the IronPython Community Edition <http://fepy.sourceforge.net>`_ (maintained by Seo Sanghyeon).
     
-    For the rest, one possibility is `Ironclad <http://code.google.com/p/ironclad/>`_. This is an open source project by Resolver Systems, and is basically a re-implementation of the Python C API in C#. It allows C extensions to be imported and used seamlessly from IronPython (our goal is to allow Numpy to be used from inside Resolver One). It already works for small extensions (like bz2) - and in the latest release you could import numpy and create and use integer arrays! There is still a lot to be done though.
+    For the rest, one possibility is `Ironclad <http://code.google.com/p/ironclad/>`_. This is an open source project by Resolver Systems, and is basically a re-implementation of the Python C API in C#. Although by no means complete, over 900 of the Numpy tests pass (and we have used this to build Numpy integration into Resolver One) and hundreds of Scipy and matplotlib tests also pass.
+    
     
 Connecting Python to .NET
 =========================
@@ -144,6 +145,7 @@ Connecting Python to .NET
 
 Importing .NET Classes
 ======================
+
 * Classes in the assembly are now available for import from their namespace
 
 ::
@@ -171,6 +173,7 @@ Importing .NET Classes
 
 Python and .NET Types (1)
 =========================
+
 * IronPython built-in types are the equivalent .NET types
 
 ::
@@ -193,8 +196,10 @@ Python and .NET Types (1)
    Having the standard Python types actually be the .NET types means
    that the interface with normal C# code can be very natural.
 
+
 Python and .NET Types (2)
 =========================
+
 * Built-in containers are custom types which implement standard .NET interfaces
        - list -> IList
        - dict -> IDictionary
@@ -215,8 +220,10 @@ Python and .NET Types (2)
    particular place and automaticaly wrap function references, as long
    as the number of arguments is right.
 
+
 Subclassing .NET Types
 ======================
+
 * IronPython classes can inherit from .NET classes
 * Override methods on base class
     - Should be signature compatible with the overridden method
@@ -225,8 +232,10 @@ Subclassing .NET Types
 * .NET code can call into Python code 
     - But only from .NET base class references
 
+
 Overloading
 ===========
+
 * .NET classes can have *overloaded* methods
     - Distinguished by types of arguments
 
@@ -242,8 +251,10 @@ Overloading
 
    ec.Add.Overloads[int, int]('hello', None)
 
+
 Arrays and Generics
 ===================
+
 * Uses similar syntax for creating Arrays
 
 ::
@@ -290,6 +301,7 @@ Arrays and Generics
 
 Making GUIs
 ===========
+
 * The GUI framework lives in System.Windows.Forms/Controls
 * That's the assembly and the namespace
 * Hello world:
@@ -322,6 +334,7 @@ Making GUIs
 
 User Interaction
 ================
+
 * Add controls with event handlers to forms
 
 ::
@@ -338,6 +351,7 @@ User Interaction
 
 Introducing Stutter
 ===================
+
 * Yet Another Twitter Client
 * Very simple
 * Missing some bits which we're going to implement now
@@ -356,6 +370,7 @@ Introducing Stutter
 
 Creating a Form
 ===============
+
 * Create a subclass of Form
 * in __init__():
     - call the superclass!
