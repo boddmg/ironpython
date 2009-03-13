@@ -16,7 +16,12 @@ namespace EmbeddingIronPythonSilverlight
             string code = @"
 def function(string):
     return string.upper()";
-            ScriptEngine pe = Python.CreateEngine();
+
+            ScriptRuntimeSetup setup = Python.CreateRuntimeSetup(null);
+            setup.HostType = typeof(Microsoft.Scripting.Silverlight.BrowserScriptHost);
+            ScriptRuntime runtime = new ScriptRuntime(setup);
+            ScriptEngine pe = Python.GetEngine(runtime);
+
             ScriptScope scope = pe.CreateScope();
             ScriptSource source = pe.CreateScriptSourceFromString(code, SourceCodeKind.Statements);
             source.Execute(scope);
