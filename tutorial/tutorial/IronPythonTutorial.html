@@ -3,14 +3,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.4.1: http://docutils.sourceforge.net/" />
 <meta name="version" content="S5 1.1" />
 <title>Developing with IronPython</title>
 <style type="text/css">
 
 /*
-:Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 5196 2007-06-03 20:25:28Z wiemann $
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
@@ -116,7 +118,7 @@ div.line-block div.line-block {
   margin-left: 1.5em }
 
 div.sidebar {
-  margin: 0 0 0.5em 1em ;
+  margin-left: 1em ;
   border: medium outset ;
   padding: 1em ;
   background-color: #ffffee ;
@@ -222,7 +224,8 @@ pre.address {
 
 pre.literal-block, pre.doctest-block {
   margin-left: 2em ;
-  margin-right: 2em }
+  margin-right: 2em ;
+  background-color: #eeeeee }
 
 span.classifier {
   font-family: sans-serif ;
@@ -279,6 +282,9 @@ h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
 h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
   font-size: 100% }
 
+tt.docutils {
+  background-color: #eeeeee }
+
 ul.auto-toc {
   list-style-type: none }
 
@@ -316,7 +322,6 @@ ul.auto-toc {
 <div class="presentation">
 <div class="slide" id="slide0">
 <h1 class="title">Developing with IronPython</h1>
-
 <!-- Definitions of interpreted text roles (classes) for S5/HTML data. -->
 <!-- This data file has been placed in the public domain. -->
 <!-- Colours
@@ -329,81 +334,76 @@ ul.auto-toc {
 ============================ -->
 <!-- Display in Print Only
 ===================== -->
-<!-- Display in Handout Mode Only
-============================ -->
 <!-- Incremental Display
 =================== -->
-<div class="contents handout topic" id="id1">
-<p class="topic-title first">Developing with IronPython</p>
+<div class="contents handout topic">
+<p class="topic-title first"><a id="id1" name="id1">Developing with IronPython</a></p>
 <ul class="simple">
-<li><a class="reference internal" href="#introduction-to-ironpython" id="id2">Introduction to IronPython</a></li>
-<li><a class="reference internal" href="#the-net-framework" id="id3">The .NET Framework</a></li>
-<li><a class="reference internal" href="#advantages-of-ironpython" id="id4">Advantages of IronPython</a></li>
-<li><a class="reference internal" href="#disadvantages-of-ironpython" id="id5">Disadvantages of IronPython</a></li>
-<li><a class="reference internal" href="#connecting-python-to-net" id="id6">Connecting Python to .NET</a></li>
-<li><a class="reference internal" href="#importing-net-classes" id="id7">Importing .NET Classes</a></li>
-<li><a class="reference internal" href="#python-and-net-types-1" id="id8">Python and .NET Types (1)</a></li>
-<li><a class="reference internal" href="#python-and-net-types-2" id="id9">Python and .NET Types (2)</a></li>
-<li><a class="reference internal" href="#subclassing-net-types" id="id10">Subclassing .NET Types</a></li>
-<li><a class="reference internal" href="#overloading" id="id11">Overloading</a></li>
-<li><a class="reference internal" href="#arrays-and-generics" id="id12">Arrays and Generics</a></li>
-<li><a class="reference internal" href="#making-guis" id="id13">Making GUIs</a></li>
-<li><a class="reference internal" href="#user-interaction" id="id14">User Interaction</a></li>
-<li><a class="reference internal" href="#introducing-twatter" id="id15">Introducing Twatter</a></li>
-<li><a class="reference internal" href="#creating-a-form" id="id16">Creating a Form</a></li>
-<li><a class="reference internal" href="#creating-a-form-example" id="id17">Creating a Form: Example</a></li>
-<li><a class="reference internal" href="#laying-out-the-form-1" id="id18">Laying Out the Form (1)</a></li>
-<li><a class="reference internal" href="#laying-out-the-form-2" id="id19">Laying Out the Form (2)</a></li>
-<li><a class="reference internal" href="#positioning-example" id="id20">Positioning Example</a></li>
-<li><a class="reference internal" href="#practical-adding-a-button" id="id21">Practical: Adding a Button</a></li>
-<li><a class="reference internal" href="#anchoring-and-docking" id="id22">Anchoring and Docking</a></li>
-<li><a class="reference internal" href="#docking" id="id23">Docking</a></li>
-<li><a class="reference internal" href="#anchoring" id="id24">Anchoring</a></li>
-<li><a class="reference internal" href="#practical-anchoring" id="id25">Practical: Anchoring</a></li>
-<li><a class="reference internal" href="#dropdown-menus" id="id26">Dropdown Menus</a></li>
-<li><a class="reference internal" href="#practical-add-menu-items" id="id27">Practical: Add Menu Items</a></li>
-<li><a class="reference internal" href="#practical-event-handlers" id="id28">Practical: Event Handlers</a></li>
-<li><a class="reference internal" href="#background-twitter-api" id="id29">Background: Twitter API</a></li>
-<li><a class="reference internal" href="#net-streams" id="id30">.NET Streams</a></li>
-<li><a class="reference internal" href="#making-web-requests" id="id31">Making Web Requests</a></li>
-<li><a class="reference internal" href="#practical-adding-update-support" id="id32">Practical: Adding Update Support</a></li>
-<li><a class="reference internal" href="#xml-parsing" id="id33">XML Parsing</a></li>
-<li><a class="reference internal" href="#xml-parsing-example" id="id34">XML Parsing: Example</a></li>
-<li><a class="reference internal" href="#cleaner-xml-handling" id="id35">Cleaner XML Handling</a></li>
-<li><a class="reference internal" href="#twitter-statuses" id="id36">Twitter Statuses</a></li>
-<li><a class="reference internal" href="#parsing-twitter-statuses" id="id37">Parsing Twitter Statuses</a></li>
-<li><a class="reference internal" href="#parsed-statuses" id="id38">Parsed Statuses</a></li>
-<li><a class="reference internal" href="#databases-ado-net" id="id39">Databases: ADO.NET</a></li>
-<li><a class="reference internal" href="#dataset-layer" id="id40">DataSet Layer</a></li>
-<li><a class="reference internal" href="#data-provider-layer" id="id41">Data Provider Layer</a></li>
-<li><a class="reference internal" href="#getting-connected" id="id42">Getting Connected</a></li>
-<li><a class="reference internal" href="#issuing-commands" id="id43">Issuing Commands</a></li>
-<li><a class="reference internal" href="#avoid-sql-injection" id="id44">Avoid SQL Injection!</a></li>
-<li><a class="reference internal" href="#reading-results" id="id45">Reading Results</a></li>
-<li><a class="reference internal" href="#ironpython-and-threads" id="id46">IronPython and Threads</a></li>
-<li><a class="reference internal" href="#basic-principles" id="id47">Basic Principles</a></li>
-<li><a class="reference internal" href="#thread-class-threadstart-delegate" id="id48">Thread Class &amp; ThreadStart Delegate</a></li>
-<li><a class="reference internal" href="#aborting-threads" id="id49">Aborting Threads</a></li>
-<li><a class="reference internal" href="#cleaning-up-in-a-finally-block" id="id50">Cleaning up in a Finally Block</a></li>
-<li><a class="reference internal" href="#windows-forms-and-threads" id="id51">Windows Forms and Threads</a></li>
-<li><a class="reference internal" href="#the-calltarget0-delegate" id="id52">The CallTarget0 Delegate</a></li>
-<li><a class="reference internal" href="#invoking-onto-the-control-thread" id="id53">Invoking onto the Control Thread</a></li>
+<li><a class="reference" href="#introduction-to-ironpython" id="id2" name="id2">Introduction to IronPython</a></li>
+<li><a class="reference" href="#the-net-framework" id="id3" name="id3">The .NET Framework</a></li>
+<li><a class="reference" href="#advantages-of-ironpython" id="id4" name="id4">Advantages of IronPython</a></li>
+<li><a class="reference" href="#disadvantages-of-ironpython" id="id5" name="id5">Disadvantages of IronPython</a></li>
+<li><a class="reference" href="#connecting-python-to-net" id="id6" name="id6">Connecting Python to .NET</a></li>
+<li><a class="reference" href="#importing-net-classes" id="id7" name="id7">Importing .NET Classes</a></li>
+<li><a class="reference" href="#python-and-net-types-1" id="id8" name="id8">Python and .NET Types (1)</a></li>
+<li><a class="reference" href="#python-and-net-types-2" id="id9" name="id9">Python and .NET Types (2)</a></li>
+<li><a class="reference" href="#subclassing-net-types" id="id10" name="id10">Subclassing .NET Types</a></li>
+<li><a class="reference" href="#overloading" id="id11" name="id11">Overloading</a></li>
+<li><a class="reference" href="#arrays-and-generics" id="id12" name="id12">Arrays and Generics</a></li>
+<li><a class="reference" href="#making-guis" id="id13" name="id13">Making GUIs</a></li>
+<li><a class="reference" href="#user-interaction" id="id14" name="id14">User Interaction</a></li>
+<li><a class="reference" href="#introducing-stutter" id="id15" name="id15">Introducing Stutter</a></li>
+<li><a class="reference" href="#creating-a-form" id="id16" name="id16">Creating a Form</a></li>
+<li><a class="reference" href="#creating-a-form-example" id="id17" name="id17">Creating a Form: Example</a></li>
+<li><a class="reference" href="#laying-out-the-form-1" id="id18" name="id18">Laying Out the Form (1)</a></li>
+<li><a class="reference" href="#laying-out-the-form-2" id="id19" name="id19">Laying Out the Form (2)</a></li>
+<li><a class="reference" href="#anchoring-and-docking" id="id20" name="id20">Anchoring and Docking</a></li>
+<li><a class="reference" href="#docking" id="id21" name="id21">Docking</a></li>
+<li><a class="reference" href="#anchoring" id="id22" name="id22">Anchoring</a></li>
+<li><a class="reference" href="#layout-in-stutter" id="id23" name="id23">Layout in Stutter</a></li>
+<li><a class="reference" href="#dropdown-menus" id="id24" name="id24">Dropdown Menus</a></li>
+<li><a class="reference" href="#practical-add-menu-items" id="id25" name="id25">Practical: Add Menu Items</a></li>
+<li><a class="reference" href="#practical-event-handlers" id="id26" name="id26">Practical: Event Handlers</a></li>
+<li><a class="reference" href="#background-twitter-api" id="id27" name="id27">Background: Twitter API</a></li>
+<li><a class="reference" href="#net-streams" id="id28" name="id28">.NET Streams</a></li>
+<li><a class="reference" href="#making-web-requests" id="id29" name="id29">Making Web Requests</a></li>
+<li><a class="reference" href="#practical-adding-update-support" id="id30" name="id30">Practical: Adding Update Support</a></li>
+<li><a class="reference" href="#xml-parsing" id="id31" name="id31">XML Parsing</a></li>
+<li><a class="reference" href="#xml-parsing-example" id="id32" name="id32">XML Parsing: Example</a></li>
+<li><a class="reference" href="#cleaner-xml-handling" id="id33" name="id33">Cleaner XML Handling</a></li>
+<li><a class="reference" href="#twitter-statuses" id="id34" name="id34">Twitter Statuses</a></li>
+<li><a class="reference" href="#parsing-twitter-statuses" id="id35" name="id35">Parsing Twitter Statuses</a></li>
+<li><a class="reference" href="#parsed-statuses" id="id36" name="id36">Parsed Statuses</a></li>
+<li><a class="reference" href="#databases-ado-net" id="id37" name="id37">Databases: ADO.NET</a></li>
+<li><a class="reference" href="#dataset-layer" id="id38" name="id38">DataSet Layer</a></li>
+<li><a class="reference" href="#data-provider-layer" id="id39" name="id39">Data Provider Layer</a></li>
+<li><a class="reference" href="#getting-connected" id="id40" name="id40">Getting Connected</a></li>
+<li><a class="reference" href="#issuing-commands" id="id41" name="id41">Issuing Commands</a></li>
+<li><a class="reference" href="#avoid-sql-injection" id="id42" name="id42">Avoid SQL Injection!</a></li>
+<li><a class="reference" href="#reading-results" id="id43" name="id43">Reading Results</a></li>
+<li><a class="reference" href="#ironpython-and-threads" id="id44" name="id44">IronPython and Threads</a></li>
+<li><a class="reference" href="#basic-principles" id="id45" name="id45">Basic Principles</a></li>
+<li><a class="reference" href="#thread-class-threadstart-delegate" id="id46" name="id46">Thread Class &amp; ThreadStart Delegate</a></li>
+<li><a class="reference" href="#aborting-threads" id="id47" name="id47">Aborting Threads</a></li>
+<li><a class="reference" href="#cleaning-up-in-a-finally-block" id="id48" name="id48">Cleaning up in a Finally Block</a></li>
+<li><a class="reference" href="#windows-forms-and-threads" id="id49" name="id49">Windows Forms and Threads</a></li>
+<li><a class="reference" href="#the-calltarget0-delegate" id="id50" name="id50">The CallTarget0 Delegate</a></li>
+<li><a class="reference" href="#invoking-onto-the-control-thread" id="id51" name="id51">Invoking onto the Control Thread</a></li>
 </ul>
 </div>
 <img align="right" alt="IronPython in Action" class="image align-right" src="images/ironpythoninaction.jpg" style="width: 325px; height: 415px;" />
 <ul class="simple">
-<li><a class="reference external" href="http://www.ironpythoninaction.com/">www.ironpythoninaction.com</a></li>
-<li><a class="reference external" href="http://www.resolversystems.com">Resolver Systems</a></li>
-<li><a class="reference external" href="http://www.freshfoo.com">freshfoo.com</a></li>
+<li><a class="reference" href="http://www.ironpythoninaction.com/">www.ironpythoninaction.com</a></li>
+<li><a class="reference" href="http://www.tartley.com">tartley.com</a></li>
+<li><a class="reference" href="http://www.resolversystems.com">Resolver Systems</a></li>
 </ul>
 <p class="handout">This tutorial is taken by:</p>
 <ul class="handout simple">
-<li><a class="reference external" href="http://www.voidspace.org.uk/python/weblog/index.shtml">Michael Foord</a></li>
-<li>Christian Muirhead</li>
-<li><a class="reference external" href="http://www.freshfoo.com">Menno Smits</a></li>
+<li><a class="reference" href="http://www.voidspace.org.uk/python/weblog/index.shtml">Michael Foord</a></li>
+<li><a class="reference" href="http://www.tartley.com">Jonathan Hartley</a></li>
 </ul>
-<p class="handout">All three of us work for Resolver Systems in London, creating a spreadsheet development environment with IronPython. There are currently around 50 000 lines of IronPython code in Resolver One, plus around 130 000 lines in the test framework.</p>
-<p class="handout">Christian and Michael are also the authors of <em>IronPython in Action</em>, the first (English) book on IronPython - published by Manning Publications. It is now complete and should be available mid-Novemeber.</p>
+<p class="handout">Both of us work for Resolver Systems in London, creating a spreadsheet development environment with IronPython. There are currently around 40 000 lines of IronPython code in Resolver One, plus around 130 000 lines in the test framework.</p>
+<p class="handout">Michael is also the author of <em>IronPython in Action</em>, the first (English) book on IronPython - published by Manning Publications.</p>
 <p class="handout">It covers topics like:</p>
 <ul class="handout simple">
 <li>Windows Forms and Windows Presentation Foundation</li>
@@ -423,15 +423,14 @@ ul.auto-toc {
 <li>Runs on .NET and Mono</li>
 <li>Originally created by Jim Hugunin</li>
 <li>Now being developed by a Microsoft team</li>
-<li>Stable version 1.1.2 (Python 2.4)</li>
-<li>Version 2, still in beta and built on the Dynamic Language Runtime (Python 2.5)</li>
-<li>Version 2 runs on Silverlight</li>
+<li>Version 2, built on the Dynamic Language Runtime (Python 2.5)</li>
+<li>Version 2 runs on Silverlight (and Moonlight 2 on Linux)</li>
 </ul>
 <p class="handout">IronPython was originally created as an experiment to demonstrate how bad the .NET framework was for dynamic languages.</p>
 <p class="handout">His early version ran the Pystone benchmark about 1.7 times faster than CPython, so it became a serious project. Eventually he was hired by Microsoft to work on the CLR (Common Language Runtime) and they took on IronPython - releasing it with an OSI approved open source license.</p>
-<p class="handout">After completing IronPython 1 they abstracted out the dynamic type system and dynamic language hosting environment to create the Dynamic Language Runtime. As well as making it easier to implement dynamic languages for .NET, the DLR allows dynamic languages to interoperate through a shared type system. IronPython 2 (still in beta) is built on the DLR. Other (Microsoft) DLR languages include IronRuby (still in alpha) and Managed JScript (an ECMA 3 compliant implementation of Javascript for Silverlight).</p>
-<p class="handout">Visual Basic .NET version ten will be 'partially dynamic' through the DLR - which will become part of the Common Language Runtime. C# 4 will also include mechanisms for easier interaction with 'dynamic objects' (possible now through the IronPython hosting API - but a bit clumsy).</p>
-<p class="handout">IronPython is a Python compiler - it compiles Python to in-memory assemblies in IL (Intermediate Language), the .NET bytecode (which can be compiled to native code by the JIT). It is very well integrated with the .NET framework. Strings in Python are .NET string objects, <em>and</em> they have the Python methods that you would expect. The same is true for the other types.</p>
+<p class="handout">After completing IronPython 1 they abstracted out the dynamic type system and dynamic language hosting environment to create the Dynamic Language Runtime. As well as making it easier to implement dynamic languages for .NET, the DLR allows dynamic languages to interoperate through a shared type system. IronPython 2 is built on the DLR. Other (Microsoft) DLR languages include IronRuby (still in alpha) and Managed JScript (an ECMA 3 compliant implementation of Javascript for Silverlight).</p>
+<p class="handout">Visual Basic .NET 10 and C# 4.0 (.NET 4.0) will be 'partially dynamic' through the DLR - which will become part of the Common Language Runtime. It will include mechanisms for easier interaction with 'dynamic objects' (possible now through the IronPython hosting API - but a bit clumsy).</p>
+<p class="handout">IronPython is a Python compiler - it compiles Python in-memory to IL (Intermediate Language), the .NET bytecode (which can be compiled to native code by the JIT). It is very well integrated with the .NET framework. Strings in Python are .NET string objects, <em>and</em> they have the Python methods that you would expect. The same is true for the other types.</p>
 <p class="handout">We can also take .NET assemblies and import classes / objects from them, and use them with <em>no</em> wrapping needed.</p>
 </div>
 <div class="slide" id="the-net-framework">
@@ -491,8 +490,8 @@ ul.auto-toc {
 <p class="handout">A substantial part of the Python standard library (or existing Python code) <em>does</em> work. However, the performance profile for IronPython is very different to CPython (function calls and arithmetic are massively faster - using the builtin types is slower). This means that code optimised <em>for CPython</em> will typically run slower on IronPython.</p>
 <p class="handout">IronPython is not <em>fully</em> compatible with CPython though - it doesn't use Python stack frames for example. Code that depends on CPython 'implementation details' are unlikely to work.</p>
 <p class="handout">Another potential source of incompatibility (although it seems to be less of a problem in practice) is that all strings are Unicode in IronPython (like Python 3). This actually makes working with strings much more pleasant!</p>
-<p class="handout">The single biggest incompatibility problem is that Python C extensions don't work. Several of these (particularly the builtin modules) have been re-implemented by the IronPython team in C#. For others, the community has provided compatibility wrappers around an equivalent .NET library. You can find several of these in <a class="reference external" href="http://fepy.sourceforge.net">FePy: the IronPython Community Edition</a> (maintained by Seo Sanghyeon).</p>
-<p class="handout">For the rest, one possibility is <a class="reference external" href="http://code.google.com/p/ironclad/">Ironclad</a>. This is an open source project by Resolver Systems, and is basically a re-implementation of the Python C API in C#. It allows C extensions to be imported and used seamlessly from IronPython (our goal is to allow Numpy to be used from inside Resolver One). It already works for small extensions (like bz2) - and in the latest release you could import numpy and create and use integer arrays! There is still a lot to be done though.</p>
+<p class="handout">The single biggest incompatibility problem is that Python C extensions don't work. Several of these (particularly the builtin modules) have been re-implemented by the IronPython team in C#. For others, the community has provided compatibility wrappers around an equivalent .NET library. You can find several of these in <a class="reference" href="http://fepy.sourceforge.net">FePy: the IronPython Community Edition</a> (maintained by Seo Sanghyeon).</p>
+<p class="handout">For the rest, one possibility is <a class="reference" href="http://code.google.com/p/ironclad/">Ironclad</a>. This is an open source project by Resolver Systems, and is basically a re-implementation of the Python C API in C#. Although by no means complete, over 900 of the Numpy tests pass (and we have used this to build Numpy integration into Resolver One) and hundreds of Scipy and matplotlib tests also pass.</p>
 </div>
 <div class="slide" id="connecting-python-to-net">
 <h1>Connecting Python to .NET</h1>
@@ -729,18 +728,18 @@ Application.Run(form)
 <li>More on this later...</li>
 </ul>
 </div>
-<div class="slide" id="introducing-twatter">
-<h1>Introducing Twatter</h1>
+<div class="slide" id="introducing-stutter">
+<h1>Introducing Stutter</h1>
 <ul class="simple">
 <li>Yet Another Twitter Client</li>
 <li>Very simple</li>
 <li>Missing some bits which we're going to implement now</li>
 <li>Let's see what it looks like...</li>
 </ul>
-<p class="handout">Twatter is a simple application, written in IronPython, that talks to the
-Twitter service (<a class="reference external" href="http://twitter.com/">http://twitter.com/</a>). Twitter offers excellent web APIs
+<p class="handout">Stutter is a simple application, written in IronPython, that talks to the
+Twitter service (<a class="reference" href="http://twitter.com/">http://twitter.com/</a>). Twitter offers excellent web APIs
 that allow you to see what your friends are up to, as well as update your
-own status. Twatter takes advantage of these APIs to retrieve &quot;tweets&quot;
+own status. Stutter takes advantage of these APIs to retrieve &quot;tweets&quot;
 and submit new tweets. Tweets are cached to a database to keep a long
 history and avoid having to bother the Twitter service so much.</p>
 </div>
@@ -772,8 +771,8 @@ Contain controls include Form and Panel. By combining such controls you
 can construct complex layouts. More on this later.</p>
 <p class="handout">Useful links:</p>
 <ul class="handout simple">
-<li>System.Windows.Forms (v2.0): <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.form(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.form(VS.80).aspx</a></li>
-<li>System.Windows.Forms (v3.5): <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.aspx</a></li>
+<li>System.Windows.Forms (v2.0): <a class="reference" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.form(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.form(VS.80).aspx</a></li>
+<li>System.Windows.Forms (v3.5): <a class="reference" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.aspx</a></li>
 </ul>
 </div>
 <div class="slide" id="creating-a-form-example">
@@ -786,7 +785,7 @@ class MainForm(Form):
 
     def __init__(self):
         Form.__init__(self)
-        self.Text = 'twatter'
+        self.Text = 'stutter'
         self.Height = self.INITIAL_HEIGHT
         self.Width = self.INITIAL_WIDTH
 
@@ -796,7 +795,7 @@ class MainForm(Form):
         self.friendsListBox = ListBox()
         ...
 </pre>
-<p class="handout">This is a sample from our Twatter application (MainForm.py). We create a
+<p class="handout">This is a sample from our Stutter application (MainForm.py). We create a
 subclass of Form called MainForm. In the constructor, the Form constructor
 is called (rather important) and then we set the title (&quot;Text&quot;), Height
 and Width of the form. Then it's just a matter of creating a few controls
@@ -811,7 +810,8 @@ and configuring them.</p>
 <li>Parameterising layout</li>
 </ul>
 <p class="handout">On Windows, most people use Visual Studio to do layout. This works ok but
-isn't an option for Unix or Mac users.</p>
+isn't an option for Unix or Mac users. (Mono Develop has a GTK# designer
+and a Windows Forms designer is in the works.)</p>
 <p class="handout">Programmatic layout works on all platforms but can be tedious. It is
 necessary when dynamic interfaces need to built at runtime. One advantage
 of programmatic layouts is that they can be quick to change if
@@ -845,53 +845,6 @@ pixels and are normally applied relative to the parent container.</p>
 <p class="handout">The ClientSize attribute of a control indicates the space inside a
 control. This attribute is a Size object; it itself has Height and
 Width attributes.</p>
-</div>
-<div class="slide" id="positioning-example">
-<h1>Positioning Example</h1>
-<ul>
-<li><p class="first">Look inside MainForm.py: _layout() method</p>
-</li>
-<li><p class="first">Observe how the parts of the form are put together using Controls.Add</p>
-</li>
-<li><p class="first">Main parts: upperPanel, lowerPanel</p>
-</li>
-<li><dl class="first docutils">
-<dt>Style notes:</dt>
-<dd><ul class="first last simple">
-<li>hard-coded numbers are avoided</li>
-<li>positions and sizes of controls are relative to other controls</li>
-<li>easy to maintain</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<p class="handout">The main layout groups on MainForm are 2 Panel instances. All other
-controls are contained within these 2 controls.</p>
-</div>
-<div class="slide" id="practical-adding-a-button">
-<h1>Practical: Adding a Button</h1>
-<ul>
-<li><p class="first">Create a Button instance and give it some text</p>
-</li>
-<li><p class="first">Keep a reference to it on the form</p>
-</li>
-<li><p class="first">Add() it to the form's Controls</p>
-</li>
-<li><dl class="first docutils">
-<dt>Adjust the layout</dt>
-<dd><ul class="first last simple">
-<li>rough is ok, we can fix it later</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<p class="handout">Useful links:</p>
-<ul class="handout simple">
-<li>Button class: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.button(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.button(VS.80).aspx</a></li>
-<li>Form.Controls property: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.control.controls(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.control.controls(VS.80).aspx</a></li>
-</ul>
 </div>
 <div class="slide" id="anchoring-and-docking">
 <h1>Anchoring and Docking</h1>
@@ -952,23 +905,36 @@ controls are contained within these 2 controls.</p>
 <li><p class="first">Controls will resize as required to meet the contraints</p>
 </li>
 </ul>
-</div>
-<div class="slide" id="practical-anchoring">
-<h1>Practical: Anchoring</h1>
-<ul class="simple">
-<li>Run twatter and resize the window, controls don't move!</li>
-<li>Try out different Dock options</li>
-<li>Try out Anchor options</li>
-<li>Then, try to make the form resize nicely</li>
-<li>Hint: the Panels &amp; Button we added are good places to start</li>
-</ul>
 <p class="handout">Useful links:</p>
 <ul class="handout simple">
-<li>Anchor property: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.control.anchor.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.control.anchor.aspx</a></li>
-<li>AnchorStyles: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.anchorstyles.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.anchorstyles.aspx</a></li>
-<li>Dock property: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.control.dock.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.control.dock.aspx</a></li>
-<li>DockStyle: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.dockstyle.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.dockstyle.aspx</a></li>
+<li>Anchor property: <a class="reference" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.control.anchor.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.control.anchor.aspx</a></li>
+<li>AnchorStyles: <a class="reference" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.anchorstyles.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.anchorstyles.aspx</a></li>
+<li>Dock property: <a class="reference" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.control.dock.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.control.dock.aspx</a></li>
+<li>DockStyle: <a class="reference" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.dockstyle.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.dockstyle.aspx</a></li>
 </ul>
+</div>
+<div class="slide" id="layout-in-stutter">
+<h1>Layout in Stutter</h1>
+<ul>
+<li><p class="first">Look inside MainForm.py: _layout() method</p>
+</li>
+<li><p class="first">Observe how the parts of the form are put together using Controls.Add</p>
+</li>
+<li><p class="first">Main parts: upperPanel, lowerPanel</p>
+</li>
+<li><dl class="first docutils">
+<dt>Style notes:</dt>
+<dd><ul class="first last simple">
+<li>hard-coded numbers are avoided</li>
+<li>positions and sizes of controls are relative to other controls</li>
+<li>easy to maintain</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="handout">The main layout groups on MainForm are 2 Panel instances. All other
+controls are contained within these 2 controls.</p>
 </div>
 <div class="slide" id="dropdown-menus">
 <h1>Dropdown Menus</h1>
@@ -993,7 +959,9 @@ Controls and setting the MainMenuStrip attribute.</p>
 <div class="slide" id="practical-add-menu-items">
 <h1>Practical: Add Menu Items</h1>
 <ul>
-<li><p class="first">The Twatter application currently has a dropdown menu but no menu items</p>
+<li><p class="first">The UI of Stutter is created in MainForm.py</p>
+</li>
+<li><p class="first">MainForm currently has a dropdown menu but no menu items</p>
 </li>
 <li><dl class="first docutils">
 <dt>Add 2 items:</dt>
@@ -1006,34 +974,37 @@ Controls and setting the MainMenuStrip attribute.</p>
 </li>
 <li><p class="first">Remember to keep references to menu items created. We'll need them later.</p>
 </li>
+<li><p class="first">The main menu strip also needs to be added to its parent and docked at the top.</p>
+</li>
 </ul>
 <p class="handout">Useful links:</p>
 <ul class="handout simple">
-<li>ToolStripMenuItem class: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.toolstripmenuitem.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.toolstripmenuitem.aspx</a></li>
+<li>ToolStripMenuItem class: <a class="reference" href="http://msdn.microsoft.com/en-us/library/system.windows.forms.toolstripmenuitem.aspx">http://msdn.microsoft.com/en-us/library/system.windows.forms.toolstripmenuitem.aspx</a></li>
 </ul>
 </div>
 <div class="slide" id="practical-event-handlers">
 <h1>Practical: Event Handlers</h1>
 <ul>
+<li><p class="first">Event handlers are hooked up in Stutter.py</p>
+</li>
 <li><dl class="first docutils">
-<dt>Add events handlers for:</dt>
+<dt>In the constructor we need to add handlers for:</dt>
 <dd><ul class="first last simple">
-<li>the Post button</li>
 <li>the Quit menu item</li>
 <li>the Refresh menu item</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p class="first">Make Quit work (look at docs for Application)</p>
-</li>
-<li><p class="first">Stub is ok for Post and Quit</p>
-</li>
 </ul>
-<p class="handout">Reminder of how event handlers are set ... for a Button:</p>
+<p class="handout">Reminder of how event handlers are set ...:</p>
 <pre class="handout literal-block">
-Button.Click += myHandler
+ToolStripMenuItem.Click += myHandler
+
+def myHandler(self, source, args):
+    pass
 </pre>
+<p class="handout">The 'myHandler' function will be called when the event is fired.</p>
 </div>
 <div class="slide" id="background-twitter-api">
 <h1>Background: Twitter API</h1>
@@ -1053,7 +1024,7 @@ Button.Click += myHandler
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Twatter only needs a small subset of the API:</dt>
+<dt>Stutter only needs a small subset of the API:</dt>
 <dd><ul class="first last simple">
 <li>GET: statuses/friends_timeline.xml</li>
 <li>POST: statuses/update.xml</li>
@@ -1071,8 +1042,8 @@ Transfer) style. Among other things, this means it's easy to write
 clients that use the API using just basic web requests.</p>
 <p class="handout">Useful links:</p>
 <ul class="handout simple">
-<li>Twitter API: <a class="reference external" href="http://apiwiki.twitter.com/REST+API+Documentation">http://apiwiki.twitter.com/REST+API+Documentation</a></li>
-<li>REST: <a class="reference external" href="http://en.wikipedia.org/wiki/Representational_State_Transfer">http://en.wikipedia.org/wiki/Representational_State_Transfer</a></li>
+<li>Twitter API: <a class="reference" href="http://apiwiki.twitter.com/REST+API+Documentation">http://apiwiki.twitter.com/REST+API+Documentation</a></li>
+<li>REST: <a class="reference" href="http://en.wikipedia.org/wiki/Representational_State_Transfer">http://en.wikipedia.org/wiki/Representational_State_Transfer</a></li>
 </ul>
 </div>
 <div class="slide" id="net-streams">
@@ -1133,23 +1104,23 @@ StreamWriter. These provide convenient methods for manipulating stream data.</p>
 </ul>
 <p class="handout">Useful links:</p>
 <ul class="handout simple">
-<li>WebRequest: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.net.webrequest.aspx">http://msdn.microsoft.com/en-us/library/system.net.webrequest.aspx</a></li>
-<li>StreamReader: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.io.streamreader(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.io.streamreader(VS.80).aspx</a></li>
-<li>StreamWriter: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.io.streamwriter(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.io.streamwriter(VS.80).aspx</a></li>
+<li>WebRequest: <a class="reference" href="http://msdn.microsoft.com/en-us/library/system.net.webrequest.aspx">http://msdn.microsoft.com/en-us/library/system.net.webrequest.aspx</a></li>
+<li>StreamReader: <a class="reference" href="http://msdn.microsoft.com/en-us/library/system.io.streamreader(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.io.streamreader(VS.80).aspx</a></li>
+<li>StreamWriter: <a class="reference" href="http://msdn.microsoft.com/en-us/library/system.io.streamwriter(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.io.streamwriter(VS.80).aspx</a></li>
 </ul>
 </div>
 <div class="slide" id="practical-adding-update-support">
 <h1>Practical: Adding Update Support</h1>
 <ul class="simple">
 <li>Add an update() method to twitter.Client.Client</li>
-<li>Make a POST to <a class="reference external" href="http://twitter.com/statuses/update.xml">http://twitter.com/statuses/update.xml</a></li>
+<li>Make a POST to <a class="reference" href="http://twitter.com/statuses/update.xml">http://twitter.com/statuses/update.xml</a></li>
 <li>One POST argument (status) is required which gives the tweet text</li>
 <li>Don't forget authentication!</li>
 <li>Call update from the button handler we created earlier</li>
 </ul>
 <p class="handout">Useful links:</p>
 <ul class="handout simple">
-<li>Twitter update API: <a class="reference external" href="http://apiwiki.twitter.com/REST+API+Documentation#update">http://apiwiki.twitter.com/REST+API+Documentation#update</a></li>
+<li>Twitter update API: <a class="reference" href="http://apiwiki.twitter.com/REST+API+Documentation#update">http://apiwiki.twitter.com/REST+API+Documentation#update</a></li>
 </ul>
 </div>
 <div class="slide" id="xml-parsing">
@@ -1157,7 +1128,7 @@ StreamWriter. These provide convenient methods for manipulating stream data.</p>
 <ul>
 <li><p class="first">The Twitter API can return tweet timelines as XML</p>
 </li>
-<li><p class="first">Twatter uses the .NET API from System.Xml</p>
+<li><p class="first">Stutter uses the .NET API from System.Xml</p>
 </li>
 <li><p class="first">.NET's main parser API is at System.Xml.XmlReader</p>
 </li>
@@ -1174,7 +1145,7 @@ StreamWriter. These provide convenient methods for manipulating stream data.</p>
 </ul>
 <p class="handout">Useful links:</p>
 <ul class="handout simple">
-<li>XmlReader: <a class="reference external" href="http://msdn.microsoft.com/en-us/library/system.xml.xmlreader(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.xml.xmlreader(VS.80).aspx</a></li>
+<li>XmlReader: <a class="reference" href="http://msdn.microsoft.com/en-us/library/system.xml.xmlreader(VS.80).aspx">http://msdn.microsoft.com/en-us/library/system.xml.xmlreader(VS.80).aspx</a></li>
 </ul>
 </div>
 <div class="slide" id="xml-parsing-example">
@@ -1214,7 +1185,7 @@ while reader.Read():
 intermediate layer to make them more convenient to use. With a dynamic
 language like IronPython we can create an API that is elegant, requiring
 minimal programming effort to use.</p>
-<p class="handout">For Twatter we've to chosen wrap XmlReader to create a SAX/event-driven
+<p class="handout">For Stutter we've to chosen wrap XmlReader to create a SAX/event-driven
 style parser. This is implemented in xmlreader.py as the XmlDocumentReader
 class. To use, subclass XmlDocumentReader and then add methods to handle
 XML nodes as they are encountered in the stream. The method names should
@@ -1248,7 +1219,7 @@ have a corresponding handler method are ignored.</p>
 <p class="handout">This is an example of what a Twitter status timeline looks like in XML
 format. I've added whitespace to make it more readable. In practice, all
 unnecessary whitespace is stripped to reduce network overhead.</p>
-<p class="handout">See also: <a class="reference external" href="http://apiwiki.twitter.com/REST+API+Documentation#friendstimeline">http://apiwiki.twitter.com/REST+API+Documentation#friendstimeline</a></p>
+<p class="handout">See also: <a class="reference" href="http://apiwiki.twitter.com/REST+API+Documentation#friendstimeline">http://apiwiki.twitter.com/REST+API+Documentation#friendstimeline</a></p>
 </div>
 <div class="slide" id="parsing-twitter-statuses">
 <h1>Parsing Twitter Statuses</h1>
@@ -1348,7 +1319,7 @@ unnecessary whitespace is stripped to reduce network overhead.</p>
 </dl>
 </li>
 </ul>
-<p class="handout">More information about ADO.NET: <a class="reference external" href="http://msdn.microsoft.com/en-us/data/aa937722.aspx">http://msdn.microsoft.com/en-us/data/aa937722.aspx</a></p>
+<p class="handout">More information about ADO.NET: <a class="reference" href="http://msdn.microsoft.com/en-us/data/aa937722.aspx">http://msdn.microsoft.com/en-us/data/aa937722.aspx</a></p>
 </div>
 <div class="slide" id="getting-connected">
 <h1>Getting Connected</h1>
@@ -1514,7 +1485,7 @@ text = form.Invoke(CallTarget0(lambda: textbox.Text))
 </pre>
 <p class="handout">For callables that take arguments you can use <tt class="docutils literal"><span class="pre">CallTarget1</span></tt> and friends. I prefer to wrap the call with a lambda and use <tt class="docutils literal"><span class="pre">CallTarget0</span></tt>.</p>
 <p class="handout">In IronPython 2 <tt class="docutils literal"><span class="pre">CallTarget0</span></tt> doesn't work with .NET methods that have a void return signature. To invoke a call to something like <tt class="docutils literal"><span class="pre">form.Close</span></tt>  you will also need to wrap the call in a lambda.</p>
-<p class="handout">We can use this to make the database / network calls for Twatter happen on a background thread.</p>
+<p class="handout">We can use this to make the database / network calls for Stutter happen on a background thread.</p>
 </div>
 </div>
 </body>
