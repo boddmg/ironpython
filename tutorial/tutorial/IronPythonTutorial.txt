@@ -144,6 +144,8 @@ Connecting Python to .NET
 
 .. class:: handout
 
+    Demo these in the interactive interpretter as we talk through it.
+
     Assemblies physically partition an application or library into one or
     more .Net EXE or DLL files. Several source code files can be compiled into
     a single assembly. (although it is also possible to compile code to create
@@ -174,20 +176,27 @@ Importing .NET Classes
     the kind of sys.path manipulations big projects might do to ensure modules
     are available for importing.
 
-    The an assembly's name doesn't have to be a prefix of all of the
+    An assembly's name doesn't have to be a prefix of all of the
     namespaces whose classes it contains, but in general that's how
     things are organised - it's easier to manage.
 
     Two assemblies can have classes in the same namespace. Say assembly A1
     contains Example.Classes namespace containing the class Fish, and A2
     contains Example.Classes with Dog. You could add references to A1 and A2
-    and then do: from Example.Classes import Dog, Fish
+    and then import both classes from the namespace, eg:
+
+    ::
+        
+        import clr
+        clr.AddReference("A1")
+        clr.AddReference("A2")
+        from Example.Classes import Dog, Fish
 
 
 Python and .NET Types (1)
 =========================
 
-* IronPython built-in types are the equivalent .NET types
+* IronPython maps Python's built-in types to the equivalent .NET types
 
 ::
 
@@ -218,7 +227,7 @@ Python and .NET Types (2)
        - dict -> IDictionary
 * .NET types you might see in the wild:
        - Enumerations: nicer constants/flags for APIs
-       - Structs: like classes, but value types
+       - Structs: like classes, but are value types
        - Delegates: statically typed function pointers
 
 .. class:: handout
@@ -227,7 +236,7 @@ Python and .NET Types (2)
    or dictionaries, so you can pass them straight in from IronPython
    code without needing to do any translation.
 
-   Delegates are heavily used in the framework for callbacks, especially
+   Delegates are heavily used in the .NET framework for callbacks, especially
    for event handlers in the GUI toolkit. In a lot of cases,
    IronPython can detect what delegate type is expected in a
    particular place and automaticaly wrap function references, as long
