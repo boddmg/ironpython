@@ -119,7 +119,7 @@ Disadvantages of IronPython
     
     A substantial part of the Python standard library (or existing Python code) *does* work. However, the performance profile for IronPython is very different to CPython (function calls and arithmetic are massively faster - using the builtin types is slower). This means that code optimised *for CPython* will typically run slower on IronPython.
     
-    IronPython is not *fully* compatible with CPython though - it doesn't use Python stack frames for example. Code that depends on CPython 'implementation details' are unlikely to work.
+    IronPython is not *fully* compatible with CPython though - it doesn't use Python stack frames for example. Code that depends on CPython 'implementation details' is unlikely to work.
     
     Another potential source of incompatibility (although it seems to be less of a problem in practice) is that all strings are Unicode in IronPython (like Python 3). This actually makes working with strings much more pleasant!
     
@@ -132,8 +132,8 @@ Connecting Python to .NET
 =========================
 
 * Two *orthogonal* ways of organising classes in .NET
-    - Namespaces
     - Assemblies
+    - Namespaces
     
 * Use clr.AddReference to make classes in an assembly available for import
 
@@ -141,6 +141,19 @@ Connecting Python to .NET
    
    import clr # built-in to IronPython
    clr.AddReference('System.Data')
+
+.. class:: handout
+
+    Assemblies physically partition an application or library into one or
+    more .Net EXE or DLL files. Several source code files can be compiled into
+    a single assembly. (although it is also possible to compile code to create
+    an assembly in memory)
+
+    Namespaces represent the logical partitioning of an application or
+    library. Often a namespace will have a one-to-one relationship with an
+    assembly, but it doesn't necessarily have to. A namespace can be split
+    between several assemblies, or a single assembly can impliment several
+    namespaces.
 
 
 Importing .NET Classes
