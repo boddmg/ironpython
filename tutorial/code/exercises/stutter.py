@@ -1,3 +1,5 @@
+#!/usr/bin/env ipy
+
 import AddReferences
 from System.Windows.Forms import Application
 

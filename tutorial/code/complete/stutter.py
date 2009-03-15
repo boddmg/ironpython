@@ -1,3 +1,5 @@
+#!/usr/bin/env ipy
+
 import AddReferences
 from System.Windows.Forms import Application
 
@@ -9,11 +11,11 @@ import stutterdb
 
 from threadhelper import DoBackgroundWithInvoke
 
-        
+
 class Stutter(object):
 
     def __init__(self):
-        self.client = Client(config.username, 
+        self.client = Client(config.username,
                              config.password,
                              config.url_base)
 
@@ -38,7 +40,7 @@ class Stutter(object):
             selectedFriend = self.form.friendsListBox.SelectedItem
         self.form.showTweets(stutterdb.getTweets(selectedFriend))
 
-            
+
     def run(self):
         self.form.Show()
         Application.Run(self.form)
