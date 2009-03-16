@@ -1,7 +1,7 @@
 Exercises
 
 # Exercise A
-Client.py, impliment Client.update() method
+# In Client.py, impliment Client.update() method
 
 Answer
     def update(self, text):
@@ -21,14 +21,118 @@ Answer
         return tweets[0]
 
 
-# Exercise B, MainForm.py, MainForm.__init__
-# Create a 'Post' button
+# Exercise B: Create a 'Post' button
+# MainForm.py, MainForm.__init__()
 # use an instance of the .NET Button class, store it 'self.postButton'
 # label the button 'Post'
 
 Answer:
-        self.postButton = Button()
-        self.postButton.Text = "Post"
+    self.postButton = Button()
+    self.postButton.Text = "Post"
+
+
+# Exercise C1: Add menu items for 'Refresh' and 'Quit'
+# MainForm.py, MainForm._addMenu()
+# These need to be added to the menu 
+# 'stutterMenu' created above.
+
+Answer:
+    self.refreshMenuItem = ToolStripMenuItem("Refresh")
+    stutterMenu.DropDownItems.Add(self.refreshMenuItem)
+
+    self.quitMenuItem = ToolStripMenuItem("Quit")
+    stutterMenu.DropDownItems.Add(self.quitMenuItem)
+
+
+# Exercise C2: The main menu needs docking to its parent form
+# MainForm.py, MainForm._addMenu()
+# It doesn't have a parent yet
+
+Answer:
+    self.menuStrip.Dock = DockStyle.Top
+    self.Controls.Add(self.menuStrip)
+
+
+# Exercise D: intentionally left blank
+
+
+# Exercise E: download and save the image in the cache
+# TweetPanel.py, getImage()
+
+Answer:
+    try:
+        imageBytes = WebClient().DownloadData(tweet['image_url'])
+        image = Bitmap(MemoryStream(imageBytes))        
+    except:
+        return Bitmap.FromFile(os.path.join('imagecache', '__fallback__.png'))
+    else:
+        image.Save(cacheLocation)
+        return image
+
+
+# Exercise F: Use the 'onRefresh' function as a 'Refresh' menu item handler
+# stutter.py, Stutter.__init__()
+
+Answer:
+    self.form.refreshMenuItem.Click += self.onRefresh
+
+
+# Exercise G: Add a function to handle 'Quit' menu item events
+# stutter.py, Stutter.__init__()
+
+Answer:
+    self.form.quitMenuItem.Click += self.onQuit
+
+    def onQuit(self, source, args):
+        Application.Exit()
+
+
+# Exercise H: Add a handler for the friendListBox.SelectedIndexChanged event.
+# stutter.py, Stutter.__init__()
+
+Answer:
+    self.form.friendsListBox.SelectedIndexChanged += self.onSelectFriend
+
+    def onSelectFriend(self, source, args):
+        self.displayTweets()
+
+    def displayTweets(self):
+        selectedFriend = None
+        if self.form.friendsListBox.SelectedIndex != 0:
+            selectedFriend = self.form.friendsListBox.SelectedItem
+        self.form.showTweets(stutterdb.getTweets(selectedFriend))
+
+
+# Exercuse I: Add a handler for the 'Post' Button
+# stutter.py, Stutter.__init__()
+
+Answer:
+    self.form.postButton.Click += self.onPost
+
+    def onPost(self, source, args):
+        tweet = self.client.update(self.form.postTextBox.Text)
+        stutterdb.saveTweet(tweet)
+        self.form.postTextBox.Text = ''
+        self.displayTweets()
+
+
+# Exercise J: Include the Post button in the form layout
+# MainForm.py, MainForm._layout()
+Answer: Just uncomment out the code there, otherwise it takes ages to sort out
+without much learning benefit
+
+
+# Exercise K: Implement DoBackgroundWithInvoke()
+# threadhelper.py
+Answer:
+    from System.Threading import Thread, ThreadStart
+
+    def DoBackgroundWithInvoke(function, callback, form):
+        def op():
+            function()
+            form.Invoke(CallTarget0(callback))
+        t = Thread(ThreadStart(op))
+        t.Start()
 
 
 

@@ -16,8 +16,7 @@ except ImportError:
 
         
 def DoBackgroundWithInvoke(function, callback, form):
-    def op():
-        function()
-        form.Invoke(CallTarget0(callback))
-    t = Thread(ThreadStart(op))
-    t.Start()
+	pass
+	# Exercise K: Implement DoBackgroundWithInvoke() to invoke
+	# 'function' on a new thread, using the .NET Thread class
+

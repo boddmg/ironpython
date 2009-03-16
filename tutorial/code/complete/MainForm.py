@@ -25,7 +25,7 @@ class MainForm(Form):
         self.postButton.Text = "Post"
 
         self.friendsListBox = ListBox()
-      
+
         self._addMenu()
         self._layout()
 
@@ -59,27 +59,29 @@ class MainForm(Form):
                              AnchorStyles.Right)
 
         upperPanel.Controls.Add(self.postTextBox)
-        upperPanel.Controls.Add(self.postButton)
+        if hasattr(self, 'postButton'):
+            upperPanel.Controls.Add(self.postButton)
 
         self.postTextBox.Left = 0
         self.postTextBox.Top = 0
-        self.postTextBox.Width = (upperPanel.ClientSize.Width -
-                                  self.postButton.Width -
-                                  self.PADDING)
+        if hasattr(self, 'postButton'):
+            self.postTextBox.Width = (upperPanel.ClientSize.Width -
+                                      self.postButton.Width -
+                                      self.PADDING)
         self.postTextBox.Height *= 2
         self.postTextBox.Anchor = (AnchorStyles.Top |
                                    AnchorStyles.Left |
                                    AnchorStyles.Right)
 
-        self.postButton.Left = self.postTextBox.Width + self.PADDING
-        self.postButton.Top = 0
-        self.postButton.Anchor = (AnchorStyles.Top |
-                                 AnchorStyles.Right)
+        if hasattr(self, 'postButton'):
+            self.postButton.Left = self.postTextBox.Width + self.PADDING
+            self.postButton.Top = 0
+            self.postButton.Anchor = (AnchorStyles.Top |
+                                     AnchorStyles.Right)
 
         upperPanel.Height = self.postTextBox.Height
 
         self.Controls.Add(upperPanel)
-
 
         lowerPanel = Panel()
         lowerPanel.Width = upperPanel.Width
@@ -116,7 +118,7 @@ class MainForm(Form):
         lowerPanel.Controls.Add(self.tweetsPanel)
 
         self.Controls.Add(lowerPanel)
-        
+
 
     def showFriends(self, friends):
         self.friendsListBox.DataSource = friends
@@ -140,4 +142,4 @@ class MainForm(Form):
             top += tweetPanel.Height
 
         self.ResumeLayout()
-                                 
+

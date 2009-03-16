@@ -21,8 +21,7 @@ class MainForm(Form):
         self.postTextBox = TextBox()
         self.postTextBox.Multiline = True
 
-		# Exercise B
-		# Create a 'Post' button
+		# Exercise B: Create a 'Post' button
 		# store it in member 'postButton'
 
         self.friendsListBox = ListBox()
@@ -38,16 +37,15 @@ class MainForm(Form):
         stutterMenu.DropDown.ShowImageMargin = False
         stutterMenu.DropDown.ShowCheckMargin = False
 
-        # TODO: Add menu items for 'Refresh' and 'Quit'
+        # Exercise C1: Add menu items for 'Refresh' and 'Quit'
         # These need to be added to the menu 
         # 'stutterMenu' created above.
-
 
         self.menuStrip.Items.Add(stutterMenu)
         self.MainMenuStrip = self.menuStrip
         
-        # TODO: The main menu (the MenuStrip) needs to
-        #  be docked to the top of its parent
+        # Exercise C2: The main menu (the MenuStrip) needs
+        # to be docked to the top of its parent
         # It doesn't have a parent yet
 
 
@@ -56,32 +54,34 @@ class MainForm(Form):
         upperPanel.Top = self.menuStrip.Height + self.PADDING
         upperPanel.Left = self.PADDING
         upperPanel.Width = self.ClientSize.Width - (2 * self.PADDING)
-        upperPanel.Anchor = (AnchorStyles.Left |
-                             AnchorStyles.Top |
-                             AnchorStyles.Right)
+
+		# Exercise J: Include the Post button in the form layout
+
+        # upperPanel.Anchor = (AnchorStyles.Left |
+        #                      AnchorStyles.Top |
+        #                      AnchorStyles.Right)
 
         upperPanel.Controls.Add(self.postTextBox)
-        upperPanel.Controls.Add(self.postButton)
+        # upperPanel.Controls.Add(self.postButton)
 
         self.postTextBox.Left = 0
         self.postTextBox.Top = 0
         self.postTextBox.Width = (upperPanel.ClientSize.Width -
-                                  self.postButton.Width -
+        #                           self.postButton.Width -
                                   self.PADDING)
         self.postTextBox.Height *= 2
-        self.postTextBox.Anchor = (AnchorStyles.Top |
-                                   AnchorStyles.Left |
-                                   AnchorStyles.Right)
+        # self.postTextBox.Anchor = (AnchorStyles.Top |
+        #                            AnchorStyles.Left |
+        #                            AnchorStyles.Right)
 
-        self.postButton.Left = self.postTextBox.Width + self.PADDING
-        self.postButton.Top = 0
-        self.postButton.Anchor = (AnchorStyles.Top |
-                                 AnchorStyles.Right)
+        # self.postButton.Left = self.postTextBox.Width + self.PADDING
+        # self.postButton.Top = 0
+        # self.postButton.Anchor = (AnchorStyles.Top |
+        #                          AnchorStyles.Right)
 
         upperPanel.Height = self.postTextBox.Height
 
         self.Controls.Add(upperPanel)
-
 
         lowerPanel = Panel()
         lowerPanel.Width = upperPanel.Width
