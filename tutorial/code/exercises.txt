@@ -1,0 +1,34 @@
+Exercises
+
+# Exercise A
+Client.py, impliment Client.update() method
+
+Answer
+    def update(self, text):
+        request = WebRequest.Create(self.url_base + '/statuses/update.xml')
+        request.Credentials = self.credentials
+        request.Method = 'POST'
+
+        writer = StreamWriter(request.GetRequestStream())
+        postData = urllib.urlencode(dict(status=text))
+        writer.WriteLine(postData)
+        writer.Close()
+
+        response = request.GetResponse()
+        reader = StatusReader()
+        tweets = reader.read(StreamReader(response.GetResponseStream()))
+        assert len(tweets) == 1, "expecting just one update response"
+        return tweets[0]
+
+
+# Exercise B, MainForm.py, MainForm.__init__
+# Create a 'Post' button
+# use an instance of the .NET Button class, store it 'self.postButton'
+# label the button 'Post'
+
+Answer:
+        self.postButton = Button()
+        self.postButton.Text = "Post"
+
+
+

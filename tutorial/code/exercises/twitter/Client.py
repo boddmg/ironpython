@@ -27,27 +27,17 @@ class Client(object):
         return reader.read(StreamReader(response.GetResponseStream()))
 
 
-    def update(self, text):
-        request = WebRequest.Create(self.url_base + '/statuses/update.xml')
-        request.Credentials = self.credentials
-        request.Method = 'POST'
+	def update(self, text):
+		# Exercise A
+		# impliment the 'update' method
+		pass
 
-        writer = StreamWriter(request.GetRequestStream())
-        postData = urllib.urlencode(dict(status=text))
-        writer.WriteLine(postData)
-        writer.Close()
-
-        response = request.GetResponse()
-        reader = StatusReader()
-        tweets = reader.read(StreamReader(response.GetResponseStream()))
-        assert len(tweets) == 1, "expecting just one update response"
-        return tweets[0]
-    
 
 def demo():
     import sys
     client = Client(sys.argv[1], sys.argv[2])
     print client.getFriendsTimeline()
+
 
 if __name__ == '__main__':
     demo()
