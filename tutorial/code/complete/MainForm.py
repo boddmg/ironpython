@@ -59,25 +59,22 @@ class MainForm(Form):
                              AnchorStyles.Right)
 
         upperPanel.Controls.Add(self.postTextBox)
-        if hasattr(self, 'postButton'):
-            upperPanel.Controls.Add(self.postButton)
+        upperPanel.Controls.Add(self.postButton)
 
         self.postTextBox.Left = 0
         self.postTextBox.Top = 0
-        if hasattr(self, 'postButton'):
-            self.postTextBox.Width = (upperPanel.ClientSize.Width -
-                                      self.postButton.Width -
-                                      self.PADDING)
+        self.postTextBox.Width = (upperPanel.ClientSize.Width -
+                                  self.postButton.Width -
+                                  self.PADDING)
         self.postTextBox.Height *= 2
         self.postTextBox.Anchor = (AnchorStyles.Top |
                                    AnchorStyles.Left |
                                    AnchorStyles.Right)
 
-        if hasattr(self, 'postButton'):
-            self.postButton.Left = self.postTextBox.Width + self.PADDING
-            self.postButton.Top = 0
-            self.postButton.Anchor = (AnchorStyles.Top |
-                                     AnchorStyles.Right)
+        self.postButton.Left = self.postTextBox.Width + self.PADDING
+        self.postButton.Top = 0
+        self.postButton.Anchor = (AnchorStyles.Top |
+                                 AnchorStyles.Right)
 
         upperPanel.Height = self.postTextBox.Height
 
