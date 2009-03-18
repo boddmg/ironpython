@@ -725,6 +725,8 @@ Making Web Requests
 
         For our use case we need a stream to pass to our XML parser rather than a string, so WebRequest is
         actually more convenient.
+        
+        * http://msdn.microsoft.com/en-us/library/system.net.webclient.aspx
 
 
 Practical: Adding Update Support 
