@@ -525,13 +525,20 @@ Anchoring and Docking
     - Anchoring
 * You should choose one mechanism: they don't work well together
 
+
 Practical 2
 ===========
-Layout of the Stutter GUI
--------------------------
+Layout in Stutter
+-----------------
 
-In MainForm._layout(), uncomment each of the lines that is already
-provided there, observing the effect of each on the application.
+* Look inside MainForm.py: _layout() method
+* Uncomment each of the lines, observing the effect of each.
+* See how controls are added to form.
+* Containers like the panels have further controls added to them.
+* Style notes: 
+    - hard-coded numbers are avoided
+    - positions and sizes of controls are relative to other controls
+    - easy to maintain
 
 
 Docking
@@ -564,22 +571,6 @@ Anchoring
     * DockStyle: http://msdn.microsoft.com/en-us/library/system.windows.forms.dockstyle.aspx
 
 
-Layout in Stutter
-=================
-
-* Look inside MainForm.py: _layout() method
-* Observe how the parts of the form are put together using Controls.Add
-* Main parts: upperPanel, lowerPanel
-* Style notes: 
-    - hard-coded numbers are avoided
-    - positions and sizes of controls are relative to other controls
-    - easy to maintain
-
-.. class:: handout
-
-    The main layout groups on MainForm are 2 Panel instances. All other
-    controls are contained within these 2 controls. 
-
 
 Dropdown Menus
 ==============
@@ -608,15 +599,17 @@ Dropdown Menus
     Controls and setting the MainMenuStrip attribute.
 
 
-Practical: Add Menu Items
-=========================
+Practical 3: Add Menu Items
+==========================
 
-* The UI of Stutter is created in MainForm.py
-* MainForm currently has a dropdown menu but no menu items
-* Add 2 items:
+MainForm currently has a dropdown menu but no menu items on it.
+
+* Add 2 menu items:
     - Refresh
     - Quit
-* Remember to keep references to menu items created. We'll need them later.
+
+* Remember to keep references to the menu items created for later.
+
 * The main menu strip also needs to be added to its parent and docked at the top.
 
 .. class:: handout

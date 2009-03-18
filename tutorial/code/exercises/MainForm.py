@@ -42,16 +42,12 @@ class MainForm(Form):
         stutterMenu.DropDown.ShowImageMargin = False
         stutterMenu.DropDown.ShowCheckMargin = False
 
-        # Exercise C1: Add menu items for 'Refresh' and 'Quit'
-        # These need to be added to the menu
-        # 'stutterMenu' created above.
+        # Practical 3: Add menu items for 'Refresh' and 'Quit'
 
         self.menuStrip.Items.Add(stutterMenu)
         self.MainMenuStrip = self.menuStrip
 
-        # Exercise C2: The main menu (the MenuStrip) needs
-        # to be docked to the top of its parent
-        # It doesn't have a parent yet
+        # Practical 3: add menustrip to parent form and dock it
 
 
     def _layout(self):

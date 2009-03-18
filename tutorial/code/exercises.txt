@@ -17,6 +17,20 @@ in _layout():
 Anwer: just uncomment the lines there
 
 
+# Practical 3: Add menu items for 'Refresh' and 'Quit'
+# MainForm.py, MainForm._addMenu()
+
+Answer:
+    self.refreshMenuItem = ToolStripMenuItem("Refresh")
+    stutterMenu.DropDownItems.Add(self.refreshMenuItem)
+
+    self.quitMenuItem = ToolStripMenuItem("Quit")
+    stutterMenu.DropDownItems.Add(self.quitMenuItem)
+
+    self.menuStrip.Dock = DockStyle.Top
+    self.Controls.Add(self.menuStrip)
+
+
 ----------
 
 # Exercise A
@@ -39,31 +53,6 @@ Answer
         assert len(tweets) == 1, "expecting just one update response"
         return tweets[0]
 
-
-# Exercise C1: Add menu items for 'Refresh' and 'Quit'
-# MainForm.py, MainForm._addMenu()
-# These need to be added to the menu 
-# 'stutterMenu' created above.
-
-Answer:
-    self.refreshMenuItem = ToolStripMenuItem("Refresh")
-    stutterMenu.DropDownItems.Add(self.refreshMenuItem)
-
-    self.quitMenuItem = ToolStripMenuItem("Quit")
-    stutterMenu.DropDownItems.Add(self.quitMenuItem)
-
-
-# Exercise C2: The main menu needs docking to its parent form
-# MainForm.py, MainForm._addMenu()
-# It doesn't have a parent yet
-
-Answer:
-    self.menuStrip.Dock = DockStyle.Top
-    self.Controls.Add(self.menuStrip)
-
-
-# Exercise D: Layout is conceptually simple but fiddly to get perfect,
-# so in the interests of time.
 
 
 # Exercise E: download and save the image in the cache
@@ -124,12 +113,6 @@ Answer:
         stutterdb.saveTweet(tweet)
         self.form.postTextBox.Text = ''
         self.displayTweets()
-
-
-# Exercise J: Include the Post button in the form layout
-# MainForm.py, MainForm._layout()
-Answer: Just uncomment out the code there, otherwise it takes ages to sort out
-without much learning benefit
 
 
 # Exercise K: Implement DoBackgroundWithInvoke()
