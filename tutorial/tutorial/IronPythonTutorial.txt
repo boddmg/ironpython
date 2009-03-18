@@ -339,11 +339,9 @@ Arrays and Generics
 Making GUIs
 ===========
 
-* The GUI framework lives in System.Windows.Forms/Controls
+* The Windows Forms GUI framework lives in System.Windows.Forms
 * That's the assembly and the namespace
-* Hello world:
-
-::
+* Hello world::
 
    clr.AddReference('System.Windows.Forms')
    from System.Windows.Forms import Application, Label, Form
@@ -352,9 +350,6 @@ Making GUIs
    Application.Run(form)
 
 .. class:: handout
-
-    .NET UI components come from System.Windows.Forms (in .NET 3.0 and up
-    they were moved to System.Windows.Controls).
 
     The constructor for the Label actually takes no parameters; the
     keyword arguments are IronPython syntactic sugar to make
