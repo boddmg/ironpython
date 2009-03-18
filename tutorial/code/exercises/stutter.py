@@ -29,7 +29,7 @@ class Stutter(object):
 		# Exercise H: Add a handler for the friendListBox.SelectedIndexChanged
 		# event.
 
-		# Exercuse I: Add a handler for the 'Post' Button
+		# Practical 5: Add 'onPost' method as a handler for the 'Post' button
 
         self.refreshFriends()
 
@@ -53,9 +53,18 @@ class Stutter(object):
         DoBackgroundWithInvoke(refresh, self.refreshFriends, self.form)
 
 
+    def onPost(self, source, args):
+        tweet = self.client.update(self.form.postTextBox.Text)
+        stutterdb.saveTweet(tweet)
+        self.form.postTextBox.Text = ''
+        self.displayTweets()
+
+
 def main():
     app = Stutter()
     app.run()
 
+
 if __name__ == '__main__':
     main()
+

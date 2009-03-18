@@ -46,6 +46,8 @@ Answer:
 
 # Practical 5: Add update support
 # In Client.py, impliment Client.update() method
+# In stutter.py constructor, the onPost method calls this. Add onPost
+# as a handler of the Post button click event
 
 Answer
     def update(self, text):
@@ -63,6 +65,9 @@ Answer
         tweets = reader.read(StreamReader(response.GetResponseStream()))
         assert len(tweets) == 1, "expecting just one update response"
         return tweets[0]
+
+and in Stutter.__init__():
+    self.form.postButton.Click += self.onPost
 
 
 ----------
@@ -98,19 +103,6 @@ Answer:
         if self.form.friendsListBox.SelectedIndex != 0:
             selectedFriend = self.form.friendsListBox.SelectedItem
         self.form.showTweets(stutterdb.getTweets(selectedFriend))
-
-
-# Exercuse I: Add a handler for the 'Post' Button
-# stutter.py, Stutter.__init__()
-
-Answer:
-    self.form.postButton.Click += self.onPost
-
-    def onPost(self, source, args):
-        tweet = self.client.update(self.form.postTextBox.Text)
-        stutterdb.saveTweet(tweet)
-        self.form.postTextBox.Text = ''
-        self.displayTweets()
 
 
 # Exercise K: Implement DoBackgroundWithInvoke()
