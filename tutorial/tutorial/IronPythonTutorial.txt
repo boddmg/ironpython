@@ -729,20 +729,21 @@ Making Web Requests
         * http://msdn.microsoft.com/en-us/library/system.net.webclient.aspx
 
 
-Practical: Adding Update Support 
-================================
+Practical 5: Adding Update Support 
+==================================
 
 * Add an update() method to twitter.Client.Client
 * Make a POST to http://twitter.com/statuses/update.xml
 * One POST argument (status) is required which gives the tweet text 
 * Don't forget authentication!
-* Call update from the button handler we created earlier
+* Call update from the Post button handler we created earlier
 
 .. class:: handout
 
     Useful links:
 
     * Twitter update API: http://apiwiki.twitter.com/REST+API+Documentation#update
+
 
 XML Parsing
 ===========

@@ -44,9 +44,7 @@ Answer:
         Application.Exit()
 
 
-----------
-
-# Exercise A
+# Practical 5: Add update support
 # In Client.py, impliment Client.update() method
 
 Answer
@@ -65,6 +63,9 @@ Answer
         tweets = reader.read(StreamReader(response.GetResponseStream()))
         assert len(tweets) == 1, "expecting just one update response"
         return tweets[0]
+
+
+----------
 
 
 

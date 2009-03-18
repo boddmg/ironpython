@@ -20,7 +20,8 @@ class Client(object):
 
 
     def getFriendsTimeline(self):
-        request = WebRequest.Create(self.url_base + '/statuses/friends_timeline.xml')
+        request = WebRequest.Create(self.url_base +
+            '/statuses/friends_timeline.xml')
         request.Credentials = self.credentials
         response = request.GetResponse()
         reader = StatusReader()
@@ -28,8 +29,9 @@ class Client(object):
 
 
 	def update(self, text):
-		# Exercise A
-		# impliment the 'update' method
+		# Practical 5: Add update support.
+        # Implement this function.
+        # Call it from the 'Post' button handler
 		pass
 
 
