@@ -31,6 +31,19 @@ Answer:
     self.Controls.Add(self.menuStrip)
 
 
+# Practical 4: Add handlers for 'refresh' and 'quit'
+# Use the 'onRefresh' function as a 'Refresh' menu item handler
+# Write an onQuit and add that as a 'Quit' handler
+# stutter.py, Stutter.__init__()
+
+Answer:
+    self.form.refreshMenuItem.Click += self.onRefresh
+    self.form.quitMenuItem.Click += self.onQuit
+
+    def onQuit(self, source, args):
+        Application.Exit()
+
+
 ----------
 
 # Exercise A
@@ -68,22 +81,6 @@ Answer:
         image.Save(cacheLocation)
         return image
 
-
-# Exercise F: Use the 'onRefresh' function as a 'Refresh' menu item handler
-# stutter.py, Stutter.__init__()
-
-Answer:
-    self.form.refreshMenuItem.Click += self.onRefresh
-
-
-# Exercise G: Add a function to handle 'Quit' menu item events
-# stutter.py, Stutter.__init__()
-
-Answer:
-    self.form.quitMenuItem.Click += self.onQuit
-
-    def onQuit(self, source, args):
-        Application.Exit()
 
 
 # Exercise H: Add a handler for the friendListBox.SelectedIndexChanged event.

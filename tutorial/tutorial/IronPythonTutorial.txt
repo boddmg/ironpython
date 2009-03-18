@@ -619,13 +619,13 @@ MainForm currently has a dropdown menu but no menu items on it.
     * ToolStripMenuItem class: http://msdn.microsoft.com/en-us/library/system.windows.forms.toolstripmenuitem.aspx
 
 
-Practical: Event Handlers
-=========================
+Practical 4: Event Handlers
+===========================
 
 * Event handlers are hooked up in Stutter.py
 * In the constructor we need to add handlers for:
+    - the Refresh menu item (function 'onRefresh' already exists)
     - the Quit menu item
-    - the Refresh menu item
 
 .. class:: handout
 

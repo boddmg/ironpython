@@ -21,10 +21,10 @@ class Stutter(object):
 
         self.form = MainForm()
 
-		# Exercise F: Use the 'onRefresh' function to handle events from the
-	    # 'Refresh' menu item.
-
-		# Exercise G: Add a function to handle 'Quit' menu item events
+		# Practical 4: Use the 'onRefresh' function to handle events from the
+        # 'Refresh' menu item.
+		# Write an 'onQuit' function and use it to handle 'Quit' menu item
+        # events.
 
 		# Exercise H: Add a handler for the friendListBox.SelectedIndexChanged
 		# event.
