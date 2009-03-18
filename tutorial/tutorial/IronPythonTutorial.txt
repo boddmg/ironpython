@@ -279,24 +279,6 @@ Subclassing .NET Types
     - But only from .NET base class references
 
 
-Overloading
-===========
-
-* .NET classes can have *overloaded* methods
-    - Distinguished by types of arguments
-
-:: 
-
-   ExampleClass.Add(Int32, Int32)
-   ExampleClass.Add(String, String)
-
-* Often IP can determine correct method from types of arguments
-* Occasionally needs help
-
-::
-
-   ExampleClass.Add.Overloads[int, int]('hello', None)
-
 
 Arrays and Generics
 ===================
@@ -324,28 +306,34 @@ Arrays and Generics
     performance tradeoffs than the Python ones.
 
 
-.NET ignorant of dynamic types
-==============================
+    .NET classes can have *overloaded* methods - distinguished by types of
+    arguments::
 
-* IronPython subclasses of the same C# base class will be indistinguishable to .NET's static typing.
+        ExampleClass.Add(Int32, Int32)
+        ExampleClass.Add(String, String)
 
-.. class:: handout
+    Often IP can determine the correct method from the types of arguments,
+    occasionally it needs help::
 
-    One thing to note is that arrays and generics can only tell the
-    difference between classes that are distinct at the .NET level. If
-    you have two different subclasses of object, and an array that you
-    only intended to contain one type, the instances of the other type
-    can still be stored in it, because as far as the CLR is concerned
+       ExampleClass.Add.Overloads[int, int]('hello', None)
+
+    IronPython subclasses of the same C# base class will be
+    indistinguishable to .NET's static typing.
+
+    .NET can only tell the difference between classes that are distinct at the
+    CLR level. If you have two different subclasses of object, and an array
+    that you only intended to contain one type, the instances of the other
+    type can still be stored in it, because as far as the CLR is concerned
     they are of the same type.
 
-::
+    ::
 
-    class Custom1(object): pass
-    class Custom2(object): pass
- 
-    c = Custom1()
-    a = Array[Custom1]([c])
-    a[0] = Custom2()  # this will work
+        class Custom1(object): pass
+        class Custom2(object): pass
+     
+        c = Custom1()
+        a = Array[Custom1]([c])
+        a[0] = Custom2()  # this will work
 
 
 Making GUIs
