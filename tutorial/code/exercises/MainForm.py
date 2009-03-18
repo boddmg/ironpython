@@ -24,11 +24,6 @@ class MainForm(Form):
 		# Exercise B: Create a 'Post' button
 		# store it in member 'postButton'
 
-        # TODO delete:
-        from System.Windows.Forms import Button
-        self.postButton = Button()
-        self.postButton.Text = 'Post'
-
         self.friendsListBox = ListBox()
 
         self._addMenu()
