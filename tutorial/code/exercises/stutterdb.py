@@ -97,59 +97,6 @@ def itemExists(table, id):
 
 friendAttrs = 'id screen_name name description location url profile_image_url'.split()
 
-def saveFriend(friend):
-    if itemExists('friends', friend['id']):
-        return
-
-    cmd = conn.CreateCommand()
-    cmd.CommandText = SAVE_FRIEND_STATEMENT
-    for name in friendAttrs:
-        setParameter(cmd, name, friend.get(name))
-    cmd.ExecuteNonQuery()
-        
-
-def saveTweet(tweet):
-    if itemExists('tweets', tweet['id']):
-        return
-
-    friend = tweet.pop('user')
-    saveFriend(friend)
-
-    cmd = conn.CreateCommand()
-    cmd.CommandText = SAVE_TWEET_STATEMENT
-    for key, value in tweet.iteritems():
-        setParameter(cmd, key, value)
-
-    setParameter(cmd, 'friend_id', friend['id'])
-    cmd.ExecuteNonQuery()
-    
-
-# python 2.5 compatible syntax only
-
-## from __future__ import with_statement
-## from contextlib import contextmanager
-
-## @contextmanager
-## def disposable(obj):
-##     try:
-##         yield obj
-##     finally:
-##         obj.Dispose()
-
-
-def getFriends():
-    cmd = conn.CreateCommand()
-    cmd.CommandText = GET_FRIENDS_STATEMENT
-    ## with disposable(cmd.ExecuteReader()) as reader:
-    reader = cmd.ExecuteReader()
-    try:
-        friends = []
-        while reader.Read():
-            friends.append(reader['screen_name'])
-    finally:
-        reader.Close()
-    return friends
-
 
 def makeTweet(reader):
     tweet = {}
@@ -158,16 +105,18 @@ def makeTweet(reader):
     return tweet
 
 
+# Exercise L1: Write db access functions to save and load friends
+# to the database
+
+def saveFriend(friend):
+	pass
+
+def getFriends():
+	return []
+
+def saveTweet(tweet):
+	pass
+
 def getTweets(friend=None):
-    cmd = conn.CreateCommand()
-    cmd.CommandText = GET_TWEETS_STATEMENT
-    setParameter(cmd, 'friend', friend)
-    ## with disposable(cmd.ExecuteReader()) as reader:
-    reader = cmd.ExecuteReader()
-    try:
-        tweets = []
-        while reader.Read():
-            tweets.append(makeTweet(reader))
-    finally:
-        reader.Close()
-    return tweets
+	return []
+

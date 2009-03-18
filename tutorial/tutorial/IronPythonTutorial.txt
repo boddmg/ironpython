@@ -342,7 +342,7 @@ Arrays and Generics
 
     class Custom1(object): pass
     class Custom2(object): pass
-
+ 
     c = Custom1()
     a = Array[Custom1]([c])
     a[0] = Custom2()  # this will work
