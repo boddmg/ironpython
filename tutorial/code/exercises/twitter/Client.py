@@ -32,7 +32,8 @@ class Client(object):
 		# Practical 5: Add update support.
         # Implement this function.
         # It is called from the stutter.py onPost() method. Add this method
-        # as a handler of Post button click events.
+        # as a handler of Post button click events in the Stutter.__init__()
+        # method.
 		pass
 
 

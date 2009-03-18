@@ -778,6 +778,7 @@ XML Parsing: Example
 
     This is a simplified example. We'll look at some real XML handling soon.
 
+
 Cleaner XML Handling
 ====================
 * XML API is functional but not elegant (it's for C# programmers)
@@ -882,12 +883,14 @@ Databases: ADO.NET
     - Database-specific Data Providers
     - Generic DataSets
 
+
 DataSet Layer
 =============
 * Disconnected in-memory data storage and manipulation
 * Huge!
 * Lots of facilities for slicing and dicing data
 * ... which aren't really needed in Python
+
 
 Data Provider Layer
 ===================
@@ -919,6 +922,7 @@ Getting Connected
 
 * Connection class name and connection string parameters depend on provider
 
+
 Issuing Commands
 ================
 * With the Command class!
@@ -932,6 +936,7 @@ Issuing Commands
 * ExecuteScalar returns first value from first row of results
 * ExecuteNonQuery for INSERT, UPDATE and DELETE
 * ExecuteReader for reading results
+
 
 Avoid SQL Injection!
 ====================
@@ -948,6 +953,7 @@ Avoid SQL Injection!
 
 * Name of Parameter class also depends on provider
     
+
 Reading Results
 ===============
 * Command.ExecuteReader returns a DataReader
