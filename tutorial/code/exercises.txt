@@ -1,4 +1,14 @@
-Exercises
+# Practical 1: Create a 'Post' button
+# MainForm.py, MainForm.__init__()
+In the MainForm.__init__, create new .NET Button, and store it as 
+self.postButton. Label the button 'Post'.
+
+Answer:
+    self.postButton = Button()
+    self.postButton.Text = "Post"
+
+
+----------
 
 # Exercise A
 # In Client.py, impliment Client.update() method
@@ -21,14 +31,6 @@ Answer
         return tweets[0]
 
 
-# Exercise B: Create a 'Post' button
-# MainForm.py, MainForm.__init__()
-# use an instance of the .NET Button class, store it 'self.postButton'
-# label the button 'Post'
-
-Answer:
-    self.postButton = Button()
-    self.postButton.Text = "Post"
 
 
 # Exercise C1: Add menu items for 'Refresh' and 'Quit'

@@ -348,14 +348,16 @@ ul.auto-toc {
 <li><a class="reference" href="#python-and-net-types-1" id="id8" name="id8">Python and .NET Types (1)</a></li>
 <li><a class="reference" href="#python-and-net-types-2" id="id9" name="id9">Python and .NET Types (2)</a></li>
 <li><a class="reference" href="#subclassing-net-types" id="id10" name="id10">Subclassing .NET Types</a></li>
-<li><a class="reference" href="#overloading" id="id11" name="id11">Overloading</a></li>
-<li><a class="reference" href="#arrays-and-generics" id="id12" name="id12">Arrays and Generics</a></li>
-<li><a class="reference" href="#net-ignorant-of-dynamic-types" id="id13" name="id13">.NET ignorant of dynamic types</a></li>
-<li><a class="reference" href="#making-guis" id="id14" name="id14">Making GUIs</a></li>
-<li><a class="reference" href="#user-interaction" id="id15" name="id15">User Interaction</a></li>
-<li><a class="reference" href="#introducing-stutter" id="id16" name="id16">Introducing Stutter</a></li>
-<li><a class="reference" href="#creating-a-form" id="id17" name="id17">Creating a Form</a></li>
-<li><a class="reference" href="#creating-a-form-example" id="id18" name="id18">Creating a Form: Example</a></li>
+<li><a class="reference" href="#arrays-and-generics" id="id11" name="id11">Arrays and Generics</a></li>
+<li><a class="reference" href="#making-guis" id="id12" name="id12">Making GUIs</a></li>
+<li><a class="reference" href="#user-interaction" id="id13" name="id13">User Interaction</a></li>
+<li><a class="reference" href="#introducing-stutter" id="id14" name="id14">Introducing Stutter</a></li>
+<li><a class="reference" href="#creating-a-form" id="id15" name="id15">Creating a Form</a></li>
+<li><a class="reference" href="#creating-a-form-example" id="id16" name="id16">Creating a Form: Example</a></li>
+<li><a class="reference" href="#practical-1" id="id17" name="id17">Practical 1</a><ul>
+<li><a class="reference" href="#add-a-post-button" id="id18" name="id18">Add a Post button</a></li>
+</ul>
+</li>
 <li><a class="reference" href="#laying-out-the-form-1" id="id19" name="id19">Laying Out the Form (1)</a></li>
 <li><a class="reference" href="#laying-out-the-form-2" id="id20" name="id20">Laying Out the Form (2)</a></li>
 <li><a class="reference" href="#anchoring-and-docking" id="id21" name="id21">Anchoring and Docking</a></li>
@@ -658,30 +660,6 @@ is right.</p>
 </li>
 </ul>
 </div>
-<div class="slide" id="overloading">
-<h1>Overloading</h1>
-<ul>
-<li><dl class="first docutils">
-<dt>.NET classes can have <em>overloaded</em> methods</dt>
-<dd><ul class="first last simple">
-<li>Distinguished by types of arguments</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<pre class="literal-block">
-ExampleClass.Add(Int32, Int32)
-ExampleClass.Add(String, String)
-</pre>
-<ul class="simple">
-<li>Often IP can determine correct method from types of arguments</li>
-<li>Occasionally needs help</li>
-</ul>
-<pre class="literal-block">
-ExampleClass.Add.Overloads[int, int]('hello', None)
-</pre>
-</div>
 <div class="slide" id="arrays-and-generics">
 <h1>Arrays and Generics</h1>
 <ul class="simple">
@@ -703,19 +681,25 @@ arrays and a lot of generic classes, but sometimes they're
 necessary for talking to an API. The .NET generic collections can
 also be useful if you want to use a container with different
 performance tradeoffs than the Python ones.</p>
-</div>
-<div class="slide" id="net-ignorant-of-dynamic-types">
-<h1>.NET ignorant of dynamic types</h1>
-<ul class="simple">
-<li>IronPython subclasses of the same C# base class will be indistinguishable to .NET's static typing.</li>
-</ul>
-<p class="handout">One thing to note is that arrays and generics can only tell the
-difference between classes that are distinct at the .NET level. If
-you have two different subclasses of object, and an array that you
-only intended to contain one type, the instances of the other type
-can still be stored in it, because as far as the CLR is concerned
+<p class="handout">.NET classes can have <em>overloaded</em> methods - distinguished by types of
+arguments:</p>
+<pre class="handout literal-block">
+ExampleClass.Add(Int32, Int32)
+ExampleClass.Add(String, String)
+</pre>
+<p class="handout">Often IP can determine the correct method from the types of arguments,
+occasionally it needs help:</p>
+<pre class="handout literal-block">
+ExampleClass.Add.Overloads[int, int]('hello', None)
+</pre>
+<p class="handout">IronPython subclasses of the same C# base class will be
+indistinguishable to .NET's static typing.</p>
+<p class="handout">.NET can only tell the difference between classes that are distinct at the
+CLR level. If you have two different subclasses of object, and an array
+that you only intended to contain one type, the instances of the other
+type can still be stored in it, because as far as the CLR is concerned
 they are of the same type.</p>
-<pre class="literal-block">
+<pre class="handout literal-block">
 class Custom1(object): pass
 class Custom2(object): pass
 
@@ -726,11 +710,12 @@ a[0] = Custom2()  # this will work
 </div>
 <div class="slide" id="making-guis">
 <h1>Making GUIs</h1>
-<ul class="simple">
-<li>The GUI framework lives in System.Windows.Forms/Controls</li>
-<li>That's the assembly and the namespace</li>
-<li>Hello world:</li>
-</ul>
+<ul>
+<li><p class="first">The Windows Forms GUI framework lives in System.Windows.Forms</p>
+</li>
+<li><p class="first">That's the assembly and the namespace</p>
+</li>
+<li><p class="first">Hello world:</p>
 <pre class="literal-block">
 clr.AddReference('System.Windows.Forms')
 from System.Windows.Forms import Application, Label, Form
@@ -738,8 +723,8 @@ form = Form()
 label = Label(Parent=form, Text='Hello world!')
 Application.Run(form)
 </pre>
-<p class="handout">.NET UI components come from System.Windows.Forms (in .NET 3.0 and up
-they were moved to System.Windows.Controls).</p>
+</li>
+</ul>
 <p class="handout">The constructor for the Label actually takes no parameters; the
 keyword arguments are IronPython syntactic sugar to make
 constructing GUIs a little more convenient. It's equivalent to:</p>
@@ -838,6 +823,14 @@ subclass of Form called MainForm. In the constructor, the Form constructor
 is called (rather important) and then we set the title (&quot;Text&quot;), Height
 and Width of the form. Then it's just a matter of creating a few controls
 and configuring them.</p>
+</div>
+<div class="slide" id="practical-1">
+<h1>Practical 1</h1>
+<div class="section" id="add-a-post-button">
+<h2>Add a Post button</h2>
+<p>In the MainForm.__init__, create new .NET Button, and store it on
+self.postButton. Label the button 'Post'.</p>
+</div>
 </div>
 <div class="slide" id="laying-out-the-form-1">
 <h1>Laying Out the Form (1)</h1>

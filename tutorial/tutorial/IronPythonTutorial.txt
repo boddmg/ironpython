@@ -458,6 +458,14 @@ Creating a Form: Example
     and Width of the form. Then it's just a matter of creating a few controls
     and configuring them.
 
+Practical 1
+===========
+
+Add a Post button
+-----------------
+
+In the MainForm.__init__, create new .NET Button, and store it as 
+self.postButton. Label the button 'Post'.
 
 
 Laying Out the Form (1)
