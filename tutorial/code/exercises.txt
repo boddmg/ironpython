@@ -1,11 +1,20 @@
 # Practical 1: Create a 'Post' button
 # MainForm.py, MainForm.__init__()
 In the MainForm.__init__, create new .NET Button, and store it as 
-self.postButton. Label the button 'Post'.
+self.postButton. Label the button 'Post'. Add this button, not to the
+form itself, but to the form's upper panel control.
 
 Answer:
+in __init__():
     self.postButton = Button()
     self.postButton.Text = "Post"
+in _layout():
+    upperPanel.Controls.Add(self.postButton)
+
+
+# Practical 2: GUI Layout
+# MainForm.py, _layout()
+Anwer: just uncomment the lines there
 
 
 ----------
@@ -31,8 +40,6 @@ Answer
         return tweets[0]
 
 
-
-
 # Exercise C1: Add menu items for 'Refresh' and 'Quit'
 # MainForm.py, MainForm._addMenu()
 # These need to be added to the menu 
@@ -55,7 +62,8 @@ Answer:
     self.Controls.Add(self.menuStrip)
 
 
-# Exercise D: intentionally left blank
+# Exercise D: Layout is conceptually simple but fiddly to get perfect,
+# so in the interests of time.
 
 
 # Exercise E: download and save the image in the cache

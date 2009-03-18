@@ -24,8 +24,13 @@ class MainForm(Form):
 		# Exercise B: Create a 'Post' button
 		# store it in member 'postButton'
 
+        # TODO delete:
+        from System.Windows.Forms import Button
+        self.postButton = Button()
+        self.postButton.Text = 'Post'
+
         self.friendsListBox = ListBox()
-      
+
         self._addMenu()
         self._layout()
 
@@ -38,12 +43,12 @@ class MainForm(Form):
         stutterMenu.DropDown.ShowCheckMargin = False
 
         # Exercise C1: Add menu items for 'Refresh' and 'Quit'
-        # These need to be added to the menu 
+        # These need to be added to the menu
         # 'stutterMenu' created above.
 
         self.menuStrip.Items.Add(stutterMenu)
         self.MainMenuStrip = self.menuStrip
-        
+
         # Exercise C2: The main menu (the MenuStrip) needs
         # to be docked to the top of its parent
         # It doesn't have a parent yet
@@ -55,14 +60,16 @@ class MainForm(Form):
         upperPanel.Left = self.PADDING
         upperPanel.Width = self.ClientSize.Width - (2 * self.PADDING)
 
-		# Exercise J: Include the Post button in the form layout
+        # Practical 1: add the Post button to the form's upper panel
+
+        # Practical 2: uncomment each of the commented lines
+        # below, and observe the effect of each on the application form
 
         # upperPanel.Anchor = (AnchorStyles.Left |
         #                      AnchorStyles.Top |
         #                      AnchorStyles.Right)
 
         upperPanel.Controls.Add(self.postTextBox)
-        # upperPanel.Controls.Add(self.postButton)
 
         self.postTextBox.Left = 0
         self.postTextBox.Top = 0
@@ -118,7 +125,7 @@ class MainForm(Form):
         lowerPanel.Controls.Add(self.tweetsPanel)
 
         self.Controls.Add(lowerPanel)
-        
+
 
     def showFriends(self, friends):
         self.friendsListBox.DataSource = friends
@@ -142,4 +149,4 @@ class MainForm(Form):
             top += tweetPanel.Height
 
         self.ResumeLayout()
-                                 
+
