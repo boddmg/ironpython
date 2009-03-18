@@ -713,7 +713,18 @@ Making Web Requests
     * WebRequest: http://msdn.microsoft.com/en-us/library/system.net.webrequest.aspx
     * StreamReader: http://msdn.microsoft.com/en-us/library/system.io.streamreader(VS.80).aspx
     * StreamWriter: http://msdn.microsoft.com/en-us/library/system.io.streamwriter(VS.80).aspx
+    
+    .. note::
+    
+        There is also a useful alternative for making web requests called WebClient. For
+        making simple requests you can do it on one line::
+        
+            from System.Net import WebClient
+            
+            page = WebClient.DownloadString(uri)
 
+        For our use case we need a stream to pass to our XML parser rather than a string, so WebRequest is
+        actually more convenient.
 
 
 Practical: Adding Update Support 
