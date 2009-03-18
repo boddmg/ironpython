@@ -21,7 +21,7 @@ class MainForm(Form):
         self.postTextBox = TextBox()
         self.postTextBox.Multiline = True
 
-		# Exercise B: Create a 'Post' button
+		# Practical 1: Create a 'Post' button
 		# store it in member 'postButton'
 
         self.friendsListBox = ListBox()

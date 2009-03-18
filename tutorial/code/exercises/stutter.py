@@ -26,10 +26,10 @@ class Stutter(object):
 		# Write an 'onQuit' function and use it to handle 'Quit' menu item
         # events.
 
+		# Practical 5: Add 'onPost' method as a handler for the 'Post' button
+
 		# Exercise H: Add a handler for the friendListBox.SelectedIndexChanged
 		# event.
-
-		# Practical 5: Add 'onPost' method as a handler for the 'Post' button
 
         self.refreshFriends()
 
