@@ -834,6 +834,7 @@ Twitter Statuses
 
     See also: http://apiwiki.twitter.com/REST+API+Documentation#friendstimeline
 
+
 Parsing Twitter Statuses
 ========================
 * Subclass that handles Twitter statuses:
@@ -965,6 +966,21 @@ Reading Results
     reader.Close()
 
 * Close frees the result set
+
+
+Practical 6 : Database access
+=============================
+
+Stutterdb.py contains functions saveTweet() and getTweets() to insert
+and select tweets from the database.
+
+* Impliment the stubs for saveFriend() and getFriends(), which will be
+very similar:
+
+* In saveFriend(), the parameters to set on the command are those enumerated
+in friendAttrs. Get the value of each attr using friend.get(key)
+
+* In getFriends(), construct the friends list by appending reader['screen_name'], while reader.Read() is True.
 
 
 IronPython and Threads

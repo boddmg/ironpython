@@ -105,18 +105,43 @@ def makeTweet(reader):
     return tweet
 
 
-# Exercise L1: Write db access functions to save and load friends
-# to the database
+def saveTweet(tweet):
+    if itemExists('tweets', tweet['id']):
+        return
+
+    friend = tweet.pop('user')
+    saveFriend(friend)
+
+    cmd = conn.CreateCommand()
+    cmd.CommandText = SAVE_TWEET_STATEMENT
+    for key, value in tweet.iteritems():
+        setParameter(cmd, key, value)
+
+    setParameter(cmd, 'friend_id', friend['id'])
+    cmd.ExecuteNonQuery()
+
+
+def getTweets(friend=None):
+    cmd = conn.CreateCommand()
+    cmd.CommandText = GET_TWEETS_STATEMENT
+    setParameter(cmd, 'friend', friend)
+    reader = cmd.ExecuteReader()
+    try:
+        tweets = []
+        while reader.Read():
+            tweets.append(makeTweet(reader))
+    finally:
+        reader.Close()
+    return tweets
+
+
+# Practical 6: Write db access functions to save and load friends
+# to the database. These will be similar to the routines for
+# saving and loading tweets, above.
 
 def saveFriend(friend):
 	pass
 
 def getFriends():
-	return []
-
-def saveTweet(tweet):
-	pass
-
-def getTweets(friend=None):
 	return []
 

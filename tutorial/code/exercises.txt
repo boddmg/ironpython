@@ -70,6 +70,32 @@ and in Stutter.__init__():
     self.form.postButton.Click += self.onPost
 
 
+# Practical 6: Write db access functions to save and load friends.
+# This will be similar to the routines to save and load tweets, above.
+Answer:
+    def saveFriend(friend):
+        if itemExists('friends', friend['id']):
+            return
+
+        cmd = conn.CreateCommand()
+        cmd.CommandText = SAVE_FRIEND_STATEMENT
+        for name in friendAttrs:
+            setParameter(cmd, name, friend.get(name))
+        cmd.ExecuteNonQuery()
+
+
+    def getFriends():
+        cmd = conn.CreateCommand()
+        cmd.CommandText = GET_FRIENDS_STATEMENT
+        reader = cmd.ExecuteReader()
+        try:
+            friends = []
+            while reader.Read():
+                friends.append(reader['screen_name'])
+        finally:
+            reader.Close()
+        return friends
+
 
 # Practical 7: Implement DoBackgroundWithInvoke()
 # threadhelper.py
@@ -119,6 +145,15 @@ Answer:
 
 
 
+<<<<<<< .mine
+    def DoBackgroundWithInvoke(function, callback, form):
+        def op():
+            function()
+            form.Invoke(CallTarget0(callback))
+        t = Thread(ThreadStart(op))
+        t.Start()
+
+=======
 # Exercse L1: Write db access functions to save and load to database
 # stutterdb.py, saveFriend(), saveTweet(), getFriends(), getTweets()
 Answer:
@@ -175,3 +210,4 @@ Answer:
             reader.Close()
         return tweets
 
+>>>>>>> .r52
