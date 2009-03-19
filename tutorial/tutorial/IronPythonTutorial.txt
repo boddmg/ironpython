@@ -600,7 +600,7 @@ Dropdown Menus
 
 
 Practical 3: Add Menu Items
-==========================
+===========================
 
 MainForm currently has a dropdown menu but no menu items on it.
 
@@ -975,10 +975,10 @@ Stutterdb.py contains functions saveTweet() and getTweets() to insert
 and select tweets from the database.
 
 * Implement saveFriend() and getFriends(), which will be
-similar to the above.
+  similar to the above.
 
 * In saveFriend(), the parameters to set on the command are those enumerated
-in friendAttrs. Get the value of each attr using friend.get(key)
+  in friendAttrs. Get the value of each attr using friend.get(key)
 
 * In getFriends(), no parameters need setting. The list returned is obtained by calling reader.Read() until it returns False, appending the value of reader['screen_name'] each time.
 
