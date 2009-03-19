@@ -197,7 +197,7 @@ Importing .NET Classes
 
     Often a namespace will have a one-to-one relationship with an assembly,
     but it doesn't necessarily have to. A namespace can be split between
-    several assemblies, or a single assembly can impliment several namespaces.
+    several assemblies, or a single assembly can implement several namespaces.
 
     An assembly's name doesn't have to be the common prefix to all of the
     namespaces whose classes it contains, but usually that's how things are
@@ -1124,3 +1124,4 @@ Practical 7: Fetching Tweets in the Background
 * And then invoke a GUI refresh onto the control thread
 * Complete ``DoBackgroundWithInvoke`` in threadhelper.py
 * This is called from ``Stutter.onRefresh``
+
