@@ -974,13 +974,13 @@ Practical 6 : Database access
 Stutterdb.py contains functions saveTweet() and getTweets() to insert
 and select tweets from the database.
 
-* Impliment the stubs for saveFriend() and getFriends(), which will be
-very similar:
+* Impliment saveFriend() and getFriends(), which will be
+similar to the above.
 
 * In saveFriend(), the parameters to set on the command are those enumerated
 in friendAttrs. Get the value of each attr using friend.get(key)
 
-* In getFriends(), construct the friends list by appending reader['screen_name'], while reader.Read() is True.
+* In getFriends(), no parameters need setting. The list returned is obtained by calling reader.Read() until it returns False, appending the value of reader['screen_name'] each time.
 
 
 IronPython and Threads
