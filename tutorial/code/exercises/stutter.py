@@ -21,6 +21,8 @@ class Stutter(object):
 
         self.form = MainForm()
 
+        self.form.friendsListBox.SelectedIndexChanged += self.onSelectFriend
+
 		# Practical 4: Use the 'onRefresh' function to handle events from the
         # 'Refresh' menu item.
 		# Write an 'onQuit' function and use it to handle 'Quit' menu item
@@ -34,16 +36,22 @@ class Stutter(object):
         self.refreshFriends()
 
 
+    def onSelectFriend(self, source, args):
+        self.displayTweets()
+
+
+    def displayTweets(self):
+        selectedFriend = None
+        if self.form.friendsListBox.SelectedIndex != 0:
+            selectedFriend = self.form.friendsListBox.SelectedItem
+        self.form.showTweets(stutterdb.getTweets(selectedFriend))
+
+
     def refreshFriends(self):
         prevSelection = self.form.friendsListBox.SelectedItem
         self.form.showFriends(['All'] + stutterdb.getFriends())
         # fires the onSelectFriend event handler that displays tweets
         self.form.friendsListBox.SelectedItem = prevSelection
-
-
-    def run(self):
-        self.form.Show()
-        Application.Run(self.form)
 
 
     def onRefresh(self, source, args):
@@ -58,6 +66,11 @@ class Stutter(object):
         stutterdb.saveTweet(tweet)
         self.form.postTextBox.Text = ''
         self.displayTweets()
+
+
+    def run(self):
+        self.form.Show()
+        Application.Run(self.form)
 
 
 def main():
