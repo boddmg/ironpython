@@ -974,7 +974,7 @@ Practical 6 : Database access
 Stutterdb.py contains functions saveTweet() and getTweets() to insert
 and select tweets from the database.
 
-* Impliment saveFriend() and getFriends(), which will be
+* Implement saveFriend() and getFriends(), which will be
 similar to the above.
 
 * In saveFriend(), the parameters to set on the command are those enumerated
