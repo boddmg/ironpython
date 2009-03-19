@@ -2,7 +2,7 @@
 Developing with IronPython
 ==========================
 
-
+.. include:: <s5defs.txt>
 
 .. image:: images/ironpythoninaction.jpg
     :align: right
