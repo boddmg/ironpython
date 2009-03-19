@@ -110,37 +110,3 @@ Answer:
         t.Start()
         
         
-----------
-
-
-
-# Exercise E: download and save the image in the cache
-# TweetPanel.py, getImage()
-
-Answer:
-    try:
-        imageBytes = WebClient().DownloadData(tweet['image_url'])
-        image = Bitmap(MemoryStream(imageBytes))        
-    except:
-        return Bitmap.FromFile(os.path.join('imagecache', '__fallback__.png'))
-    else:
-        image.Save(cacheLocation)
-        return image
-
-
-# Exercise H: Add a handler for the friendListBox.SelectedIndexChanged event.
-# stutter.py, Stutter.__init__()
-
-Answer:
-    self.form.friendsListBox.SelectedIndexChanged += self.onSelectFriend
-
-    def onSelectFriend(self, source, args):
-        self.displayTweets()
-
-    def displayTweets(self):
-        selectedFriend = None
-        if self.form.friendsListBox.SelectedIndex != 0:
-            selectedFriend = self.form.friendsListBox.SelectedItem
-        self.form.showTweets(stutterdb.getTweets(selectedFriend))
-
-

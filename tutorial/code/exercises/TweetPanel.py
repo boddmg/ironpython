@@ -13,11 +13,15 @@ def getImage(tweet):
     cacheLocation = os.path.join('imagecache', tweet['screen_name'] + '.jpg')
     if os.path.isfile(cacheLocation):
         return Bitmap.FromFile(cacheLocation)
+    try:
+        imageBytes = WebClient().DownloadData(tweet['image_url'])
+        image = Bitmap(MemoryStream(imageBytes))
+    except:
+        return Bitmap.FromFile(os.path.join('imagecache', '__fallback__.png'))
+    else:
+        image.Save(cacheLocation)
+        return image
 
-	# Exercise E: download and save the image in the cache
-	# replace the line below with something appropriate
-    return Bitmap.FromFile(os.path.join('imagecache', '__fallback__.png'))
-    
 
 HEIGHT = 49
 
@@ -34,7 +38,7 @@ class TweetPanel(Panel):
         imageBox.Parent = self
 
         halfway = (self.ClientSize.Width - imageBox.Width) / 2
-        
+
         self.friendLabel = friendLabel = Label(Text=tweet['screen_name'],
                                                TextAlign=ContentAlignment.MiddleLeft)
         friendLabel.Font = Font(friendLabel.Font,
@@ -70,4 +74,4 @@ class TweetPanel(Panel):
             self.imageBox.Image = None
         if disposing is None:
             Panel.Dispose(self)
-            
+

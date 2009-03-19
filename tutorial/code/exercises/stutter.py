@@ -30,9 +30,6 @@ class Stutter(object):
 
 		# Practical 5: Add 'onPost' method as a handler for the 'Post' button
 
-		# Exercise H: Add a handler for the friendListBox.SelectedIndexChanged
-		# event.
-
         self.refreshFriends()
 
 
