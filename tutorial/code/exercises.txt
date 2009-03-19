@@ -70,6 +70,20 @@ and in Stutter.__init__():
     self.form.postButton.Click += self.onPost
 
 
+
+# Practical 7: Implement DoBackgroundWithInvoke()
+# threadhelper.py
+Answer:
+    from System.Threading import Thread, ThreadStart
+
+    def DoBackgroundWithInvoke(function, callback, form):
+        def op():
+            function()
+            form.Invoke(CallTarget0(callback))
+        t = Thread(ThreadStart(op))
+        t.Start()
+        
+        
 ----------
 
 
@@ -103,18 +117,6 @@ Answer:
             selectedFriend = self.form.friendsListBox.SelectedItem
         self.form.showTweets(stutterdb.getTweets(selectedFriend))
 
-
-# Exercise K: Implement DoBackgroundWithInvoke()
-# threadhelper.py
-Answer:
-    from System.Threading import Thread, ThreadStart
-
-    def DoBackgroundWithInvoke(function, callback, form):
-        def op():
-            function()
-            form.Invoke(CallTarget0(callback))
-        t = Thread(ThreadStart(op))
-        t.Start()
 
 
 # Exercse L1: Write db access functions to save and load to database

@@ -736,7 +736,7 @@ Practical 5: Adding Update Support
 * Make a POST to http://twitter.com/statuses/update.xml
 * One POST argument (status) is required which gives the tweet text 
 * Don't forget authentication!
-* Call update from the Post button handler we created earlier
+* This update method is called from the Post button handler hooked in stutter.py
 
 .. class:: handout
 
@@ -773,10 +773,6 @@ XML Parsing: Example
         elif reader.NodeType == XmlNodeType.Text:
             goHandleThisText(reader)
         ...
-
-.. class:: handout
-
-    This is a simplified example. We'll look at some real XML handling soon.
 
 
 Cleaner XML Handling
@@ -1103,3 +1099,12 @@ Invoking onto the Control Thread
     
     We can use this to make the database / network calls for Stutter happen on a background thread.
     
+
+Practical 7: Fetching Tweets in the Background
+============================================== 
+
+* Fetching new tweets can take a long time
+* We want to do this on a background thread
+* And then invoke a GUI refresh onto the control thread
+* Complete ``DoBackgroundWithInvoke`` in threadhelper.py
+* This is called from ``Stutter.onRefresh``

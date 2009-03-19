@@ -17,6 +17,9 @@ except ImportError:
         
 def DoBackgroundWithInvoke(function, callback, form):
 	pass
-	# Exercise K: Implement DoBackgroundWithInvoke() to invoke
+	# Practical 7: Implement DoBackgroundWithInvoke() to execute
 	# 'function' on a new thread, using the .NET Thread class
+	# invoking 'callback' back onto the form when 'function'
+	# has completed.
+	# Called from stutter.Stutter.onRefresh
 
