@@ -2,10 +2,7 @@
 Developing with IronPython
 ==========================
 
-.. include:: <s5defs.txt>
 
-.. contents:: Developing with IronPython
-   :class: handout
 
 .. image:: images/ironpythoninaction.jpg
     :align: right
@@ -17,6 +14,10 @@ Developing with IronPython
 * `www.ironpythoninaction.com <http://www.ironpythoninaction.com/>`_
 * `tartley.com <http://www.tartley.com>`_
 * `Resolver Systems <http://www.resolversystems.com>`_
+
+.. contents::
+   :class: handout
+
 
 
 .. class:: handout
