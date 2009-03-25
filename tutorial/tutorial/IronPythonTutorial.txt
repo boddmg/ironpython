@@ -410,7 +410,6 @@ Creating a Form
 
 * Create a subclass of Form
 * in __init__():
-    - call the superclass!
     - Create control instances 
     - Add controls and lay them out
 * Controls added using self.Controls.Add()
@@ -460,8 +459,7 @@ Creating a Form: Example
 .. class:: handout
 
     This is a sample from our Stutter application (MainForm.py). We create a
-    subclass of Form called MainForm. In the constructor, the Form constructor
-    is called (rather important) and then we set the title ("Text"), Height
+    subclass of Form called MainForm. In the constructor we set the title ("Text"), Height
     and Width of the form. Then it's just a matter of creating a few controls
     and configuring them.
 
@@ -766,7 +764,7 @@ XML Parsing: Example
 
 ::
 
-    reader = XmlReader(someTextReader)
+    reader = XmlReader.Create(someTextReader)
     while reader.Read():
         if reader.NodeType == XmlNodeType.Element:
             goHandleThisElement(reader)
