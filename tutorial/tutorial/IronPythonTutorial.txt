@@ -6,13 +6,15 @@ Developing with IronPython
 
 .. image:: images/ironpythoninaction.jpg
     :align: right
-    :width: 325
-    :height: 415
+    :width: 255
+    :height: 315
     :alt: IronPython in Action
     :class: image
 
-* `www.ironpythoninaction.com <http://www.ironpythoninaction.com/>`_
-* `tartley.com <http://www.tartley.com>`_
+* Michael Foord,
+  `www.ironpythoninaction.com <http://www.ironpythoninaction.com/>`_
+* Jonathan Hartley,
+  `tartley.com <http://www.tartley.com>`_
 * `Resolver Systems <http://www.resolversystems.com>`_
 
 .. contents::
@@ -133,8 +135,8 @@ Connecting Python to .NET
 =========================
 
 * Two *orthogonal* ways of organising classes in .NET
-    - Assemblies
-    - Namespaces
+    - Assemblies (physical)
+    - Namespaces (logical)
     
 * Use clr.AddReference to make classes in an assembly available for import
 
@@ -280,6 +282,11 @@ Subclassing .NET Types
     - But only from .NET base class references
 
 
+.. class:: handout
+
+   This sounds fiddly, but isn't something you generally need to worry
+   about - in practice this mechanism is simple and transparent to use.
+   
 
 Arrays and Generics
 ===================
@@ -305,7 +312,6 @@ Arrays and Generics
     necessary for talking to an API. The .NET generic collections can
     also be useful if you want to use a container with different
     performance tradeoffs than the Python ones.
-
 
     .NET classes can have *overloaded* methods - distinguished by types of
     arguments::
@@ -460,16 +466,12 @@ Creating a Form: Example
     and configuring them.
 
 
-Practical 1
-===========
+Practical 1: Add a Post button
+==============================
 
-Add a Post button
------------------
-
-In the MainForm.__init__, create new .NET Button, and store it as
-self.postButton. Label the button 'Post'.
-
-In the _layout() method, add this button, not to the form itself, but to the form's upper panel control.
+* In the MainForm.__init__, create new .NET Button, and store it as self.postButton.
+* Label the button 'Post'.
+* In the _layout() method, add this button, not to the form itself, but to the form's upper panel control.
 
 
 Laying Out the Form (1)
@@ -527,10 +529,8 @@ Anchoring and Docking
 * You should choose one mechanism: they don't work well together
 
 
-Practical 2
-===========
-Layout in Stutter
------------------
+Practical 2: Layout in Stutter
+==============================
 
 * Look inside MainForm.py: _layout() method
 * Uncomment each of the lines, observing the effect of each.
@@ -603,7 +603,7 @@ Dropdown Menus
 Practical 3: Add Menu Items
 ===========================
 
-MainForm currently has a dropdown menu but no menu items on it.
+* MainForm currently has a dropdown menu but no menu items on it.
 
 * Add 2 menu items:
     - Refresh
@@ -698,9 +698,8 @@ Background: Twitter API
 
 Making Web Requests
 ===================
-* Using .NET, web requests are made using the System.Net.WebRequest
-* To use:
-    - Create a WebRequest
+* Using .NET, web requests are made using the System.Net.WebRequest:
+    - Create a WebRequest object
     - Set the Method attribute ('GET' or 'POST')
     - Set Credentials attribute if authenentication is required
     - If POST use the request's stream to add POST data (GetRequestStream())
@@ -717,21 +716,21 @@ Making Web Requests
     
     .. note::
     
-        There is also a useful alternative for making web requests called WebClient. For
-        making simple requests you can do it on one line::
+        There is also a useful alternative for making web requests called
+        WebClient. For making simple requests you can do it on one line::
         
             from System.Net import WebClient
             
             page = WebClient.DownloadString(uri)
 
-        For our use case we need a stream to pass to our XML parser rather than a string, so WebRequest is
-        actually more convenient.
+        For our use case we need a stream to pass to our XML parser rather than
+        a string, so WebRequest is actually more convenient.
         
         * http://msdn.microsoft.com/en-us/library/system.net.webclient.aspx
 
 
-Practical 5: Adding Update Support 
-==================================
+Practical 5: Post Updates
+=========================
 
 * Add an update() method to twitter.Client.Client
 * Make a POST to http://twitter.com/statuses/update.xml
@@ -963,7 +962,7 @@ Reading Results
     reader = command.ExecuteReader()
     while reader.Read():
     	tweetCreatedAt = reader['created']
-	< do something with tweet >
+        # do something with each creation date
     reader.Close()
 
 * Close frees the result set
@@ -972,16 +971,13 @@ Reading Results
 Practical 6 : Database access
 =============================
 
-Stutterdb.py contains functions saveTweet() and getTweets() to insert
-and select tweets from the database.
+* Implement *saveFriend()* and *getFriends()*, which will be
+  similar to the existing *saveTweet()* and *getTweets()*.
 
-* Implement saveFriend() and getFriends(), which will be
-  similar to the above.
+* In *saveFriend()*, the parameters to set on the command are enumerated
+  in *friendAttrs*. Get the value of each attr using *friend.get(key)*
 
-* In saveFriend(), the parameters to set on the command are those enumerated
-  in friendAttrs. Get the value of each attr using friend.get(key)
-
-* In getFriends(), no parameters need setting. The list returned is obtained by calling reader.Read() until it returns False, appending the value of reader['screen_name'] each time.
+* In *getFriends()*, no parameters need setting. Read all returned rows, returning a list of the values from the 'screen_name' column.
 
 
 IronPython and Threads
@@ -1005,8 +1001,10 @@ Basic Principles
 * No Global Interpreter Lock - scale across multiple cores
 
 
-Thread Class & ThreadStart Delegate
-===================================
+Thread & ThreadStart 
+====================
+
+* ThreadStart is a delegate passed to the Thread class constructor.
 
 ::
 
@@ -1095,8 +1093,8 @@ The CallTarget0 Delegate
     ``CallTarget0`` (and ``CallTarget1`` etc) changed location in between IronPython 1 and 2 (in fact it changed twice in IronPython 2 - the one shown here is its final resting place.)
     
 
-Invoking onto the Control Thread
-================================
+Invoking on the Control Thread
+==============================
 
 ::
 
@@ -1117,8 +1115,8 @@ Invoking onto the Control Thread
     We can use this to make the database / network calls for Stutter happen on a background thread.
     
 
-Practical 7: Fetching Tweets in the Background
-============================================== 
+Practical 7: Asynch Fetching
+============================
 
 * Fetching new tweets can take a long time
 * We want to do this on a background thread
