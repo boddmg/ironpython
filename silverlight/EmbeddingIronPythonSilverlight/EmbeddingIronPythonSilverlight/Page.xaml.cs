@@ -19,8 +19,17 @@ def function(string):
 
             ScriptRuntimeSetup setup = Python.CreateRuntimeSetup(null);
             setup.HostType = typeof(Microsoft.Scripting.Silverlight.BrowserScriptHost);
+            setup.Options["SearchPaths"] = new string[] { string.Empty };
+
             ScriptRuntime runtime = new ScriptRuntime(setup);
             ScriptEngine pe = Python.GetEngine(runtime);
+
+            // load platform assemblies so you don't need to call LoadAssembly in script code.
+            foreach (string name in new string[] { "mscorlib", "System", "System.Windows", "System.Windows.Browser", "System.Net" })
+            {
+                runtime.LoadAssembly(runtime.Host.PlatformAdaptationLayer.LoadAssembly(name));
+            }
+
 
             ScriptScope scope = pe.CreateScope();
             ScriptSource source = pe.CreateScriptSourceFromString(code, SourceCodeKind.Statements);
