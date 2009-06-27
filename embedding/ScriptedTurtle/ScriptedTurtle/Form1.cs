@@ -43,8 +43,8 @@ namespace ScriptedTurtle
 
             this.tabControl.Focus();
             
-            engine = Python.CreateEngine();
-            scope = engine.CreateScope();
+            engine = Python.CreateEngine(); // ScriptEngine
+            scope = engine.CreateScope();   // ScriptScope
 
             ScriptRuntime runtime = engine.Runtime;
             runtime.LoadAssembly(typeof(String).Assembly);
