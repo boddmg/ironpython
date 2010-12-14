@@ -46,8 +46,13 @@ class Client(object):
 
 def demo():
     import sys
-    client = Client(sys.argv[1], sys.argv[2])
-    print client.getFriendsTimeline()
+    credentials = NetworkCredential('ironpython', 'password')
+    request = WebRequest.Create('http://twitter.com' + '/statuses/friends_timeline.xml')
+    request.Credentials = credentials
+    response = request.GetResponse()
+    reader = StreamReader(response.GetResponseStream())
+    #print dir(reader)
+    print reader.ReadToEnd()
 
 if __name__ == '__main__':
     demo()

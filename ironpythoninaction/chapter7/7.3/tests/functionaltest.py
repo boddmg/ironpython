@@ -14,9 +14,14 @@ try:
 except ImportError:
     import clr
     clr.AddReference('IronPython')
-    from IronPython.Compiler import CallTarget0
-
-
+    try:
+        from IronPython.Compiler import CallTarget0
+    except ImportError:
+        # IronPython 2.0a5 (FePy on Mono)
+        clr.AddReference('Microsoft.Scripting')
+        from Microsoft.Scripting import CallTarget0
+    
+    
 class AsyncExecutor(object):
 
     def __init__(self, function):
