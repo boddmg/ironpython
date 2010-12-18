@@ -52,12 +52,12 @@ class Main(object):
     def init_context_menu(self):
         context_menu = ContextMenu()
         exit_menu_item = MenuItem("Exit")
-        exit_menu_item.Click += self.onExit
+        exit_menu_item.Click += self.on_exit
         context_menu.MenuItems.Add(exit_menu_item)
         return context_menu
         
 
-    def onExit(self, sender, event):
+    def on_exit(self, sender, event):
         self.notify_icon.Visible = False
         Application.Exit()     
    
