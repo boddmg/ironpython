@@ -24,10 +24,10 @@ class Main(object):
         
         watcher = FileSystemWatcher()
         watcher.Path = this_dir
-        def handle(w, a): 
+        def handle(sender, event): 
             self.notify_icon.ShowBalloonTip(
-                10, str(a.ChangeType), 
-                a.FullPath, ToolTipIcon.Warning
+                10, str(event.ChangeType), 
+                event.FullPath, ToolTipIcon.Warning
             )
             
         watcher.Changed += handle
