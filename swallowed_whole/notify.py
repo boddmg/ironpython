@@ -3,6 +3,7 @@ import clr
 clr.AddReference("System.Windows.Forms")
 clr.AddReference("System.Drawing")
 
+import os
 from System.Drawing import Icon
 from System.Windows.Forms import (
     Application, ContextMenu, 
@@ -11,12 +12,9 @@ from System.Windows.Forms import (
 
 from System.IO import FileSystemWatcher
 
-import os
+this_dir = os.path.dirname(os.path.abspath(__file__))
 
-this_dir = os.path.dirname(
-    os.path.abspath(__file__)
-)
-    
+
 class Main(object):
 
     def __init__(self):
@@ -41,12 +39,6 @@ class Main(object):
         self.notify_icon.Icon = Icon("test.ico")
         self.notify_icon.Visible = True
         self.notify_icon.ContextMenu = self.init_context_menu()
-
-    
-    def onTick(self, sender, event):
-        self.notify_icon.BalloonTipTitle = "Hello, I'm IronPython"
-        self.notify_icon.BalloonTipText = "Who are you?"
-        self.notify_icon.ShowBalloonTip(1000)
 
         
     def init_context_menu(self):
